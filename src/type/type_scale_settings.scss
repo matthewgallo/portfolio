@@ -1,0 +1,478 @@
+@import 'type_media_queries';
+
+
+// Ratios
+$double-octave    : 4                 ;
+$pi               : 3.14159265359     ;
+$major-twelfth    : 3                 ;
+$major-eleventh   : 2.666666667       ;
+$major-tenth      : 2.5               ;
+$octave           : 2                 ;
+$major-seventh    : 1.875             ;
+$minor-seventh    : 1.777777778       ;
+$major-sixth      : 1.666666667       ;
+$phi              : 1.618034          ;
+$golden           : $phi              ;
+$minor-sixth      : 1.6               ;
+$fifth            : 1.5               ;
+$augmented-fourth : 1.41421           ;
+$fourth           : 1.333333333       ;
+$major-third      : 1.25              ;
+$minor-third      : 1.2               ;
+$major-second     : 1.125             ;
+$minor-second     : 1.066666667       ;
+
+
+// Typescale ratio
+$ms-ratio: $major-second  !default;
+// Base font size
+$base-rem-font-size: 1rem;
+
+$ms-3: $base-rem-font-size * .6875;
+$ms-2: $base-rem-font-size * .75;
+$ms-1: $base-rem-font-size * .875;
+$ms0: $base-rem-font-size;
+$ms1: $base-rem-font-size * 1.125;
+$ms2: $base-rem-font-size * 1.25;
+$ms3: $base-rem-font-size * 1.4375;
+$ms4: $base-rem-font-size * 1.625;
+$ms5: $base-rem-font-size * 1.8125;
+$ms6: $base-rem-font-size * 2;
+$ms7: $base-rem-font-size * 2.25;
+$ms8: $base-rem-font-size * 2.5625;
+$ms9: $base-rem-font-size * 2.875;
+$ms10: $base-rem-font-size * 3.25;
+$ms11: $base-rem-font-size * 3.625;
+$ms12: $base-rem-font-size * 4.125;
+$ms13: $base-rem-font-size * 4.625;
+$ms14: $base-rem-font-size * 5.1875;
+$ms15: $base-rem-font-size * 5.875;
+$ms16: $base-rem-font-size * 6.583;
+$ms17: $base-rem-font-size * 7.4059;
+$ms18: $base-rem-font-size * 8.3316;
+$ms19: $base-rem-font-size * 9.37306;
+
+$msl-3: $base-rem-font-size * 1.03125;
+$msl-2: $base-rem-font-size * 1.125;
+$msl-1: $base-rem-font-size * 1.3125;
+$msl0:  $base-rem-font-size * 1.5;
+$msl1:  $base-rem-font-size * 1.6875;
+$msl2:  $base-rem-font-size * 1.5625;
+$msl3:  $base-rem-font-size * 1.796875;
+$msl4:  $base-rem-font-size * 2.03125;
+$msl5:  $base-rem-font-size * 2.265625;
+$msl6:  $base-rem-font-size * 2.5;
+$msl7:  $base-rem-font-size * 2.8125;
+$msl8:  $base-rem-font-size * 3.203125;
+$msl9:  $base-rem-font-size * 3.59375;
+$msl10: $base-rem-font-size * 4.0625;
+$msl11: $base-rem-font-size * 4.53125;
+$msl12: $base-rem-font-size * 5.15625;
+$msl13: $base-rem-font-size * 5.78125;
+$msl14: $base-rem-font-size * 5.8359375;
+$msl15: $base-rem-font-size * 6.609375;
+$msl16: $base-rem-font-size * 7.405875;
+$msl17: $base-rem-font-size * 7.4059;
+$msl18: $base-rem-font-size * 8.3316;
+$msl19: $base-rem-font-size * 9.37306;
+
+
+@mixin font-size($step) {
+  $fonts: (
+    -3: $ms-3,
+    -2: $ms-2,
+    -1: $ms-1,
+    0: $ms0,
+  	1: $ms1,
+  	2: $ms2,
+  	3: $ms3,
+  	4: $ms4,
+  	5: $ms5,
+  	6: $ms6,
+  	7: $ms7,
+  	8: $ms8,
+  	9: $ms9,
+  	10: $ms10,
+    11: $ms11,
+    12: $ms12,
+    13: $ms13,
+    14: $ms14,
+    15: $ms15,
+    16: $ms16,
+    17: $ms17,
+    18: $ms18,
+    19: $ms19,
+  );
+
+	$line-heights: (
+    -3: $msl-3,
+    -2: $msl-2,
+    -1: $msl-1,
+    0: $msl0,
+  	1: $msl1,
+  	2: $msl2,
+  	3: $msl3,
+  	4: $msl4,
+  	5: $msl5,
+  	6: $msl6,
+  	7: $msl7,
+  	8: $msl8,
+  	9: $msl9,
+  	10: $msl10,
+    11: $msl11,
+    12: $msl12,
+    13: $msl13,
+    14: $msl14,
+    15: $msl15,
+    16: $msl16,
+    17: $msl17,
+    18: $msl18,
+    19: $msl19,
+  );
+
+		$font-minus1: ($step - 1);
+    $font-minus2: ($step - 2);
+    $font-minus4: ($step - 4);
+		$font-minus5: ($step - 5);
+		$font-minus6: ($step - 6);
+    $font-minus8: ($step - 8);
+		$font-minus11: ($step - 11);
+
+    $font-full:    $step;
+	@if $step <= 0 {
+		font-size: map-get($fonts, $font-full);
+    line-height: map-get($line-heights, $font-full);
+	}
+
+	@if $step == 1 {
+		font-size: map-get($fonts, $font-minus1);
+    line-height: map-get($line-heights, $font-minus1);
+		@media #{$medium-up} {
+			font-size: map-get($fonts, $font-full);
+      line-height: map-get($line-heights, $font-full);
+		}
+	}
+
+  @if $step >= 2 and $step < 19 and $step != 3 and $step != 10 and $step != 19{
+			font-size: map-get($fonts, $font-minus2);
+      line-height: map-get($line-heights, $font-minus2);
+		@media #{$medium-up} {
+			font-size: map-get($fonts, $font-minus1);
+      line-height: map-get($line-heights, $font-minus1);
+		}
+		@media #{$large-up} {
+			font-size: map-get($fonts, $font-full);
+      line-height: map-get($line-heights, $font-full);
+		}
+	}
+
+	@if $step == 3 {
+			font-size: map-get($fonts, $font-minus1);
+			line-height: map-get($line-heights, $font-minus1);
+		@media #{$medium-up} {
+			font-size: map-get($fonts, $font-minus1);
+			line-height: map-get($line-heights, $font-minus1);
+		}
+		@media #{$large-up} {
+			font-size: map-get($fonts, $font-full);
+			line-height: map-get($line-heights, $font-full);
+		}
+	}
+
+	@if $step == 10 {
+			font-size: map-get($fonts, $font-minus5);
+			line-height: map-get($line-heights, $font-minus5);
+		@media #{$medium-up} {
+			font-size: map-get($fonts, $font-minus2);
+			line-height: map-get($line-heights, $font-minus2);
+		}
+		@media #{$large-up} {
+			font-size: map-get($fonts, $font-full);
+			line-height: map-get($line-heights, $font-full);
+		}
+	}
+
+	@if $step == 19 {
+			font-size: map-get($fonts, $font-minus11);
+			line-height: map-get($line-heights, $font-minus11);
+		@media #{$medium-up} {
+			font-size: map-get($fonts, $font-minus6);
+			line-height: map-get($line-heights, $font-minus6);
+		}
+		@media #{$large-up} {
+			font-size: map-get($fonts, $font-full);
+			line-height: map-get($line-heights, $font-full);
+		}
+	}
+}
+
+
+// Load fonts
+
+/**
+    HTML/CSS codes:
+    300 - Hairline (Ultra Light)
+    400 - Light
+    500 - Regular
+    600 - Bold
+    700 - Black
+**/
+$Lato : 'Lato';
+$fontPath: '../assets/fonts';
+$latoPath: "#{$fontPath}";
+// Function to create all the src paths.
+@mixin addFonts ($fontname) {
+    src: url('#{$latoPath}/#{$fontname}.woff') format('woff'),
+        url('#{$latoPath}/#{$fontname}.woff2') format('woff2');
+}
+
+////////////////////////////////////////////////////////////
+//
+//  Hairline - variants
+//
+////////////////////////////////////////////////////////////
+// DEFAULT .MG-Hairline FONT.
+// Hairline
+$Lato : 'Lato';
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-Hairline');
+    font-weight: 300;
+    font-style: normal;
+}
+// Hairline - italic
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-HairlineItalic');
+    font-weight: 300;
+    font-style: italic;
+}
+
+////////////////////////////////////////////////////////////
+//
+//  Light
+//
+////////////////////////////////////////////////////////////
+// DEFAULT BODY FONT.
+// Light
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-Light');
+    font-weight: 400;
+    font-style: normal;
+}
+// DEFAULT ITALIC FONT.
+// Light - italic
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-LightItalic');
+    font-weight: 400;
+    font-style: italic;
+}
+
+////////////////////////////////////////////////////////////
+//
+//  Regular
+//
+////////////////////////////////////////////////////////////
+// Regular
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-Regular');
+    font-weight: 500;
+    font-style: normal;
+}
+// Regular - italic
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-Italic');
+    font-weight: 500;
+    font-style: italic;
+}
+
+////////////////////////////////////////////////////////////
+//
+//  Bold
+//
+////////////////////////////////////////////////////////////
+// DEFAULT BOLD FONT.
+// Bold
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-Bold');
+    font-weight: 600;
+    font-style: normal;
+}
+// Bold - italic
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-BoldItalic');
+    font-weight: 600;
+    font-style: italic;
+}
+
+////////////////////////////////////////////////////////////
+//
+//  Black - variants
+//
+////////////////////////////////////////////////////////////
+// Black
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-Black');
+    font-weight: 700;
+    font-style: normal;
+}
+// Black - italic
+@font-face {
+    font-family: $Lato;
+    @include addFonts('Lato-BlackItalic');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+/**
+    HTML/CSS codes:
+    300 - Hairline (Ultra Light)
+    400 - Light
+    500 - Regular
+    600 - Bold
+    700 - Black
+**/
+// Usage of type scale
+h1,
+.mg-h1 {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: normal;
+	@include font-size(19);
+}
+
+.mg-h1-italic {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: italic;
+	@include font-size(19);
+}
+
+h2,
+.mg-h2 {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: normal;
+  @include font-size(11);
+}
+
+.mg-h2-italic {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: italic;
+  @include font-size(11);
+}
+
+h3,
+.mg-h3 {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: normal;
+  @include font-size(8);
+}
+
+.mg-h3-italic {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: italic;
+  @include font-size(8);
+}
+
+h4,
+.mg-h4 {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: normal;
+  @include font-size(4);
+}
+
+.mg-h4-italic {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: italic;
+  @include font-size(4);
+}
+
+h5,
+.mg-h5 {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: normal;
+  @include font-size(0);
+}
+
+.mg-h5-italic {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: italic;
+  @include font-size(0);
+}
+
+h6,
+.mg-h6 {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: normal;
+  @include font-size(-1);
+}
+
+.mg-h6-italic {
+	font-family: $Lato;
+	font-weight: 500;
+	font-style: italic;
+	@include font-size(-1);
+}
+
+small,
+.mg-caption {
+	font-family: $Lato;
+	font-weight: 400;
+	font-style: normal;
+	@include font-size(-1);
+	letter-spacing: .01rem;
+}
+
+small.mg-caption-italic,
+.mg-caption-italic {
+	font-family: $Lato;
+	font-weight: 400;
+	font-style: italic;
+	@include font-size(-1);
+}
+
+p {
+	font-family: $Lato;
+	font-weight: 400;
+	font-style: normal;
+  @include font-size(0);
+}
+
+p.mg-italic {
+	font-family: $Lato;
+	font-weight: 400;
+	font-style: italic;
+  @include font-size(0);
+}
+
+strong,
+.mg-semibold {
+	font-family: $Lato;
+	font-weight: 600;
+	font-style: normal;
+}
+
+
+.mg-bold {
+	font-family: $Lato;
+	font-weight: 700;
+	font-style: normal;
+}
