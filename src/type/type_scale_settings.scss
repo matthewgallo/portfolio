@@ -248,12 +248,12 @@ $Lato : 'Lato';
     font-style: italic;
 }
 
-.mg-hairline {
+.mg--hairline {
 	font-weight: 300 !important;
 	font-style: normal !important;
 }
 
-.mg-hairline-italic {
+.mg--hairline-italic {
 	font-weight: 300 !important;
 	font-style: italic !important;
 }
@@ -280,12 +280,12 @@ $Lato : 'Lato';
     font-style: italic;
 }
 
-.mg-light {
+.mg--light {
 	font-weight: 400 !important;
 	font-style: normal !important;
 }
 
-.mg-light-italic {
+.mg--light-italic {
 	font-weight: 400 !important;
 	font-style: italic !important;
 }
@@ -310,12 +310,12 @@ $Lato : 'Lato';
     font-style: italic;
 }
 
-.mg-regular {
+.mg--regular {
 	font-weight: 500 !important;
 	font-style: normal !important;
 }
 
-.mg-regular-italic {
+.mg--regular-italic {
 	font-weight: 500 !important;
 	font-style: italic !important;
 }
@@ -341,12 +341,12 @@ $Lato : 'Lato';
     font-style: italic;
 }
 
-.mg-bold {
+.mg--bold {
 	font-weight: 600 !important;
 	font-style: normal !important;
 }
 
-.mg-bold-italic {
+.mg--bold-italic {
 	font-weight: 600 !important;
 	font-style: italic !important;
 }
@@ -371,12 +371,12 @@ $Lato : 'Lato';
     font-style: italic;
 }
 
-.mg-black {
+.mg--black {
 	font-weight: 700 !important;
 	font-style: normal !important;
 }
 
-.mg-black-italic {
+.mg--black-italic {
 	font-weight: 700 !important;
 	font-style: italic !important;
 }
@@ -398,14 +398,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 // Usage of type scale
 h1,
-.mg-h1 {
+.mg--h1 {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: normal;
 	@include font-size(19);
 }
 
-.mg-h1-italic {
+.mg--h1-italic {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: italic;
@@ -413,14 +413,14 @@ h1,
 }
 
 h2,
-.mg-h2 {
+.mg--h2 {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(11);
 }
 
-.mg-h2-italic {
+.mg--h2-italic {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: italic;
@@ -428,14 +428,14 @@ h2,
 }
 
 h3,
-.mg-h3 {
+.mg--h3 {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(8);
 }
 
-.mg-h3-italic {
+.mg--h3-italic {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: italic;
@@ -443,14 +443,14 @@ h3,
 }
 
 h4,
-.mg-h4 {
+.mg--h4 {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(4);
 }
 
-.mg-h4-italic {
+.mg--h4-italic {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: italic;
@@ -458,14 +458,14 @@ h4,
 }
 
 h5,
-.mg-h5 {
+.mg--h5 {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(0);
 }
 
-.mg-h5-italic {
+.mg--h5-italic {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: italic;
@@ -473,14 +473,14 @@ h5,
 }
 
 h6,
-.mg-h6 {
+.mg--h6 {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(-1);
 }
 
-.mg-h6-italic {
+.mg--h6-italic {
 	font-family: $Lato;
 	font-weight: 500;
 	font-style: italic;
@@ -488,7 +488,7 @@ h6,
 }
 
 small,
-.mg-caption {
+.mg--caption {
 	font-family: $Lato;
 	font-weight: 400;
 	font-style: normal;
@@ -496,8 +496,8 @@ small,
 	letter-spacing: .01rem;
 }
 
-small.mg-caption-italic,
-.mg-caption-italic {
+small.mg--caption-italic,
+.mg--caption-italic {
 	font-family: $Lato;
 	font-weight: 400;
 	font-style: italic;
@@ -511,7 +511,7 @@ p {
   @include font-size(0);
 }
 
-p.mg-italic {
+p.mg--italic {
 	font-family: $Lato;
 	font-weight: 400;
 	font-style: italic;
@@ -519,14 +519,14 @@ p.mg-italic {
 }
 
 strong,
-.mg-semibold {
+.mg--semibold {
 	font-family: $Lato;
 	font-weight: 600;
 	font-style: normal;
 }
 
 
-.mg-bold {
+.mg--bold {
 	font-family: $Lato;
 	font-weight: 700;
 	font-style: normal;

@@ -1,0 +1,36 @@
+.site-navigation {
+  padding: 1rem 0;
+	width: 100%;
+	.nav-content {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		max-width: 1170px;
+		.nav-logo {
+			color: #fff;
+			display: block;
+			position: relative;
+			.nav-logo-link {
+				.mg--logo-nav {
+					fill: #1c1d25;
+					height: 50px;
+					transition: fill .5s ease;
+					width: 88px;
+				}
+				&:hover,
+				&:focus {
+					.mg--logo-nav {
+						fill: #3c6df0;
+					}
+				}
+			}
+		}
+		.nav-links {
+			align-items: center;
+			display: flex;
+			margin: 0;
+			padding: 0;
+			transition: opacity .35s ease .75s;
+		}
+	}
+}

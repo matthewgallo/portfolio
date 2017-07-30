@@ -1,18 +1,18 @@
-.footer-link-item {
+.nav-link-item {
 	display: block;
 	list-style-type: none;
   margin: 0 3.75rem;
 	padding: .5rem 0;
-	.footer-link {
+	.nav-link {
     display: block;
-		color: #fff;
+		color: #272727;
     position: relative;
 		text-decoration: none;
     transition: color .3s ease;
 		&:hover,
 		&:focus {
-			outline: 0;
 	    text-decoration: none;
+			outline: 0;
 		}
 		&:after,
 		&:before {
@@ -44,7 +44,7 @@
 }
 
 @media (min-width: 520px) {
-	.footer-link-item {
+	.nav-link-item {
 		display: inline-block;
 		padding: 0;
 	}

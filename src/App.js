@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import Nav from './components/Nav';
 
 //styles
 import './App.scss';
@@ -10,13 +12,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-				<h1>Hello</h1>
-				<h2>Hello</h2>
-				<h3>Hello</h3>
-				<h4>Hello</h4>
-				<h5>Hello</h5>
-				<h6>Hello</h6>
-				<small>Hello caption</small>
+				<Nav />
+				<Header />
 				<Footer />
       </div>
     )
