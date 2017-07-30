@@ -8,7 +8,7 @@ class FooterLink extends Component {
   render() {
     return (
       <li className="footer-link-item">
-				<a href={this.props.url} className="footer-link">{this.props.name}</a>
+				<a href={this.props.url} className="footer-link mg--bold">{this.props.name}</a>
       </li>
     )
   }
