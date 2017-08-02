@@ -8,15 +8,16 @@ class NavLink extends Component {
   render() {
     return (
       <li className="nav-link-item">
-				<a href={this.props.url} className="nav-link mg--bold">{this.props.name}</a>
+				<a href={this.props.url} className={`nav-link mg--bold ${this.props.className}`}>{this.props.name}</a>
       </li>
     )
   }
 }
 
 NavLink.propTypes = {
+		className: PropTypes.string,
+		name: PropTypes.string.isRequired,
 		url: PropTypes.string.isRequired,
-		name:PropTypes.string.isRequired,
 }
 
 export default NavLink;
