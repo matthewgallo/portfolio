@@ -5,6 +5,16 @@ import NavLink from './NavLink';
 import './nav.scss';
 
 class Nav extends Component {
+
+	state = {
+		mobileNavOpen: false,
+	}
+
+toggleMobileNav = e => {
+	e.preventDefault();
+		this.setState({ mobileNavOpen: !this.state.mobileNavOpen });
+	};
+
   render() {
     return (
 			<nav className="site-navigation">
@@ -34,21 +44,52 @@ class Nav extends Component {
 							</svg>
 						</a>
 					</div>
-					<ul className="nav-links">
+					<ul className="nav-links desktop-nav-links">
+						<NavLink
+							url="#work"
+							name="Work"
+						/>
 						<NavLink
 							url="#about"
 							name="About"
 						/>
 						<NavLink
-							url="#portfolio"
-							name="Portfolio"
-						/>
-						<NavLink
 							url="#contact"
 							name="Contact"
 						/>
+						<button
+							className={
+								this.state.mobileNavOpen
+									? 'mobile-nav-open mobile-nav'
+									: 'mobile-nav-closed mobile-nav'
+							}
+							href="mobile-nav"
+							onClick={this.toggleMobileNav}
+						>
+							<div className="mobile-nav-line" />
+							<div className="mobile-nav-line" />
+							<div className="mobile-nav-line" />
+						</button>
 					</ul>
 	      </div>
+				{
+					this.state.mobileNavOpen
+						? <section className="mobile-nav-container">
+								<NavLink
+									url="#work"
+									name="Work"
+								/>
+								<NavLink
+									url="#about"
+									name="About"
+								/>
+								<NavLink
+									url="#contact"
+									name="Contact"
+								/>
+						</section>
+						: ''
+				}
 			</nav>
     )
   }

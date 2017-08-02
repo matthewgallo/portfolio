@@ -1,11 +1,10 @@
 .nav-link-item {
-	display: block;
 	list-style-type: none;
   margin: 0 3.75rem;
 	padding: .5rem 0;
 	.nav-link {
     display: block;
-		color: #272727;
+		color: #535a5a;
     position: relative;
 		text-decoration: none;
     transition: color .3s ease;
@@ -43,9 +42,20 @@
 	}
 }
 
-@media (min-width: 520px) {
+.desktop-nav-links {
+	.nav-link-item {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
 	.nav-link-item {
 		display: inline-block;
 		padding: 0;
+	}
+	.desktop-nav-links {
+		.nav-link-item {
+			display: block;
+		}
 	}
 }
