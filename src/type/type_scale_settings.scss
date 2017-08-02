@@ -192,9 +192,9 @@ $msl19: $base-rem-font-size * 9.37306;
 		}
 	}
 
-	@if $step == 19 {
-			font-size: map-get($fonts, $font-minus11);
-			line-height: map-get($line-heights, $font-minus11);
+	@if $step == 16 {
+			font-size: map-get($fonts, $font-minus8);
+			line-height: map-get($line-heights, $font-minus8);
 		@media #{$medium-up} {
 			font-size: map-get($fonts, $font-minus6);
 			line-height: map-get($line-heights, $font-minus6);
@@ -211,82 +211,82 @@ $msl19: $base-rem-font-size * 9.37306;
 
 /**
     HTML/CSS codes:
-    300 - Hairline (Ultra Light)
-    400 - Light
-    500 - Regular
+		200: ExtraLight
+    300 - Light
+    400 - Regular
+    500 - Semibold
     600 - Bold
     700 - Black
 **/
-$Lato : 'Lato';
+$Titillium : 'Titillium';
 $fontPath: '../assets/fonts';
-$latoPath: "#{$fontPath}";
+$titiliumPath: "#{$fontPath}";
 // Function to create all the src paths.
 @mixin addFonts ($fontname) {
-    src: url('#{$latoPath}/#{$fontname}.woff') format('woff'),
-        url('#{$latoPath}/#{$fontname}.woff2') format('woff2');
+    src: url('#{$titiliumPath}/#{$fontname}.woff') format('woff'),
+        url('#{$titiliumPath}/#{$fontname}.woff2') format('woff2');
 }
 
 ////////////////////////////////////////////////////////////
 //
-//  Hairline - variants
+//  Extra light - variants
 //
 ////////////////////////////////////////////////////////////
-// DEFAULT .MG-Hairline FONT.
-// Hairline
-$Lato : 'Lato';
+// DEFAULT .MG-extralight FONT.
+// Extra light
+$Titillium : 'Titillium';
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-Hairline');
-    font-weight: 300;
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-ExtraLight');
+    font-weight: 200;
     font-style: normal;
 }
-// Hairline - italic
+// Extralight - italic
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-HairlineItalic');
-    font-weight: 300;
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-ExtraLightItalic');
+    font-weight: 200;
     font-style: italic;
 }
 
-.mg--hairline {
+.mg--extralight {
 	font-weight: 300 !important;
 	font-style: normal !important;
 }
 
-.mg--hairline-italic {
+.mg--extralight-italic {
 	font-weight: 300 !important;
 	font-style: italic !important;
 }
 
 ////////////////////////////////////////////////////////////
 //
-//  Light
+//  Light - variants
 //
 ////////////////////////////////////////////////////////////
-// DEFAULT BODY FONT.
+// DEFAULT .MG-light FONT.
 // Light
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-Light');
-    font-weight: 400;
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-Light');
+    font-weight: 300;
     font-style: normal;
 }
-// DEFAULT ITALIC FONT.
 // Light - italic
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-LightItalic');
-    font-weight: 400;
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-LightItalic');
+    font-weight: 300;
     font-style: italic;
 }
 
 .mg--light {
-	font-weight: 400 !important;
+	font-weight: 300 !important;
 	font-style: normal !important;
 }
 
 .mg--light-italic {
-	font-weight: 400 !important;
+	font-weight: 300 !important;
 	font-style: italic !important;
 }
 
@@ -295,27 +295,59 @@ $Lato : 'Lato';
 //  Regular
 //
 ////////////////////////////////////////////////////////////
+// DEFAULT BODY FONT.
 // Regular
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-Regular');
-    font-weight: 500;
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-Regular');
+    font-weight: 400;
     font-style: normal;
 }
+// DEFAULT ITALIC FONT.
 // Regular - italic
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-Italic');
-    font-weight: 500;
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-Italic');
+    font-weight: 400;
     font-style: italic;
 }
 
 .mg--regular {
-	font-weight: 500 !important;
+	font-weight: 400 !important;
 	font-style: normal !important;
 }
 
 .mg--regular-italic {
+	font-weight: 400 !important;
+	font-style: italic !important;
+}
+
+////////////////////////////////////////////////////////////
+//
+//  Semibold
+//
+////////////////////////////////////////////////////////////
+// Semibold
+@font-face {
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-SemiBold');
+    font-weight: 500;
+    font-style: normal;
+}
+// Semibold - italic
+@font-face {
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-SemiBoldItalic');
+    font-weight: 500;
+    font-style: italic;
+}
+
+.mg--semibold {
+	font-weight: 500 !important;
+	font-style: normal !important;
+}
+
+.mg--semibold-italic {
 	font-weight: 500 !important;
 	font-style: italic !important;
 }
@@ -328,15 +360,15 @@ $Lato : 'Lato';
 // DEFAULT BOLD FONT.
 // Bold
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-Bold');
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-Bold');
     font-weight: 600;
     font-style: normal;
 }
 // Bold - italic
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-BoldItalic');
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-BoldItalic');
     font-weight: 600;
     font-style: italic;
 }
@@ -358,15 +390,15 @@ $Lato : 'Lato';
 ////////////////////////////////////////////////////////////
 // Black
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-Black');
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-Black');
     font-weight: 700;
     font-style: normal;
 }
 // Black - italic
 @font-face {
-    font-family: $Lato;
-    @include addFonts('Lato-BlackItalic');
+    font-family: $Titillium;
+    @include addFonts('TitilliumWeb-Black');
     font-weight: 700;
     font-style: italic;
 }
@@ -385,9 +417,10 @@ $Lato : 'Lato';
 
 /**
     HTML/CSS codes:
-    300 - Hairline (Ultra Light)
-    400 - Light
-    500 - Regular
+		200: ExtraLight
+    300 - Light
+    400 - Regular
+    500 - Semibold
     600 - Bold
     700 - Black
 **/
@@ -399,29 +432,29 @@ h1, h2, h3, h4, h5, h6 {
 // Usage of type scale
 h1,
 .mg--h1 {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: normal;
-	@include font-size(19);
+	@include font-size(16);
 }
 
 .mg--h1-italic {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: italic;
-	@include font-size(19);
+	@include font-size(16);
 }
 
 h2,
 .mg--h2 {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(11);
 }
 
 .mg--h2-italic {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: italic;
   @include font-size(11);
@@ -429,14 +462,14 @@ h2,
 
 h3,
 .mg--h3 {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(8);
 }
 
 .mg--h3-italic {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: italic;
   @include font-size(8);
@@ -444,14 +477,14 @@ h3,
 
 h4,
 .mg--h4 {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(4);
 }
 
 .mg--h4-italic {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: italic;
   @include font-size(4);
@@ -459,14 +492,14 @@ h4,
 
 h5,
 .mg--h5 {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(0);
 }
 
 .mg--h5-italic {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: italic;
   @include font-size(0);
@@ -474,14 +507,14 @@ h5,
 
 h6,
 .mg--h6 {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: normal;
   @include font-size(-1);
 }
 
 .mg--h6-italic {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 500;
 	font-style: italic;
 	@include font-size(-1);
@@ -489,7 +522,7 @@ h6,
 
 small,
 .mg--caption {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 400;
 	font-style: normal;
 	@include font-size(-1);
@@ -498,21 +531,21 @@ small,
 
 small.mg--caption-italic,
 .mg--caption-italic {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 400;
 	font-style: italic;
 	@include font-size(-1);
 }
 
 p {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 400;
 	font-style: normal;
   @include font-size(0);
 }
 
 p.mg--italic {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 400;
 	font-style: italic;
   @include font-size(0);
@@ -520,14 +553,14 @@ p.mg--italic {
 
 strong,
 .mg--semibold {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 600;
 	font-style: normal;
 }
 
 
 .mg--bold {
-	font-family: $Lato;
+	font-family: $Titillium;
 	font-weight: 700;
 	font-style: normal;
 }

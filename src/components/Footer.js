@@ -1,15 +1,28 @@
 import React, {Component} from 'react';
+import Scroll from 'react-scroll';
 import FooterLink from './FooterLink';
 //styles
 import './footer.scss';
 
+const scroll = Scroll.animateScroll;
+const Link   = Scroll.Link;
+
 class Footer extends Component {
+
+	scrollToTop = (options) => {
+	  scroll.scrollToTop();
+	}
+
   render() {
     return (
 			<footer>
 	      <div className="footer-container">
 					<div className="footer-logo">
-					<a href="#" className="footer-logo-link">
+					<Link
+						to="#"
+						className="footer-logo-link"
+						onClick={this.scrollToTop}
+					>
 						<svg className="mg--logo-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 400">
 						  <defs>
 						    <linearGradient id="linear-gradient" x1="1.01" y1="199.88" x2="851.01" y2="201.88" gradientUnits="userSpaceOnUse">
@@ -31,7 +44,7 @@ class Footer extends Component {
 						  <rect id="Rectangle-Copy-6" className="cls6 mg--logo-g-3" x="750" y="200" width="100" height="200"/>
 						  <rect id="Rectangle-Copy-5" className="cls7 mg--logo-g-2" x="650" y="150" width="200" height="100"/>
 						</svg>
-					</a>
+					</Link>
 					</div>
 					<ul className="footer-link-container">
 						<FooterLink

@@ -1,6 +1,7 @@
 body {
+	color: #535a5a;
+	font-family: 'Titillium','Lato','Helvetica';
+	font-size: 16px;
   margin: 0;
   padding: 0;
-  font-family: 'Lato';
-	font-size: 16px;
 }
