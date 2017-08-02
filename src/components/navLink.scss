@@ -48,6 +48,17 @@
 	}
 }
 
+.mobile-nav-container {
+	.nav-link-item {
+		display: block;
+		margin: 0 auto;
+		width: 90%;
+		.nav-link {
+			color: #fff;
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	.nav-link-item {
 		display: inline-block;

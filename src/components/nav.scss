@@ -53,6 +53,10 @@
 	}
 }
 
+.mobile-nav-stop-scroll {
+	overflow: hidden;
+}
+
 @media (min-width: 1220px) {
 	.site-navigation {
 		.nav-content {

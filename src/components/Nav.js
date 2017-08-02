@@ -10,8 +10,26 @@ class Nav extends Component {
 		mobileNavOpen: false,
 	}
 
-toggleMobileNav = e => {
-	e.preventDefault();
+	componentDidMount() {
+    window.addEventListener('resize', this.closeNavOnDesktop);
+  }
+
+	componentDidUpdate() {
+		if (this.state.mobileNavOpen) {
+			document.body.classList.add("mobile-nav-stop-scroll");
+		} else if (!this.state.mobileNavOpen) {
+			document.body.classList.remove('mobile-nav-stop-scroll');
+		}
+	}
+
+	closeNavOnDesktop = () => {
+    if (screen.width >= 768 && this.state.mobileNavOpen) {
+      this.setState({ mobileNavOpen: false });
+    }
+  };
+
+	toggleMobileNav = e => {
+		e.preventDefault();
 		this.setState({ mobileNavOpen: !this.state.mobileNavOpen });
 	};
 
@@ -78,14 +96,17 @@ toggleMobileNav = e => {
 								<NavLink
 									url="#work"
 									name="Work"
+									className="moble-nav-link mg--h1"
 								/>
 								<NavLink
 									url="#about"
 									name="About"
+									className="moble-nav-link mg--h1"
 								/>
 								<NavLink
 									url="#contact"
 									name="Contact"
+									className="moble-nav-link mg--h1"
 								/>
 						</section>
 						: ''
