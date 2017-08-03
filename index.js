@@ -17,7 +17,11 @@ app.use((req, res, next) => {
 
 app.use(express.static('./build'));
 
-app.listen(port, (err) => {
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
+
+app.listen(port, err => {
   if (err) {
     console.log(err); // eslint-disable-line no-console
     return;
