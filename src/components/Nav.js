@@ -92,7 +92,7 @@ class Nav extends Component {
 	      </div>
 				{
 					this.state.mobileNavOpen
-						? <section className="mobile-nav-container">
+						? <div className="mobile-nav-container">
 								<NavLink
 									url="#work"
 									name="Work"
@@ -108,7 +108,7 @@ class Nav extends Component {
 									name="Contact"
 									className="moble-nav-link mg--h1"
 								/>
-						</section>
+						</div>
 						: ''
 				}
 			</nav>

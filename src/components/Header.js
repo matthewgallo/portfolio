@@ -6,13 +6,6 @@ import './header.scss';
 
 class Header extends Component {
 
-// 	scroll.scrollTo('myScrollToElement', {
-//   duration: 1500,
-//   delay: 100,
-//   smooth: true,
-//   containerId: 'ContainerElementID'
-// })
-
   render() {
     return (
 			<header className="header-container">
