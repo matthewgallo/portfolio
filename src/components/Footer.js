@@ -7,23 +7,6 @@ import './footer.scss';
 const scroll = Scroll.animateScroll;
 const Link = Scroll.Link;
 
-const test = [
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-  'asdf',
-];
-
 class Footer extends Component {
   scrollToTop = options => {
     scroll.scrollToTop();
