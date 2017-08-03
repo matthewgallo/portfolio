@@ -1,6 +1,7 @@
 import compression from 'compression';
 import express from 'express';
 import fs from 'fs';
+import path from 'path';
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -23,8 +24,8 @@ app.get('*', (req, res) => {
 
 app.listen(port, err => {
   if (err) {
-    console.log(err); // eslint-disable-line no-console
+    console.log(err);
     return;
   }
-  console.log(`App and API is live at http://localhost:${port}`); // eslint-disable-line no-console
+  console.log(`App and API is live at http://localhost:${port}`);
 });
