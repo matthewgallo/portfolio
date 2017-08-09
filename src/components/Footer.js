@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Scroll from 'react-scroll';
 import FooterLink from './FooterLink';
 //styles
-import './footer.scss';
+import './footer.css';
 
 const scroll = Scroll.animateScroll;
 const Link = Scroll.Link;

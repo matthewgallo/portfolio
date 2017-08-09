@@ -5,9 +5,8 @@ import Nav from './components/Nav';
 import Work from './components/Work';
 
 //styles
-import './App.scss';
-import './type/type_media_queries.scss';
-import './type/type_scale_settings.scss';
+import './App.css';
+import './type/type_scale_settings.css';
 
 class App extends Component {
   render() {
