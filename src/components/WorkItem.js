@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 //styles
-import './workItem.scss';
+import './workItem.css';
 
 class WorkItem extends Component {
   render() {

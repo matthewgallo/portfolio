@@ -6,7 +6,7 @@ import idr from '../assets/images/idr.png';
 import a11y from '../assets/images/a11y.png';
 
 //styles
-import './work.scss';
+import './work.css';
 
 class Work extends Component {
   render() {
