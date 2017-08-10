@@ -182,17 +182,17 @@ class Nav extends Component {
               <NavLink
                 url="#work"
                 name="Work"
-                className="moble-nav-link mg--h1"
+                className="moble-nav-link mg--alpha"
               />
               <NavLink
                 url="#about"
                 name="About"
-                className="moble-nav-link mg--h1"
+                className="moble-nav-link mg--alpha"
               />
               <NavLink
                 url="#contact"
                 name="Contact"
-                className="moble-nav-link mg--h1"
+                className="moble-nav-link mg--alpha"
               />
             </div>
           : ''}

@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1,
-.mg--h1 {
+.mg--alpha {
   font-family: "Titillium";
   font-weight: 500;
   font-style: normal;
@@ -165,34 +165,34 @@ h1,
 }
 @media (min-width: 640px) {
   h1,
-  .mg--h1 {
+  .mg--alpha {
     font-size: 5.875rem;
     line-height: 6.60938rem;
   }
 }
 @media (min-width: 1056px) {
   h1,
-  .mg--h1 {
+  .mg--alpha {
     font-size: 6.583rem;
     line-height: 7.40588rem;
   }
 }
 @media (min-width: 640px) {
   h1,
-  .mg--h1 {
+  .mg--alpha {
     font-size: 3.25rem;
     line-height: 4.0625rem;
   }
 }
 @media (min-width: 1056px) {
   h1,
-  .mg--h1 {
+  .mg--alpha {
     font-size: 6.583rem;
     line-height: 7.40588rem;
   }
 }
 
-.mg--h1-italic {
+.mg--alpha-italic {
   font-family: "Titillium";
   font-weight: 500;
   font-style: italic;
@@ -202,32 +202,32 @@ h1,
   line-height: 3.20313rem;
 }
 @media (min-width: 640px) {
-  .mg--h1-italic {
+  .mg--alpha-italic {
     font-size: 5.875rem;
     line-height: 6.60938rem;
   }
 }
 @media (min-width: 1056px) {
-  .mg--h1-italic {
+  .mg--alpha-italic {
     font-size: 6.583rem;
     line-height: 7.40588rem;
   }
 }
 @media (min-width: 640px) {
-  .mg--h1-italic {
+  .mg--alpha-italic {
     font-size: 3.25rem;
     line-height: 4.0625rem;
   }
 }
 @media (min-width: 1056px) {
-  .mg--h1-italic {
+  .mg--alpha-italic {
     font-size: 6.583rem;
     line-height: 7.40588rem;
   }
 }
 
 h2,
-.mg--h2 {
+.mg--beta {
   font-family: "Titillium";
   font-weight: 500;
   font-style: normal;
@@ -236,20 +236,20 @@ h2,
 }
 @media (min-width: 640px) {
   h2,
-  .mg--h2 {
+  .mg--beta {
     font-size: 3.25rem;
     line-height: 4.0625rem;
   }
 }
 @media (min-width: 1056px) {
   h2,
-  .mg--h2 {
+  .mg--beta {
     font-size: 3.625rem;
     line-height: 4.53125rem;
   }
 }
 
-.mg--h2-italic {
+.mg--beta-italic {
   font-family: "Titillium";
   font-weight: 500;
   font-style: italic;
@@ -257,20 +257,20 @@ h2,
   line-height: 3.59375rem;
 }
 @media (min-width: 640px) {
-  .mg--h2-italic {
+  .mg--beta-italic {
     font-size: 3.25rem;
     line-height: 4.0625rem;
   }
 }
 @media (min-width: 1056px) {
-  .mg--h2-italic {
+  .mg--beta-italic {
     font-size: 3.625rem;
     line-height: 4.53125rem;
   }
 }
 
 h3,
-.mg--h3 {
+.mg--gamma {
   font-family: "Titillium";
   font-weight: 500;
   font-style: normal;
@@ -279,20 +279,20 @@ h3,
 }
 @media (min-width: 640px) {
   h3,
-  .mg--h3 {
+  .mg--gamma {
     font-size: 2.25rem;
     line-height: 2.8125rem;
   }
 }
 @media (min-width: 1056px) {
   h3,
-  .mg--h3 {
+  .mg--gamma {
     font-size: 2.5625rem;
     line-height: 3.20313rem;
   }
 }
 
-.mg--h3-italic {
+.mg--gamma-italic {
   font-family: "Titillium";
   font-weight: 500;
   font-style: italic;
@@ -300,20 +300,20 @@ h3,
   line-height: 2.5rem;
 }
 @media (min-width: 640px) {
-  .mg--h3-italic {
+  .mg--gamma-italic {
     font-size: 2.25rem;
     line-height: 2.8125rem;
   }
 }
 @media (min-width: 1056px) {
-  .mg--h3-italic {
+  .mg--gamma-italic {
     font-size: 2.5625rem;
     line-height: 3.20313rem;
   }
 }
 
 h4,
-.mg--h4 {
+.mg--delta {
   font-family: "Titillium";
   font-weight: 500;
   font-style: normal;
@@ -322,20 +322,20 @@ h4,
 }
 @media (min-width: 640px) {
   h4,
-  .mg--h4 {
+  .mg--delta {
     font-size: 1.4375rem;
     line-height: 1.79688rem;
   }
 }
 @media (min-width: 1056px) {
   h4,
-  .mg--h4 {
+  .mg--delta {
     font-size: 1.625rem;
     line-height: 2.03125rem;
   }
 }
 
-.mg--h4-italic {
+.mg--delta-italic {
   font-family: "Titillium";
   font-weight: 500;
   font-style: italic;
@@ -343,20 +343,20 @@ h4,
   line-height: 1.5625rem;
 }
 @media (min-width: 640px) {
-  .mg--h4-italic {
+  .mg--delta-italic {
     font-size: 1.4375rem;
     line-height: 1.79688rem;
   }
 }
 @media (min-width: 1056px) {
-  .mg--h4-italic {
+  .mg--delta-italic {
     font-size: 1.625rem;
     line-height: 2.03125rem;
   }
 }
 
 h5,
-.mg--h5 {
+.mg--epsilon {
   font-family: "Titillium";
   font-weight: 500;
   font-style: normal;
@@ -364,7 +364,7 @@ h5,
   line-height: 1.5rem;
 }
 
-.mg--h5-italic {
+.mg--epsilon-italic {
   font-family: "Titillium";
   font-weight: 500;
   font-style: italic;
@@ -373,7 +373,7 @@ h5,
 }
 
 h6,
-.mg--h6 {
+.mg--zeta {
   font-family: "Titillium";
   font-weight: 500;
   font-style: normal;
@@ -381,7 +381,7 @@ h6,
   line-height: 1.3125rem;
 }
 
-.mg--h6-italic {
+.mg--zeta-italic {
   font-family: "Titillium";
   font-weight: 500;
   font-style: italic;
