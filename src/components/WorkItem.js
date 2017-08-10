@@ -8,13 +8,7 @@ class WorkItem extends Component {
   render() {
     return (
       <section className="work-item-section" name="work" id="work">
-        <a
-          href={this.props.url}
-          className="work-item-link"
-          style={{
-            backgroundImage: `url(${this.props.backgroundImage})`,
-          }}
-        >
+        <a href={this.props.url} className="work-item-link">
           <img
             src={this.props.image}
             alt="Work item"
