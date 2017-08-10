@@ -12,18 +12,24 @@
   background-color: #1c1d25;
   box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.45);
   display: block;
-  height: 560px;
+  /*height: 560px;*/
   opacity: 1;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   text-decoration: none;
   transition: all .35s ease;
-  width: 80%;
+  width: 85%;
 }
 
 .work-item--content {
   color: #fff;
+}
+
+.work-item--image {
+	display: block;
+	height: 100%;
+	width: 100%;
 }
 
 .work-item--mask,
@@ -79,9 +85,9 @@
   display: block;
   position: absolute;
   bottom: 0;
-  left: 45px;
-  width: 265px;
-  height: 198px;
+  right: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   color: #fff;
   transform: translateY(0px);
@@ -96,15 +102,19 @@
 .work-item-link:focus .work-item--number {
   opacity: 1;
   transform: translateY(-15px);
-  transition-delay: .15s;
+  transition-delay: .65s;
+	height: calc(100% - 15px);
 }
 
 .work-item--number-inner {
   align-items: flex-end;
   display: flex;
+	font-size: 1.5rem;
+	justify-content: flex-end;
+	padding: 0 15px;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 }
@@ -115,7 +125,7 @@
   top: 0;
   left: 0;
   width: calc(100% - 45px);
-  padding-top: 45px;
+  padding-top: 15px;
   height: 100%;
   overflow: hidden;
   color: #fff;
@@ -130,7 +140,7 @@
 .work-item-link:hover .work-item--content,
 .work-item-link:focus .work-item--content {
   opacity: 1;
-  transform: translateX(45px);
+  transform: translateX(15px);
   transition-delay: .5s;
 }
 
@@ -158,6 +168,40 @@
 }
 
 .work-item--description {
+	display: none;
   padding-top: 2rem;
   max-width: 75%;
+}
+
+@media (min-width: 768px) {
+	.work-item-link {
+		width: 80%;
+	}
+	.work-item--description {
+		display: block;
+	}
+	.work-item-link:hover .work-item--content,
+	.work-item-link:focus .work-item--content {
+	  opacity: 1;
+	  transform: translateX(45px);
+	  transition-delay: .5s;
+	}
+	.work-item--content {
+		padding-top: 45px;
+	}
+	.work-item--number-inner {
+		font-size: 3.5rem;
+		justify-content: baseline;
+		line-height: 4.0625rem;
+		padding: 0 45px;
+	}
+	.work-item--number,
+	.work-item--number-inner {
+		left: 0;
+		right: initial;
+	}
+	.work-item-link:hover .work-item--number,
+	.work-item-link:focus .work-item--number {
+	  transition-delay: .15s;
+	}
 }

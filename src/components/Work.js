@@ -13,7 +13,7 @@ class Work extends Component {
     return (
       <section className="work-section" name="work" id="work">
         <WorkItem
-          backgroundImage={idl}
+          image={idl}
           name="IBM Design Language"
           url="https://www.ibm.com/design/language"
           workDescription="The IBM Design Language is a shared vocabulary for doing great design. Mix the elements together to design for delightful experiences that help people accomplish their goals."
@@ -21,26 +21,26 @@ class Work extends Component {
           workNumber="1"
         />
         <WorkItem
-          backgroundImage={a11y}
+          image={a11y}
           name="IBM Accessibility Handbook"
           url="ibm.biz/a11y-handbook"
-          workDescription="One size does not fit all. Accessibility asks us to be authentically thoughtful and embrace constraints—and it starts with our empathy for others."
+          workDescription="Use the IBM Design Accessibility Handbook to create products for everyone."
           workDetails="Front end development and UX"
           workNumber="2"
         />
         <WorkItem
-          backgroundImage={idr}
+          image={idr}
           name="IBM Design Research"
           url="https://www.ibm.com/design/research"
-          workDescription="The principles of IBM Design Research guide teams to continually develop their understanding. When practiced successfully, each team member is aligned to objectives that direct them towards user outcomes."
+          workDescription="Learn about IBM Design Research: our way to drive evidence-based user outcomes through continuous understanding."
           workDetails="Front end development"
           workNumber="3"
         />
         <WorkItem
-          backgroundImage={idlDataViz}
+          image={idlDataViz}
           name="IBM Design Language Data Visualization guidelines"
           url="https://www.ibm.com/design/language/experience/data-visualization"
-          workDescription="Visualizing data is central to this key moment in time, when the borders between big and impersonal, and small and intimate data will blur as we’ve never seen before. The greater the quantity and kinds of data collected, the more we need to experiment with how to make it unique."
+          workDescription="See how IBM uses data visualization to provide meaningful context and precision."
           workDetails="Front end development"
           workNumber="4"
         />
