@@ -26,6 +26,7 @@
   "path": "^0.12.7",
   "react": "^15.6.1",
   "react-dom": "^15.6.1",
+  "react-modal": "^2.2.4",
   "react-scripts": "^0.9.2",
   "react-scroll": "^1.5.4",
   "request": "^2.79.0"

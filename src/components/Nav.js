@@ -160,8 +160,7 @@ class Nav extends Component {
           </div>
           <ul className="nav-links desktop-nav-links">
             <NavLink url="#work" name="Work" />
-            <NavLink url="#about" name="About" />
-            <NavLink url="#contact" name="Contact" />
+            <NavLink name="About" openModal={this.props.openModal} />
             <button
               className={
                 this.state.mobileNavOpen
@@ -187,11 +186,6 @@ class Nav extends Component {
               <NavLink
                 url="#about"
                 name="About"
-                className="moble-nav-link mg--alpha"
-              />
-              <NavLink
-                url="#contact"
-                name="Contact"
                 className="moble-nav-link mg--alpha"
               />
             </div>

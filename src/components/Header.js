@@ -21,9 +21,9 @@ class Header extends Component {
             </div>
           </div>
         </div>
-        <a href="work" className="scroll-down-icon">
+        <div href="work" className="scroll-down-icon">
           <span />
-        </a>
+        </div>
       </header>
     );
   }

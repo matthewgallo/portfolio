@@ -42,7 +42,6 @@ class WorkItem extends Component {
 }
 
 WorkItem.propTypes = {
-  backgroundImage: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string,
   url: PropTypes.string.isRequired,
