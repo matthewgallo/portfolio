@@ -7,10 +7,11 @@ import './navLink.css';
 class NavLink extends Component {
   render() {
     return (
-      <li className="nav-link-item">
+      <li className="nav-link-item nav-link__space">
         <a
           href={this.props.url}
           className={`nav-link mg--bold ${this.props.className}`}
+          onClick={this.props.openModal}
         >
           <span>
             {this.props.name}
@@ -24,7 +25,7 @@ class NavLink extends Component {
 NavLink.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
 };
 
 export default NavLink;
