@@ -10,6 +10,14 @@ import './App.css';
 import './type/type_scale_settings.css';
 
 const customStyles = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(37, 46, 106, .9)',
+  },
   content: {
     top: '50%',
     left: '50%',
@@ -21,6 +29,12 @@ const customStyles = {
     boxShadow: '0 20px 80px 0 rgba(0,0,0,.55)',
     border: '0',
     borderRadius: '0',
+    minHeight: '30rem',
+    overflow: 'hidden',
+    position: 'absolute',
+    background: '#fff',
+    padding: '20px',
+    outline: '0',
   },
 };
 
@@ -60,6 +74,12 @@ class App extends Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
+          className={{
+            base: 'myMODAL',
+            afterOpen:
+              'modal_after-open ReactModal__Overlay ReactModal__Overlay--after-open',
+            beforeClose: 'myClass_before-close',
+          }}
         >
           <h2 className="mg--black">About Matt.</h2>
           <div>
@@ -97,6 +117,14 @@ class App extends Component {
                 >
                   ATX
                 </a>
+              </li>, but from{' '}
+              <li className="nav-link-item">
+                <a
+                  href="http://www.milb.com/index.jsp?sid=t234"
+                  className="nav-link mg--bold"
+                >
+                  NC
+                </a>
               </li>.
             </div>
             <div>
@@ -113,6 +141,7 @@ class App extends Component {
             </div>
           </div>
           <a onClick={this.closeModal} className="close" />
+          <h1 className="mg--black about-label">About</h1>
         </Modal>
         <Work />
         <Footer />
