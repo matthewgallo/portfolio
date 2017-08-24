@@ -8,6 +8,7 @@
 .nav-link-item .nav-link {
   display: block;
   color: #535a5a;
+	cursor: pointer;
   position: relative;
   text-decoration: none;
   transition: color .3s ease;

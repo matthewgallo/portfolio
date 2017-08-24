@@ -18,6 +18,7 @@
   width: 32px;
   height: 32px;
   opacity: 0.3;
+	cursor: pointer;
 }
 .close:hover {
   opacity: 1;
@@ -45,3 +46,27 @@
 .about-info div {
 	padding-bottom: .5rem;
 }
+
+.about-label {
+	font-size: 12rem;
+  color: #eaeaea;
+  position: absolute;
+  bottom: -.25rem;
+  left: -2rem;
+}
+
+/*.modal_after-open {
+	transition: transform cubic-bezier(0.22, 0.61, 0.36, 1) .35s .25s;
+}
+
+.myMODAL {
+	top: 0% !important;
+	bottom: auto !important;
+	transition: transform cubic-bezier(0.22, 0.61, 0.36, 1) .2s;
+	will-change: transform;
+	transform: translate(35%, 55%) scale(1) !important;
+}
+
+.myMODAL.modal_after-open:not([style*="display: none"]):not([style*="opacity: 0;"]) {
+  transform: translate(-50, 25%) !important;
+}*/
