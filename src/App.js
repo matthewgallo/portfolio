@@ -117,7 +117,7 @@ class App extends Component {
                 >
                   ATX
                 </a>
-              </li>, but from{' '}
+              </li>, by way of{' '}
               <li className="nav-link-item">
                 <a
                   href="http://www.milb.com/index.jsp?sid=t234"
