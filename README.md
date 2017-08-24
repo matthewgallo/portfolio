@@ -1,3 +1,7 @@
+## Zero downtime deployment
+
+`cf zero-downtime-push APP_NAME -f ./manifest.yml`
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
