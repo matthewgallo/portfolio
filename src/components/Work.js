@@ -11,7 +11,7 @@ import './work.css';
 class Work extends Component {
   render() {
     return (
-      <section className="work-section" name="work" id="work">
+      <section className="work-section" id="work" ref={'work'}>
         <WorkItem
           image={idl}
           name="IBM Design Language"

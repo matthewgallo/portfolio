@@ -75,11 +75,6 @@
     width: 350px;
   }
 }
-@media (min-width: 450px) {
-  .header-container .header-content {
-    width: 400px;
-  }
-}
 @media (min-width: 1056px) {
   .header-container .header-content {
     width: 590px;
@@ -94,6 +89,11 @@
     margin: 0 auto;
     width: 75%;
   }
+}
+@media (min-width: 1056px) {
+	.header-container {
+		background-image: url('../assets/images/mg--logo-large.svg');
+	}
 }
 @media (min-width: 1220px) {
   .header-container .header-container-inner {
