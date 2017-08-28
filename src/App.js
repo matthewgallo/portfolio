@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Home from './components/Home';
 import Nav from './components/Nav';
-import Work from './components/Work';
 
 //styles
 import './App.css';
@@ -143,7 +143,7 @@ class App extends Component {
           <a onClick={this.closeModal} className="close" />
           <h1 className="mg--black about-label">About</h1>
         </Modal>
-        <Work />
+        <Home />
         <Footer />
       </div>
     );

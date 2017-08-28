@@ -1,0 +1,60 @@
+.input-container {
+  position: relative;
+}
+
+.password-lock {
+	border: 2px solid #595959;
+	border-radius: 100%;
+	display: block;
+	height: 4rem;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	width: 4rem;
+}
+
+.password-lock path {
+	fill: #595959;
+}
+
+.project-yama-password-header {
+	text-transform: uppercase;
+}
+
+.project-yama-password-overlay {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	background-color: #f6f3f3;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.project-yama-input {
+	background-color: #fff;
+	border: 0;
+  color: #3a3a3a;
+  padding: 14px 42px 14px 15px;
+  height: 3rem;
+  transition: padding-right .1s ease-in-out;
+}
+
+.show-yama-button {
+	background: none;
+	border: 0;
+	cursor: pointer;
+	height: 3rem;
+	padding: 0;
+	position: absolute;
+	right: 0;
+}
+
+.submit-icon {
+	height: inherit;
+	padding-left: .25rem;
+	padding-top: .5rem;
+	width: 2.5rem;
+}
