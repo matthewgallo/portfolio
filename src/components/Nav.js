@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavLink from './NavLink';
+import { withRouter } from 'react-router-dom';
 
 //styles
 import './nav.css';
@@ -37,73 +38,12 @@ class Nav extends Component {
       <nav className="site-navigation">
         <div className="nav-content">
           <div className="nav-logo">
-            <a href="#" className="nav-logo-link">
+            <a href="/" className="nav-logo-link">
               <svg
                 className="mg--logo-nav"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 850 400"
               >
-                <defs>
-                  <linearGradient
-                    id="linear-gradient"
-                    x1="1.01"
-                    y1="199.88"
-                    x2="851.01"
-                    y2="201.88"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0" stopColor="#3c6df0" />
-                    <stop offset="1" stopColor="#34bc6e" />
-                  </linearGradient>
-                  <linearGradient
-                    id="linear-gradient-2"
-                    x1="1.01"
-                    y1="199.18"
-                    x2="851.01"
-                    y2="201.18"
-                    xlinkHref="#linear-gradient"
-                  />
-                  <linearGradient
-                    id="linear-gradient-3"
-                    x1="1.36"
-                    y1="48.47"
-                    x2="851.36"
-                    y2="50.47"
-                    xlinkHref="#linear-gradient"
-                  />
-                  <linearGradient
-                    id="linear-gradient-4"
-                    x1="0.66"
-                    y1="348.47"
-                    x2="850.66"
-                    y2="350.47"
-                    xlinkHref="#linear-gradient"
-                  />
-                  <linearGradient
-                    id="linear-gradient-5"
-                    x1="1.24"
-                    y1="99.53"
-                    x2="851.24"
-                    y2="101.53"
-                    xlinkHref="#linear-gradient"
-                  />
-                  <linearGradient
-                    id="linear-gradient-6"
-                    x1="0.78"
-                    y1="298.12"
-                    x2="850.78"
-                    y2="300.12"
-                    xlinkHref="#linear-gradient"
-                  />
-                  <linearGradient
-                    id="linear-gradient-7"
-                    x1="1.01"
-                    y1="198.24"
-                    x2="851.01"
-                    y2="200.24"
-                    xlinkHref="#linear-gradient"
-                  />
-                </defs>
                 <rect
                   id="Rectangle"
                   className="cls1"
@@ -159,11 +99,7 @@ class Nav extends Component {
             </a>
           </div>
           <ul className="nav-links desktop-nav-links">
-            <NavLink
-              url="#work"
-              name="Work"
-              // onClick={}
-            />
+            {this.props.location.pathname === '/' ? '' : null}
             <NavLink name="About" openModal={this.props.openModal} />
             <button
               className={
@@ -182,7 +118,7 @@ class Nav extends Component {
         </div>
         {this.state.mobileNavOpen
           ? <div className="mobile-nav-container">
-              <NavLink className="moble-nav-link mg--alpha" url="#work" />
+              {this.props.location.pathname === '/' ? '' : null}
               <NavLink
                 url="#about"
                 name="About"
@@ -196,4 +132,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
