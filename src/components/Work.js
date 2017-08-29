@@ -18,7 +18,7 @@ class Work extends Component {
           name="Project Yama"
           url="/project-yama"
           workDescription="A platform that allows IBM designers to share their design work internally, creating more visibility into the work being done across the business."
-          workDetails="Development and research"
+          workDetails="Development, research, and UX"
           workNumber="1"
         />
         <WorkItem
