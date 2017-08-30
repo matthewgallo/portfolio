@@ -1,0 +1,15 @@
+{
+  "lang": "en-US",
+  "background_color": "#fff",
+  "theme_color": "#3c6df0",
+  "name": "Matt Gallo | Front End Developer",
+  "short_name": "Matt Gallo",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./mg-logo.png",
+      "sizes": "192x90",
+      "type": "image/png"
+    }
+  ]
+}

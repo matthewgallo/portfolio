@@ -23,7 +23,7 @@ class Nav extends Component {
   }
 
   closeNavOnDesktop = () => {
-    if (screen.width >= 768 && this.state.mobileNavOpen) {
+    if (window.innerWidth >= 768 && this.state.mobileNavOpen) {
       this.setState({ mobileNavOpen: false });
     }
   };
