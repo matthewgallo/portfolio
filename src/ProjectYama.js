@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from './components/Nav';
 import Modal from 'react-modal';
 import devices from './assets/images/devices.jpg';
@@ -188,10 +189,8 @@ class ProjectYama extends Component {
                   </div>
                   <div className="py--about-label">
                     <h5>Team</h5>
-                    <p>
-                      Evan Maeda (Design/Strategy/Research), Hayley Hughes
-                      (Advisory)
-                    </p>
+                    <p>Evan Maeda (Design/Strategy/Research)</p>
+                    <p>Hayley Hughes/James Rauhut (Advisory)</p>
                   </div>
                   <div className="py--about-label">
                     <h5>Duration</h5>
@@ -602,7 +601,7 @@ class ProjectYama extends Component {
                 </div>
               </div>
               <div className="py--page-footer">
-                <a href="/" className="nav-logo-link py--footer-link">
+                <Link to="/" className="nav-logo-link py--footer-link">
                   <svg
                     className="mg--logo-nav py--footer-logo"
                     xmlns="http://www.w3.org/2000/svg"
@@ -660,7 +659,7 @@ class ProjectYama extends Component {
                       height="100"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           : <div className="project-yama-password-overlay">

@@ -8,6 +8,13 @@ const port = process.env.PORT || 8080;
 app.use(compression());
 app.enable('trust proxy');
 
+app.get(
+  `/.well-known/acme-challenge/${process.env.LETS_ENCRYPT_ROUTE}`,
+  (req, res) => {
+    res.send(process.env.LETS_ENCRYPT_VERIFICATION);
+  }
+);
+
 app.use((req, res, next) => {
   if (req.secure || req.headers.host === `localhost:${port}`) {
     next();
