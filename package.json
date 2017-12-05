@@ -4,7 +4,7 @@
  "private": true,
  "proxy": "http://localhost:8081",
  "engines": {
-  "node": "6.11.2",
+  "node": "6.11.5",
   "npm": "4.1.2"
  },
  "devDependencies": {
