@@ -597,6 +597,10 @@ class ProjectYama extends Component {
                       to stop what they were doing to take the time to document
                       their process.
                     </p>
+                    <p className="mg--regular-italic">
+                      Page design by{' '}
+                      <span className="mg--semibold-italic">Evan Maeda</span>
+                    </p>
                   </div>
                 </div>
               </div>
