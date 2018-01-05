@@ -153,7 +153,7 @@ class Footer extends Component {
             />
             <FooterLink url="https://github.com/matthewgallo/" name="Github" />
           </ul>
-          <span className="copyright mg--caption">&copy; 2017 Matt Gallo</span>
+          <span className="copyright mg--caption">&copy; 2018 Matt Gallo</span>
         </div>
       </footer>
     );

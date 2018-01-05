@@ -4,7 +4,7 @@
  "private": true,
  "proxy": "http://localhost:8081",
  "engines": {
-  "node": "6.11.5",
+  "node": "7.10.1",
   "npm": "4.1.2"
  },
  "devDependencies": {
@@ -38,7 +38,7 @@
   "bluemix": "babel-node index.js",
   "start": "concurrently \"PORT=8080 react-scripts start\" \"PORT=8081 babel-watch index.js\"",
   "precommit": "lint-staged",
-  "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
+  "build": "react-scripts build",
   "test": "react-scripts test --env=jsdom"
  },
  "lint-staged": {
