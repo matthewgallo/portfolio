@@ -35,11 +35,11 @@
   "sw-precache": "^5.2.0"
  },
  "scripts": {
-  "bluemix": "babel-node index.js",
   "start": "concurrently \"PORT=8080 react-scripts start\" \"PORT=8081 babel-watch index.js\"",
   "precommit": "lint-staged",
   "build": "react-scripts build",
-  "test": "react-scripts test --env=jsdom"
+  "test": "react-scripts test --env=jsdom",
+  "deploy": "now && now alias"
  },
  "lint-staged": {
   "src/**/*.js": [
