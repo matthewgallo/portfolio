@@ -50,5 +50,11 @@
    "prettier --trailing-comma es5 --single-quote --write",
    "git add"
   ]
- }
+ },
+  "now": {
+    "alias": [
+      "matthewdgallo.com",
+      "www.matthewdgallo.com"
+    ]
+  }
 }
