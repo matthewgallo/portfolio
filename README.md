@@ -1,3 +1,7 @@
+## Deploy using now cli
+https://zeit.co/docs/deployment-types/node
+======
+# **No longer using Bluemix**
 ## Zero downtime deployment
 
 `cf zero-downtime-push APP_NAME -f ./manifest.yml`
