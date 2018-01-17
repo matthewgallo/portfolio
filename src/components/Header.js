@@ -14,7 +14,7 @@ class Header extends Component {
               <img className="header-logo" src={mgLogo} alt="Matt Gallo logo" />
             </div>
             <div className="header-name-container">
-              <h1 className="mg--black">Matt Gallo</h1>
+              <h2 className="mg--black">Matt Gallo</h2>
               <p className="mg--light-italic">
                 Front end developer and designer
               </p>
