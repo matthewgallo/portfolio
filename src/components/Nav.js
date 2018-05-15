@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavLink from './NavLink';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 //styles
 import './nav.css';
@@ -38,7 +38,7 @@ class Nav extends Component {
       <nav className="site-navigation">
         <div className="nav-content">
           <div className="nav-logo">
-            <a href="/" className="nav-logo-link">
+            <Link to="/" className="nav-logo-link">
               <svg
                 className="mg--logo-nav"
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ class Nav extends Component {
                   height="100"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
           <ul className="nav-links desktop-nav-links">
             {this.props.location.pathname === '/' ? '' : null}
