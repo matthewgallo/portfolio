@@ -142,17 +142,17 @@ class ProjectYama extends Component {
                     <li className="nav-link-item">
                       <a
                         className="nav-link mg--bold"
-                        href="http://torchystacos.com/"
+                        href="http://www.milb.com/index.jsp?sid=t234"
                       >
-                        ATX
+                        Raleigh, NC
                       </a>
-                    </li>, by way of{' '}
+                    </li>, previously{' '}
                     <li className="nav-link-item">
                       <a
-                        href="http://www.milb.com/index.jsp?sid=t234"
+                        href="http://torchystacos.com/"
                         className="nav-link mg--bold"
                       >
-                        NC
+                        ATX
                       </a>
                     </li>.
                   </div>
