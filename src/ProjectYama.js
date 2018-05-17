@@ -119,6 +119,15 @@ class ProjectYama extends Component {
                   <li className="nav-link-item">
                     <a
                       className="nav-link mg--bold"
+                      href="https://www.ibm.com/blockchain"
+                    >
+                      IBM Blockchain
+                    </a>
+                  </li>{' '}
+                  and{' '}
+                  <li className="nav-link-item">
+                    <a
+                      className="nav-link mg--bold"
                       href="https://www.ibm.com/design"
                     >
                       IBM Design
