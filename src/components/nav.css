@@ -1,8 +1,10 @@
 .site-navigation {
-  background-color: #f6f3f3;
-  height: 5.15rem;
-  padding: 1rem 0;
+  background-color: rgba(255, 255, 255, .75);
+  padding: .5rem 0;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 1000;
 }
 .site-navigation .nav-content {
   display: flex;
@@ -17,9 +19,9 @@
 }
 .site-navigation .nav-content .nav-logo .nav-logo-link .mg--logo-nav {
   fill: #535a5a;
-  height: 50px;
+  height: 2rem;
   transition: fill .5s ease;
-  width: 88px;
+  width: 3rem;
 }
 .site-navigation .nav-content .nav-logo .nav-logo-link:hover .mg--logo-nav, .site-navigation .nav-content .nav-logo .nav-logo-link:focus .mg--logo-nav {
   fill: #3c6df0;

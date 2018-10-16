@@ -19,7 +19,6 @@
 	background-image: url('../assets/images/mg--logo-pattern.svg');
 	background-size: 100%;
   height: 100vh;
-  margin-top: -5.15rem;
 }
 .header-container .header-container-inner {
   display: block;
