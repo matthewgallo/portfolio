@@ -4,7 +4,7 @@ import Nav from '../components/Nav';
 import mgLogo from '../assets/images/mg--logo-2.svg';
 
 //styles
-import './notFound.css';
+import './notFound.scss';
 
 class NotFound extends Component {
   render() {

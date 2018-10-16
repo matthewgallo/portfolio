@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 //styles
-import './workItem.css';
+import './workItem.scss';
 
 class WorkItem extends Component {
   render() {
@@ -22,14 +22,10 @@ class WorkItem extends Component {
             </div>
           </div>
           <div className="work-item--content">
-            <h4>
-              {this.props.name}
-            </h4>
+            <h4>{this.props.name}</h4>
             <p className="work-item--caption mg--caption">
               <span>Role</span>
-              <span className="mg--bold">
-                {this.props.workDetails}
-              </span>
+              <span className="mg--bold">{this.props.workDetails}</span>
             </p>
             <p className="work-item--description">
               {this.props.workDescription}

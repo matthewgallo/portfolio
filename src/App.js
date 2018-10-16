@@ -6,8 +6,8 @@ import Home from './components/Home';
 import Nav from './components/Nav';
 
 //styles
-import './App.css';
-import './type/type_scale_settings.css';
+import './App.scss';
+import './type/type_scale_settings.scss';
 
 const customStyles = {
   overlay: {
@@ -103,7 +103,8 @@ class App extends Component {
               >
                 IBM Design
               </a>
-            </li>.
+            </li>
+            .
           </div>
           <div className="about-info">
             <div>
@@ -115,7 +116,8 @@ class App extends Component {
                 >
                   code
                 </a>
-              </li>.
+              </li>
+              .
             </div>
             <div>
               I live in{' '}
@@ -126,7 +128,8 @@ class App extends Component {
                 >
                   Raleigh, NC
                 </a>
-              </li>, previously{' '}
+              </li>
+              , previously{' '}
               <li className="nav-link-item">
                 <a
                   href="http://torchystacos.com/"
@@ -134,7 +137,8 @@ class App extends Component {
                 >
                   ATX
                 </a>
-              </li>.
+              </li>
+              .
             </div>
             <div>
               I love{' '}
@@ -149,7 +153,7 @@ class App extends Component {
               too.
             </div>
           </div>
-          <a onClick={this.closeModal} className="close" />
+          <div onClick={this.closeModal} className="close" />
           <h1 className="mg--black about-label">About</h1>
         </Modal>
         <Home />

@@ -8,7 +8,7 @@ import blockchain from '../assets/images/blockchain.jpg';
 import yamaFeed from '../assets/images/yama--work-feed.jpg';
 
 //styles
-import './work.css';
+import './work.scss';
 
 const workItems = [
   {
