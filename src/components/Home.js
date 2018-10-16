@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Work from './Work';
 
 //styles
-import './home.css';
+import './home.scss';
 
 class Home extends Component {
   render() {

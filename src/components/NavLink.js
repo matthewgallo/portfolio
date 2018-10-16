@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 //styles
-import './navLink.css';
+import './navLink.scss';
 
 class NavLink extends Component {
   render() {
@@ -13,9 +13,7 @@ class NavLink extends Component {
           className={`nav-link mg--bold ${this.props.className}`}
           onClick={this.props.openModal}
         >
-          <span>
-            {this.props.name}
-          </span>
+          <span>{this.props.name}</span>
         </a>
       </li>
     );

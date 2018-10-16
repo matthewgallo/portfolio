@@ -3,7 +3,7 @@ import NavLink from './NavLink';
 import { withRouter, Link } from 'react-router-dom';
 
 //styles
-import './nav.css';
+import './nav.scss';
 
 class Nav extends Component {
   state = {
@@ -116,17 +116,19 @@ class Nav extends Component {
             </button>
           </ul>
         </div>
-        {this.state.mobileNavOpen
-          ? <div className="mobile-nav-container">
-              {this.props.location.pathname === '/' ? '' : null}
-              <NavLink
-                url="#about"
-                name="About"
-                className="moble-nav-link mg--alpha"
-                navClick={this.props.openModal}
-              />
-            </div>
-          : ''}
+        {this.state.mobileNavOpen ? (
+          <div className="mobile-nav-container">
+            {this.props.location.pathname === '/' ? '' : null}
+            <NavLink
+              url="#about"
+              name="About"
+              className="moble-nav-link mg--alpha"
+              navClick={this.props.openModal}
+            />
+          </div>
+        ) : (
+          ''
+        )}
       </nav>
     );
   }

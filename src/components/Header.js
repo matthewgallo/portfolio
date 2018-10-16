@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import mgLogo from '../assets/images/mg--logo-2.svg';
 
 //styles
-import './header.css';
+import './header.scss';
 
 class Header extends Component {
   constructor(props) {

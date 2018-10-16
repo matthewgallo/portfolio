@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 //styles
-import './footerLink.css';
+import './footerLink.scss';
 
 class FooterLink extends Component {
   render() {
