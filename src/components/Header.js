@@ -5,6 +5,22 @@ import mgLogo from '../assets/images/mg--logo-2.svg';
 import './header.css';
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.scrollToWork = this.scrollToWork.bind(this);
+  }
+
+  scrollToWork() {
+    console.log('hello!');
+    const mainContent = document.querySelector('#main-content');
+    console.log(mainContent);
+    mainContent.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+
   render() {
     return (
       <header className="header-container">
@@ -21,9 +37,7 @@ class Header extends Component {
             </div>
           </div>
         </div>
-        <div href="work" className="scroll-down-icon">
-          <span />
-        </div>
+        <div onClick={this.scrollToWork} className="scroll-down-icon" />
       </header>
     );
   }
