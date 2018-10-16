@@ -7,7 +7,7 @@ import './home.css';
 class Home extends Component {
   render() {
     return (
-      <div className="home-container">
+      <div id="main-content" className="home-container">
         <Work />
       </div>
     );
