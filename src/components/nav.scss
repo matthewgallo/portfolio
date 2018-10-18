@@ -11,6 +11,7 @@
   justify-content: space-between;
   margin: 0 auto;
   max-width: 90%;
+  padding: 0;
 }
 .site-navigation .nav-content .nav-logo {
   color: #fff;
@@ -117,6 +118,10 @@
   }
 }
 @media (min-width: 768px) {
+  .site-navigation .nav-content {
+    max-width: 1170px;
+    padding: 0 2rem;
+  }
   .site-navigation .mobile-nav {
     display: none;
   }
