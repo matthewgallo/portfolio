@@ -38,7 +38,9 @@
     "precommit": "lint-staged",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "deploy": "now && now alias"
+    "deploy": "now && now alias",
+    "now-dev": "react-scripts start",
+    "now-build": "react-scripts build"
   },
   "lint-staged": {
     "src/**/*.js": [
@@ -48,12 +50,6 @@
     "index.js": [
       "prettier --trailing-comma es5 --single-quote --write",
       "git add"
-    ]
-  },
-  "now": {
-    "alias": [
-      "matthewdgallo.com",
-      "www.matthewdgallo.com"
     ]
   },
   "browserslist": [
