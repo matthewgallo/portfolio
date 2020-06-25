@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import Nav from '../components/Nav';
+import Header from '../components/Header';
 import mgLogo from '../assets/images/mg--logo-2.svg';
 
 //styles
@@ -10,7 +10,7 @@ class NotFound extends Component {
   render() {
     return (
       <div>
-        <Nav openModal={this.openModal} />
+        <Header openNav={this.openNav} />
         <section className="not-found-container">
           <div>
             <img

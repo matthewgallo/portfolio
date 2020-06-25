@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Scroll from 'react-scroll';
-import FooterLink from './FooterLink';
+import GradientLink from '../components/GradientLink/GradientLink';
 //styles
 import './footer.scss';
 
@@ -143,17 +143,32 @@ class Footer extends Component {
             </Link>
           </div>
           <ul className="footer-link-container">
-            <FooterLink
-              url="https://twitter.com/matthewgallo27"
-              name="Twitter"
-            />
-            <FooterLink
-              url="https://www.linkedin.com/in/matthew-gallo-1090748a/"
-              name="LinkedIn"
-            />
-            <FooterLink url="https://github.com/matthewgallo/" name="Github" />
+            <li className="footer-link-item">
+              <GradientLink
+                url="https://twitter.com/matthewgallo27"
+                external
+                color={'#fff'}
+                bold
+              >Twitter</GradientLink>
+            </li>
+            <li className="footer-link-item">
+              <GradientLink
+                url="https://www.linkedin.com/in/matthew-gallo-1090748a/"
+                external
+                color={'#fff'}
+                bold
+              >LinkedIn</GradientLink>
+            </li>
+            <li className="footer-link-item">
+              <GradientLink
+                url="https://github.com/matthewgallo/"
+                external
+                color={'#fff'}
+                bold
+              >Github</GradientLink>
+            </li>
           </ul>
-          <span className="copyright mg--caption">&copy; 2018 Matt Gallo</span>
+          <span className="copyright mg--caption">&copy; 2020 Matt Gallo</span>
         </div>
       </footer>
     );

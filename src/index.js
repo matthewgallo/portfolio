@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from './Routes';
+import App from './App';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import './index.scss';
 
-ReactDOM.render(<Routes />, document.getElementById('root'));
+ReactDOM.render(
+	<ParallaxProvider>
+		<App />
+	</ParallaxProvider>, document.getElementById('root'));

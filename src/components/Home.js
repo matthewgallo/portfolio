@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Work from './Work';
+import Footer from './Footer';
+import Intro from './Intro';
 
-//styles
 import './home.scss';
 
-class Home extends Component {
-  render() {
+const Home = () => {
     return (
       <div id="main-content" className="home-container">
+        <Intro />
         <Work />
+        <Footer />
       </div>
     );
-  }
 }
 
 export default Home;
