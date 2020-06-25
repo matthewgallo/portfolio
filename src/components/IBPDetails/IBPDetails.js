@@ -13,7 +13,6 @@ import reduxlogo from '../../assets/images/blockchain/redux.svg';
 import sasslogo from '../../assets/images/blockchain/sass.svg';
 import hyperledgerlogo from '../../assets/images/blockchain/hyperledger_icon.svg';
 import FooterLogoLink from '../../components/FooterLogoLink/FooterLogoLink';
-
 import './ibpDetails.scss';
 
 
