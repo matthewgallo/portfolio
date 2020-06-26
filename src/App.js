@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useSpring } from "react-spring"
+import { useSpring } from 'react-spring';
 
 import Header from './components/Header';
 import Nav from './components/Nav/Nav';
@@ -17,7 +17,6 @@ import './App.scss';
 import './type/type_scale_settings.scss';
 
 const App = () => {
-
 	const [navOpen, toggleNavOpen] = useState(false);
 	const navAnimation = useSpring({
 		opacity: navOpen ? 1 : 0,
@@ -27,21 +26,30 @@ const App = () => {
 		<div className="App">
 			<Router>
 				<PageContainer>
-					<Header navOpen={navOpen} toggleNavOpen={() => toggleNavOpen(!navOpen)} />
-					<Nav style={navAnimation} toggleNavOpen={() => toggleNavOpen(!navOpen)} />
+					<Header navOpen={navOpen}
+toggleNavOpen={() => toggleNavOpen(!navOpen)} />
+					<Nav style={navAnimation}
+toggleNavOpen={() => toggleNavOpen(!navOpen)} />
 					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/project-yama" component={ProjectYama} />
-						<Route path="/about-me" component={About} />
-						<Route path="/work/ibm-blockchain-platform" component={IBPDetails} />
-						<Route path="/work/jeopardy" component={JeopardyDetails} />
-						<Route path="/work/covid-stat" component={CovidStatDetails} />
+						<Route exact
+path="/"
+component={Home} />
+						<Route path="/project-yama"
+component={ProjectYama} />
+						<Route path="/about-me"
+component={About} />
+						<Route path="/work/ibm-blockchain-platform"
+component={IBPDetails} />
+						<Route path="/work/jeopardy"
+component={JeopardyDetails} />
+						<Route path="/work/covid-stat"
+component={CovidStatDetails} />
 						<Route component={NotFound} />
 					</Switch>
 				</PageContainer>
 			</Router>
 		</div>
-	)
+	);
 };
 
 export default App;

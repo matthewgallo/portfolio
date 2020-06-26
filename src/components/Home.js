@@ -6,13 +6,14 @@ import Intro from './Intro';
 import './home.scss';
 
 const Home = () => {
-    return (
-      <div id="main-content" className="home-container">
-        <Intro />
-        <Work />
-        <Footer />
-      </div>
-    );
-}
+	return (
+		<div id="main-content"
+className="home-container">
+			<Intro />
+			<Work />
+			<Footer />
+		</div>
+	);
+};
 
 export default Home;
