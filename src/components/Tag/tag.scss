@@ -1,0 +1,13 @@
+@import '../../assets/sass/variables';
+
+.mg--tag {
+    align-items: center;
+	background-color: $mg__theme--green;
+	border-radius: 1rem;
+	color: white;
+	display: flex;
+	height: 2rem;
+	margin-bottom: .5rem;
+	padding: 0 1rem;
+	width: fit-content;
+}

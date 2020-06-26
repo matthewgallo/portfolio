@@ -9,7 +9,8 @@ footer .footer-container {
   max-width: 1170px;
 }
 footer .footer-container .footer-link-container {
-  display: block;
+  display: flex;
+  justify-content: space-around;
   list-style: none;
   margin: 0;
   padding: 2rem 0;
