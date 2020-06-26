@@ -38,20 +38,20 @@ const DetailHeader = ({ title, subtitle, tags, headerImage }) => {
 		<div className="project--details-container">
 			<div className="project--details-header">
 				<animated.div className="project--header-content"
-style={titleAnimation}>
+					style={titleAnimation}>
 					<h4>{title}</h4>
 					<p>{subtitle}</p>
 				</animated.div>
 				<div className="project-tag-group">{tags}</div>
 				<Parallax className="project--header-image-container"
-y={[-40, 40]}
-tagOuter="figure">
+					y={[-40, 40]}
+					tagOuter="figure">
 					<animated.div style={projectImageAnimation}>
 						<Sparkles maxSize={50}
-minSize={15}>
+							minSize={15}>
 							<img src={headerImage.src}
-alt={headerImage.alt}
-className="project--header-image" />
+								alt={headerImage.alt}
+								className="project--header-image" />
 						</Sparkles>
 					</animated.div>
 				</Parallax>

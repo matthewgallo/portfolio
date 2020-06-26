@@ -5,6 +5,13 @@
 		"react/jsx-max-props-per-line": [1, { "maximum": 1 }],
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 		"react/jsx-props-no-spreading": [0],
-		"no-useless-catch": 0
+		"no-useless-catch": 0,
+		"indent": [
+			1,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		]
 	}
 }
