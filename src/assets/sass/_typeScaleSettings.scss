@@ -1,0 +1,390 @@
+/**
+    HTML/CSS codes:
+    300 - Light
+    400 - Regular
+    500 - Semibold
+    600 - Bold
+    700 - Black
+**/
+@font-face {
+	font-family: 'Titillium';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../../assets/fonts/TitilliumWeb-Light.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-Light.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: italic;
+	font-weight: 300;
+	src: url('../../assets/fonts/TitilliumWeb-LightItalic.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-LightItalic.woff2') format('woff2');
+}
+
+.mg--light {
+	/* stylelint-disable-next-line declaration-no-important */
+	font-style: normal !important;
+
+	/* stylelint-disable-next-line declaration-no-important */
+	font-weight: 300 !important;
+}
+
+.mg--light-italic {
+	/* stylelint-disable-next-line declaration-no-important */
+	font-style: italic !important;
+
+	/* stylelint-disable-next-line declaration-no-important */
+	font-weight: 300 !important;
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../../assets/fonts/TitilliumWeb-Regular.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: italic;
+	font-weight: 400;
+	src: url('../../assets/fonts/TitilliumWeb-Italic.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-Italic.woff2') format('woff2');
+}
+
+.mg--regular-italic {
+	/* stylelint-disable-next-line declaration-no-important */
+	font-style: italic !important;
+
+	/* stylelint-disable-next-line declaration-no-important */
+	font-weight: 400 !important;
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../../assets/fonts/TitilliumWeb-SemiBold.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-SemiBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: italic;
+	font-weight: 500;
+	src: url('../../assets/fonts/TitilliumWeb-SemiBoldItalic.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-SemiBoldItalic.woff2') format('woff2');
+}
+
+.mg--semibold {
+	/* stylelint-disable-next-line declaration-no-important */
+	font-style: normal !important;
+
+	/* stylelint-disable-next-line declaration-no-important */
+	font-weight: 500 !important;
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../../assets/fonts/TitilliumWeb-Bold.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-Bold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: italic;
+	font-weight: 600;
+	src: url('../../assets/fonts/TitilliumWeb-BoldItalic.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-BoldItalic.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../../assets/fonts/TitilliumWeb-Black.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-Black.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Titillium';
+	font-style: italic;
+	font-weight: 700;
+	src: url('../../assets/fonts/TitilliumWeb-Black.woff') format('woff'), url('../../assets/fonts/TitilliumWeb-Black.woff2') format('woff2');
+}
+
+/**
+    HTML/CSS codes:
+    300 - Light
+    400 - Regular
+    500 - Semibold
+    600 - Bold
+    700 - Black
+**/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+
+h1,
+.mg--alpha {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 2.5625rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 3.2rem;
+}
+@media (min-width: 640px) {
+	h1,
+	.mg--alpha {
+		font-size: 5.875rem;
+		line-height: 6.5rem;
+	}
+}
+@media (min-width: 1056px) {
+	h1,
+	.mg--alpha {
+		font-size: 6.5rem;
+		line-height: 7.25rem;
+	}
+}
+@media (min-width: 640px) {
+	h1,
+	.mg--alpha {
+		font-size: 3.25rem;
+		line-height: 4rem;
+	}
+}
+@media (min-width: 1056px) {
+	h1,
+	.mg--alpha {
+		font-size: 6.5rem;
+		line-height: 7.25rem;
+	}
+}
+
+.mg--alpha-italic {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 2.5rem;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 3.2rem;
+}
+@media (min-width: 640px) {
+	.mg--alpha-italic {
+		font-size: 5.875rem;
+		line-height: 6.5rem;
+	}
+}
+@media (min-width: 1056px) {
+	.mg--alpha-italic {
+		font-size: 6.5rem;
+		line-height: 7.25rem;
+	}
+}
+@media (min-width: 640px) {
+	.mg--alpha-italic {
+		font-size: 3.25rem;
+		line-height: 4rem;
+	}
+}
+@media (min-width: 1056px) {
+	.mg--alpha-italic {
+		font-size: 6.5rem;
+		line-height: 7.25rem;
+	}
+}
+
+h2,
+.mg--beta {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 2.875rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 3.5rem;
+}
+@media (min-width: 640px) {
+	h2,
+	.mg--beta {
+		font-size: 3.25rem;
+		line-height: 4rem;
+	}
+}
+@media (min-width: 1056px) {
+	h2,
+	.mg--beta {
+		font-size: 3.625rem;
+		line-height: 4.5rem;
+	}
+}
+
+.mg--beta-italic {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 2.875rem;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 3.5rem;
+}
+@media (min-width: 640px) {
+	.mg--beta-italic {
+		font-size: 3.25rem;
+		line-height: 4rem;
+	}
+}
+@media (min-width: 1056px) {
+	.mg--beta-italic {
+		font-size: 3.625rem;
+		line-height: 4.5rem;
+	}
+}
+
+h3,
+.mg--gamma {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 2rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 2.5rem;
+}
+@media (min-width: 640px) {
+	h3,
+	.mg--gamma {
+		font-size: 2.25rem;
+		line-height: 2.8125rem;
+	}
+}
+@media (min-width: 1056px) {
+	h3,
+	.mg--gamma {
+		font-size: 2.5rem;
+		line-height: 3.25rem;
+	}
+}
+
+.mg--gamma-italic {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 2rem;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 2.5rem;
+}
+@media (min-width: 640px) {
+	.mg--gamma-italic {
+		font-size: 2.25rem;
+		line-height: 2.75rem;
+	}
+}
+@media (min-width: 1056px) {
+	.mg--gamma-italic {
+		font-size: 2.5rem;
+		line-height: 3.25rem;
+	}
+}
+
+h4,
+.mg--delta {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 1.25rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.5rem;
+}
+@media (min-width: 640px) {
+	h4,
+	.mg--delta {
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+	}
+}
+@media (min-width: 1056px) {
+	h4,
+	.mg--delta {
+		font-size: 1.625rem;
+		line-height: 2rem;
+	}
+}
+
+.mg--delta-italic {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 1.25rem;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 1.5rem;
+}
+@media (min-width: 640px) {
+	.mg--delta-italic {
+		font-size: 1.4rem;
+		line-height: 1.8rem;
+	}
+}
+@media (min-width: 1056px) {
+	.mg--delta-italic {
+		font-size: 1.625rem;
+		line-height: 2rem;
+	}
+}
+
+h5,
+.mg--epsilon {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.5rem;
+}
+
+.mg--epsilon-italic {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 1rem;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 1.5rem;
+}
+
+h6,
+.mg--zeta {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.3125rem;
+}
+
+.mg--zeta-italic {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 0.875rem;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 1.3125rem;
+}
+
+small,
+.mg--caption {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 0.01rem;
+	line-height: 1.3125rem;
+}
+
+.mg--caption-italic {
+	font-style: italic;
+}
+
+p {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.5rem;
+}
+
+.mg--italic {
+	font-style: italic;
+}
+
+strong,
+.mg--semibold {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+}
+
+.mg--bold {
+	font-family: 'Titillium', 'Lato', 'Helvetica', 'Arial', 'Verdana', 'Tahoma', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}

@@ -1,0 +1,32 @@
+.project--details-container {
+	background-color: #f4f4f4;
+	overflow: hidden;
+	padding-top: 3.5rem;
+
+	.project--details-header {
+		align-items: flex-start;
+		color: #323232;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin: 0 auto;
+		max-width: 90%;
+		min-height: calc(100vh - 3rem);
+		padding-top: 4rem;
+		position: relative;
+		z-index: 2;
+
+		.project--header-subtitle {
+			max-width: 320px;
+		}
+
+		.project--header-image-container {
+			position: relative;
+			top: 6rem;
+
+			.project--header-image {
+				max-width: 100%;
+			}
+		}
+	}
+}

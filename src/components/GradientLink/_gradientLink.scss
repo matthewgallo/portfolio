@@ -1,0 +1,44 @@
+.gradient--link {
+	color: $green;
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	width: fit-content;
+
+	&:focus,
+	&:hover {
+		outline: 0;
+		text-decoration: none;
+	}
+
+	&:after,
+	&:before {
+		bottom: -0.125rem;
+		content: '';
+		height: 3px;
+		left: auto;
+		position: absolute;
+		right: 0;
+		width: 0;
+		z-index: 2;
+	}
+
+	&:before {
+		background-color: $blue;
+		transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
+	}
+
+	&:after {
+		background-color: $green;
+		transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
+	}
+
+	&:hover:after,
+	&:hover:before,
+	&:focus:after,
+	&:focus:before {
+		left: 0;
+		width: 100%;
+	}
+}
