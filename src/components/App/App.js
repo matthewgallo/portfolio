@@ -19,7 +19,7 @@ const App = () => {
 		transform: navOpen ? `translateY(0)` : `translateY(-100%)`,
 	});
 	return (
-		<div className="App">
+		<div className="App mg-app">
 			<Router>
 				<PageContainer>
 					<Header navOpen={navOpen}

@@ -12,7 +12,7 @@ const Intro = () => {
 							alt="Matt Gallo logo" />
 					</div>
 					<div className="header-name-container">
-						<h2 className="mg--black">Matt Gallo</h2>
+						<h2 className="mg--extra-bold">Matt Gallo</h2>
 						<p className="mg--light-italic">Senior Front end developer and designer</p>
 					</div>
 				</div>
