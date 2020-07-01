@@ -13,9 +13,16 @@ const Intro = () => {
 					</div>
 					<div className="header-name-container">
 						<h2 className="mg--semibold">Matt Gallo</h2>
-						<p className="mg--light-italic">Front end developer and designer</p>
+						<p className="mg--light-italic">Front end developer and designer*</p>
 					</div>
 				</div>
+				<p className="mg--light-italic saxophone-part-time">
+					*part time saxophonist{' '}
+					<span role="img"
+						aria-label="Saxophone emoji">
+						🎷
+					</span>
+				</p>
 			</div>
 		</section>
 	);
