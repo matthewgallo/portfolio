@@ -189,7 +189,7 @@ const BlockchainPage = () => {
 										style={{ width: '1.25rem', marginRight: '0.5rem' }}
 										alt="Sass logo"
 										aria-label="Sass logo" />
-									Saas
+									Sass
 								</span>
 								<span className="tool-item">
 									<span style={{ marginRight: '0.5rem' }}

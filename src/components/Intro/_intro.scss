@@ -90,6 +90,13 @@
 	&.header-container-dark {
 		background-image: url('../../assets/images/mg--logo-pattern-dark.svg');
 	}
+
+	.saxophone-part-time {
+		bottom: 1rem;
+		font-size: 0.75rem;
+		left: 1rem;
+		position: absolute;
+	}
 }
 
 .header-container .header-container-inner {
@@ -99,6 +106,7 @@
 	justify-content: space-between;
 	margin: 0 auto;
 	max-width: 90%;
+	position: relative;
 }
 
 .header-container .header-content {
@@ -107,7 +115,6 @@
 }
 
 .header-container .header-content .header-logo-container {
-	margin: 0 auto;
 
 	.header-logo {
 		width: 100%;
@@ -139,6 +146,7 @@
 		width: 100%;
 
 		.header-logo-container {
+			margin: 0 auto;
 			max-width: 475px;
 		}
 	}

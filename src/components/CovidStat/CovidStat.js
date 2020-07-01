@@ -116,7 +116,7 @@ const CovidStat = () => {
 										style={{ width: '1.25rem', marginRight: '0.5rem' }}
 										alt="Sass logo"
 										aria-label="Sass logo" />
-									Saas
+									Sass
 								</span>
 								<span className="tool-item">
 									<img src={vercelLogo}
