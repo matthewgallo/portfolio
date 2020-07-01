@@ -44,6 +44,7 @@
 	}
 
 	&:hover {
+
 		.hover {
 			opacity: 0.4;
 		}
@@ -53,8 +54,7 @@
 		}
 	}
 
-	.fill,
-	.hover-img:after {
+	.fill, .hover-img:after {
 		height: 100%;
 		left: 0;
 		position: absolute;
@@ -80,7 +80,8 @@
 		background-size: cover;
 	}
 }
-@media (min-width: 1060px) {
+@media ( min-width: 1060px ) {
+
 	.portrait {
 		bottom: 0;
 		display: block;

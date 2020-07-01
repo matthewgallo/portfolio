@@ -11,7 +11,7 @@
 }
 
 .password-lock {
-	border: 2px solid $dark-gray;
+	border: 2px solid $text;
 	border-radius: 100%;
 	display: block;
 	height: 4rem;
@@ -21,7 +21,7 @@
 }
 
 .password-lock path {
-	fill: $dark-gray;
+	fill: $text;
 }
 
 .project-yama-container {
@@ -38,7 +38,7 @@
 
 .project-yama-password-overlay {
 	align-items: center;
-	background-color: #f6f3f3;
+	background-color: $backgroundSecondary;
 	bottom: 0;
 	display: flex;
 	justify-content: center;
@@ -51,9 +51,9 @@
 }
 
 .project-yama-input {
-	background-color: $white;
+	background-color: $background;
 	border: 0;
-	color: #3a3a3a;
+	color: $text;
 	height: 3rem;
 	padding: 14px 42px 14px 15px;
 	transition: padding-right 0.1s ease-in-out;
@@ -87,7 +87,7 @@
 }
 
 .py--about-container {
-	border-bottom: 1px solid #d8d8d8;
+	border-bottom: 1px solid $backgroundSecondary;
 	margin-bottom: 5rem;
 	padding-bottom: 4rem;
 }
@@ -107,7 +107,7 @@
 }
 
 .py--process-business-need {
-	border-bottom: 1px solid #d8d8d8;
+	border-bottom: 1px solid $backgroundSecondary;
 	display: block;
 	margin-bottom: 4rem;
 	padding-bottom: 2rem;
@@ -121,7 +121,7 @@
 }
 
 .py--process-user-needs {
-	border-bottom: 1px solid #d8d8d8;
+	border-bottom: 1px solid $backgroundSecondary;
 	display: block;
 	margin-bottom: 4rem;
 	padding-bottom: 2rem;
@@ -138,7 +138,7 @@
 }
 
 .py--section-end {
-	border-bottom: 1px solid #d8d8d8;
+	border-bottom: 1px solid $backgroundSecondary;
 	margin-bottom: 4rem;
 	padding-bottom: 2rem;
 }
@@ -152,7 +152,7 @@
 }
 
 .py--challege-3 {
-	border-bottom: 1px solid #d8d8d8;
+	border-bottom: 1px solid $backgroundSecondary;
 	margin-bottom: 4rem;
 	padding-bottom: 2rem;
 }
@@ -177,7 +177,7 @@
 
 .py--footer-logo {
 	display: block;
-	fill: #535a5a;
+	fill: $primary;
 	height: auto;
 	margin: auto;
 	transition: fill 0.5s ease;
@@ -185,7 +185,7 @@
 }
 
 .py--footer-link:hover .py--footer-logo {
-	fill: #3c6df0;
+	fill: $secondary;
 }
 
 .py--page-footer {

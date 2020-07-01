@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSpring } from 'react-spring';
 import DetailHeader from '../DetailPage/DetailHeader';
 import IBPheaderImg from '../../assets/images/ibp_details_header.svg';
@@ -6,8 +6,8 @@ import SectionMaxWidth from '../SectionMaxWidth/SectionMaxWidth';
 import Text from '../Text/Text';
 import Tag from '../Tag/Tag';
 import GradientLink from '../GradientLink/GradientLink';
-import ibpVideo from '../../assets/images/blockchain/ibp_screenshots.mp4';
-import ToggleIcon from './ToggleIcon';
+// import ibpVideo from '../../assets/images/blockchain/ibp_screenshots.mp4';
+// import ToggleIcon from './ToggleIcon';
 import reactlogo from '../../assets/images/blockchain/react.svg';
 import reduxlogo from '../../assets/images/blockchain/redux.svg';
 import sasslogo from '../../assets/images/blockchain/sass.svg';
@@ -15,27 +15,27 @@ import hyperledgerlogo from '../../assets/images/blockchain/hyperledger_icon.svg
 import FooterLogoLink from '../FooterLogoLink/FooterLogoLink';
 
 const BlockchainPage = () => {
-	const videoRef = useRef();
-	const [paused, setPaused] = useState(false);
-	const [hoveringVideoIcon, setHoveringVideoIcon] = useState(false);
+	// const videoRef = useRef();
+	// const [paused, setPaused] = useState(false);
+	// const [hoveringVideoIcon, setHoveringVideoIcon] = useState(false);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const toggleVideo = () => {
-		if (videoRef.current) {
-			if (paused) {
-				setPaused(false);
-				videoRef.current.play();
-				videoRef.current.muted = false;
-			} else {
-				setPaused(true);
-				videoRef.current.pause();
-				videoRef.current.muted = true;
-			}
-		}
-	};
+	// const toggleVideo = () => {
+	// 	if (videoRef.current) {
+	// 		if (paused) {
+	// 			setPaused(false);
+	// 			videoRef.current.play();
+	// 			videoRef.current.muted = false;
+	// 		} else {
+	// 			setPaused(true);
+	// 			videoRef.current.pause();
+	// 			videoRef.current.muted = true;
+	// 		}
+	// 	}
+	// };
 
 	const tagAnimation = useSpring({
 		to: async next => {
@@ -321,13 +321,13 @@ const BlockchainPage = () => {
 							) as well as the Node backend.
 						</Text>
 					</div>
-					<div className="video--wrapper">
+					{/* <div className="video--wrapper">
 						<video ref={videoRef}
 							playsInline
 							loop
 							autoPlay
 							muted
-							className="ibp--video">
+							className="mg--video">
 							<source src={ibpVideo}
 								type="video/mp4" />
 						</video>
@@ -342,7 +342,7 @@ const BlockchainPage = () => {
 							<ToggleIcon hovering={hoveringVideoIcon}
 								paused={paused} />
 						</button>
-					</div>
+					</div> */}
 				</SectionMaxWidth>
 			</div>
 			<FooterLogoLink backgroundColor="gray" />

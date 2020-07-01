@@ -1,8 +1,8 @@
 @import '../../assets/sass/variables';
 
 .nav-main {
-	background-color: $dark-gray;
-	color: white;
+	background-color: $background;
+	color: $text;
 	height: 100vh;
 	left: 0;
 	position: fixed;
@@ -42,7 +42,7 @@
 }
 
 .new-nav-link {
-	color: white;
+	color: $text;
 	display: block;
 	font-weight: 300;
 	margin-bottom: 0.5rem;
@@ -93,18 +93,6 @@
 	margin: 16px 0;
 }
 
-.nav-list-item > a {
-	border-bottom: 2px transparent;
-	color: #05386b;
-	text-decoration: none;
-	transition: border 0.1s linear;
-}
-
-.nav-list-item > a:hover,
-.nav-list-item > a:focus {
-	border-bottom: 2px solid #05386b;
-}
-
 .close-nav-button {
 	align-items: center;
 	background: transparent;
@@ -125,7 +113,7 @@
 	}
 
 	.navigation-line {
-		background-color: white;
+		background-color: $text;
 		height: 1px;
 		transform: rotate(0deg);
 		transition: 0.25s ease-in-out;

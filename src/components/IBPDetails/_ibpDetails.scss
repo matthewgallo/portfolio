@@ -1,5 +1,5 @@
 .project--details-section {
-	background-color: #f4f4f4;
+	background-color: $background;
 	padding: 4rem 0;
 	padding-bottom: 6rem;
 
@@ -25,7 +25,7 @@
 		max-width: 460px;
 		position: relative;
 
-		.ibp--video {
+		.mg--video {
 			max-height: 100%;
 			width: 100%;
 		}
@@ -46,7 +46,8 @@
 }
 
 .project--call-out {
-	background-color: white;
+	background-color: $backgroundSecondary;
+	color: $text;
 	padding: 4rem 0;
 
 	.project-call-out-header {
@@ -71,8 +72,10 @@
 		}
 	}
 }
-@media (min-width: 768px) {
+@media ( min-width: 768px ) {
+
 	.project--details-container {
+
 		.project--details-header {
 			align-items: center;
 			flex-direction: row;
@@ -93,8 +96,10 @@
 		}
 	}
 }
-@media (min-width: 1220px) {
+@media ( min-width: 1220px ) {
+
 	.project--details-container {
+
 		.project--details-header {
 			max-width: 1170px;
 		}
