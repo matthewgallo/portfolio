@@ -1,15 +1,5 @@
-*,
-:after,
-:before {
+*, :after, :before {
 	box-sizing: border-box;
-}
-
-.modal-intro {
-	padding-right: 0.35rem;
-}
-
-.ReactModal__Body--open {
-	overflow: hidden;
 }
 
 .close {
@@ -26,8 +16,7 @@
 	opacity: 1;
 }
 
-.close:before,
-.close:after {
+.close:before, .close:after {
 	background-color: #333333;
 	content: ' ';
 	height: 33px;

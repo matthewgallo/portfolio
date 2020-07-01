@@ -1,11 +1,11 @@
 .project--details-container {
-	background-color: #f4f4f4;
+	background-color: $background;
 	overflow: hidden;
 	padding-top: 3.5rem;
 
 	.project--details-header {
 		align-items: flex-start;
-		color: #323232;
+		color: $text;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;

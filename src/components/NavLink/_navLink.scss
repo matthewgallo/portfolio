@@ -40,12 +40,12 @@
 }
 
 .nav-link-item .nav-link:before {
-	background-color: $blue;
+	background-color: $secondary;
 	transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
 }
 
 .nav-link-item .nav-link:after {
-	background-color: $green;
+	background-color: $primary;
 	transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
 }
 
@@ -60,7 +60,7 @@
 }
 
 .mobile-nav-container .nav-link-item .nav-link {
-	color: $white;
+	color: $text;
 	display: inline-block;
 }
 @media (min-width: 768px) {

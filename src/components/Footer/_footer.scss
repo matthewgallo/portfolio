@@ -1,7 +1,7 @@
 @import '../../assets/sass/variables';
 
 footer {
-	background: $dark-gray;
+	background-color: $backgroundSecondary;
 	padding: 8% 0;
 	width: 100%;
 
@@ -21,7 +21,6 @@ footer {
 		}
 
 		.footer-logo {
-			color: $white;
 			display: block;
 			margin: 0 auto;
 			position: relative;
@@ -35,22 +34,22 @@ footer {
 	display: inline-block;
 
 	.mg--logo-footer {
-		fill: #3c6df0;
+		fill: $secondary;
 		height: 50px;
 		transition: fill 0.8s ease;
 		width: 88px;
 	}
 
-	&:hover,
-	&:focus {
+	&:hover, &:focus {
+
 		.mg--logo-footer {
-			fill: #648fff;
+			fill: $secondary;
 		}
 	}
 }
 
 footer .footer-container .copyright {
-	color: $white;
+	color: $text;
 	display: block;
 	margin: 0 auto;
 	text-align: center;

@@ -1,19 +1,17 @@
 .gradient--link {
-	color: $green;
+	color: $primary;
 	display: inline-block;
 	position: relative;
 	text-decoration: none;
 	transition: color 0.3s ease;
 	width: fit-content;
 
-	&:focus,
-	&:hover {
+	&:focus, &:hover {
 		outline: 0;
 		text-decoration: none;
 	}
 
-	&:after,
-	&:before {
+	&:after, &:before {
 		bottom: -0.125rem;
 		content: '';
 		height: 3px;
@@ -25,19 +23,16 @@
 	}
 
 	&:before {
-		background-color: $blue;
+		background-color: $secondary;
 		transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
 	}
 
 	&:after {
-		background-color: $green;
+		background-color: $primary;
 		transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
 	}
 
-	&:hover:after,
-	&:hover:before,
-	&:focus:after,
-	&:focus:before {
+	&:hover:after, &:hover:before, &:focus:after, &:focus:before {
 		left: 0;
 		width: 100%;
 	}

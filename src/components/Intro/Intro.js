@@ -1,19 +1,19 @@
-import React from 'react';
-import mgLogo from '../../assets/images/mg--logo-2.svg';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
+import Logo from './Logo';
 
 const Intro = () => {
+	const { colorMode } = useContext(ThemeContext);
 	return (
-		<section className="header-container">
+		<section className={`header-container ${colorMode && colorMode === 'dark' ? 'header-container-dark' : 'header-container-light'}`}>
 			<div className="header-container-inner">
 				<div className="header-content">
 					<div className="header-logo-container">
-						<img className="header-logo"
-							src={mgLogo}
-							alt="Matt Gallo logo" />
+						<Logo className="header-logo" />
 					</div>
 					<div className="header-name-container">
-						<h2 className="mg--extra-bold">Matt Gallo</h2>
-						<p className="mg--light-italic">Senior Front end developer and designer</p>
+						<h2 className="mg--semibold">Matt Gallo</h2>
+						<p className="mg--light-italic">Front end developer and designer</p>
 					</div>
 				</div>
 			</div>
