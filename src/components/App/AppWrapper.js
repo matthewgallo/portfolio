@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ParallaxProvider } from 'react-scroll-parallax';
 import { ThemeProvider } from '../ThemeContext/ThemeContext';
 import App from './App';
 import GlobalStyles from '../GlobalStyles/GlobalStyles';
@@ -8,11 +7,9 @@ import GlobalStyles from '../GlobalStyles/GlobalStyles';
 const AppWrapper = ({ children }) => {
 	return (
 		<ThemeProvider>
-			<ParallaxProvider>
-				<GlobalStyles />
-				<App />
-				{children}
-			</ParallaxProvider>
+			<GlobalStyles />
+			<App />
+			{children}
 		</ThemeProvider>
 	);
 };
