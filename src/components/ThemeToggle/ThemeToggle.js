@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
 
 const ThemeToggle = () => {
 	const { colorMode, setColorMode } = useContext(ThemeContext);
+	const themeButton = useRef();
 
 	const toggleSunAnimation = useSpring({
 		to: async next => {
@@ -41,9 +42,11 @@ const ThemeToggle = () => {
 			className="viewing-mode-button"
 			id="toggle-viewing-mode"
 			type="button"
+			ref={themeButton}
 			onClick={() => {
 				if (colorMode === 'dark') setColorMode('light');
 				else setColorMode('dark');
+				if (themeButton && themeButton.current) themeButton.current.blur();
 			}}
 			title={colorMode && colorMode === 'dark' ? 'Toggle light theme' : 'Toggle dark theme'}
 		>
