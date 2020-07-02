@@ -21,8 +21,10 @@
 		}
 
 		.project--header-image-container {
+			max-width: 500px;
 			position: relative;
 			top: 6rem;
+			width: 500px;
 
 			.project--header-image {
 				max-width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring';
-import { Parallax } from 'react-scroll-parallax';
+import { ParallaxLayer } from '@react-spring/parallax';
 import Sparkles from '../Sparkle/Sparkles';
 
 const DetailHeader = ({ title, subtitle, tags, headerImage }) => {
@@ -42,18 +42,19 @@ const DetailHeader = ({ title, subtitle, tags, headerImage }) => {
 					<p>{subtitle}</p>
 				</animated.div>
 				<div className="project-tag-group">{tags}</div>
-				<Parallax className="project--header-image-container"
-					y={[-40, 40]}
-					tagOuter="figure">
-					<animated.div style={projectImageAnimation}>
-						<Sparkles maxSize={50}
-							minSize={15}>
-							<img src={headerImage.src}
-								alt={headerImage.alt}
-								className="project--header-image" />
-						</Sparkles>
-					</animated.div>
-				</Parallax>
+				<div className="project--header-image-container">
+					<ParallaxLayer offset={0}
+						speed={0.25}>
+						<animated.div style={projectImageAnimation}>
+							<Sparkles maxSize={50}
+								minSize={15}>
+								<img src={headerImage.src}
+									alt={headerImage.alt}
+									className="project--header-image" />
+							</Sparkles>
+						</animated.div>
+					</ParallaxLayer>
+				</div>
 			</div>
 		</div>
 	);

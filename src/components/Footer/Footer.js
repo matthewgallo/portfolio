@@ -1,24 +1,29 @@
 import React from 'react';
-import Scroll from 'react-scroll';
+import { useSpring } from 'react-spring';
 import GradientLink from '../GradientLink/GradientLink';
 import Logo from '../Intro/Logo';
 
-const scroll = Scroll.animateScroll;
-const { Link } = Scroll;
-
 const Footer = () => {
-	const scrollToTop = event => {
-		event.preventDefault();
-		scroll.scrollToTop();
-	};
+	const [, setY] = useSpring(() => ({ y: 0 }));
 
 	return (
 		<footer>
 			<div className="footer-container">
 				<div className="footer-logo">
-					<Link to="/"
+					<button
+						type="button"
 						className="footer-logo-link"
-						onClick={event => scrollToTop(event)}>
+						onClick={() => {
+							setY({
+								y: 0,
+								reset: true,
+								from: { y: window.scrollY },
+								onChange: springValue => {
+									window.scroll(0, springValue.y);
+								},
+							});
+						}}
+					>
 						<Logo
 							style={{
 								height: '50px',
@@ -26,7 +31,7 @@ const Footer = () => {
 								width: '88px',
 							}}
 						/>
-					</Link>
+					</button>
 				</div>
 				<ul className="footer-link-container">
 					<li className="footer-link-item">
