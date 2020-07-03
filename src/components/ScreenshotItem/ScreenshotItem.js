@@ -13,6 +13,7 @@ const ScreenshotContainer = styled.div`
 `;
 
 const Screenshot = styled.img`
+	align-self: start;
 	max-width: 660px;
 	width: 100%;
 `;
