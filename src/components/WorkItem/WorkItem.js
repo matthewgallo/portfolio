@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
+import { COLORS } from '../../theme';
+import Tag from '../Tag/Tag';
 
 const lockIcon = (
 	<svg
@@ -88,7 +91,8 @@ const gradients = [
 	},
 ];
 
-const WorkItem = ({ image, internalLink, name, url, locked }) => {
+const WorkItem = ({ image, internalLink, name, url, locked, comingSoon }) => {
+	const { colorMode } = useContext(ThemeContext);
 	const renderContents = () => {
 		return (
 			<>
@@ -100,8 +104,50 @@ const WorkItem = ({ image, internalLink, name, url, locked }) => {
 				<div className="work-item--content">
 					<h4>{name}</h4>
 				</div>
+				{comingSoon && (
+					<Tag
+						style={{
+							minWidth: '180px',
+							position: 'absolute',
+							top: '1rem',
+							right: '1rem',
+							backgroundColor: colorMode && colorMode === 'dark' ? '#fff' : '#121619',
+							color: colorMode && colorMode === 'dark' ? COLORS.text.light : COLORS.text.dark,
+						}}
+					>
+						More coming soon
+					</Tag>
+				)}
 				{locked ? lockIcon : null}
 			</>
+		);
+	};
+
+	const renderExternalOrDisabledItem = () => {
+		return !internalLink && url ? (
+			<a href={url}
+				className="work-projects-item-link"
+				target="_blank"
+				rel="noopener noreferrer">
+				{renderContents()}
+			</a>
+		) : (
+			<button
+				className="work-projects-item-link"
+				type="button"
+				disabled
+				style={{
+					background: 'transparent',
+					border: '0',
+					display: 'flex',
+					width: '100%',
+					minHeight: '24rem',
+					textAlign: 'left',
+					padding: '0',
+				}}
+			>
+				{renderContents()}
+			</button>
 		);
 	};
 
@@ -116,18 +162,13 @@ const WorkItem = ({ image, internalLink, name, url, locked }) => {
 				backgroundImage: `linear-gradient( ${linearAngle && linearAngle}deg, ${randomGradient?.color1} 0%, ${randomGradient?.color2} 100% )`,
 			}}
 		>
-			{internalLink ? (
+			{internalLink && url ? (
 				<Link to={url}
 					className="work-projects-item-link">
 					{renderContents()}
 				</Link>
 			) : (
-				<a href={url}
-					className="work-projects-item-link"
-					target="_blank"
-					rel="noopener noreferrer">
-					{renderContents()}
-				</a>
+				renderExternalOrDisabledItem()
 			)}
 		</li>
 	);
@@ -136,6 +177,7 @@ const WorkItem = ({ image, internalLink, name, url, locked }) => {
 WorkItem.defaultProps = {
 	locked: false,
 	url: '',
+	comingSoon: false,
 };
 
 WorkItem.propTypes = {
@@ -144,6 +186,7 @@ WorkItem.propTypes = {
 	url: PropTypes.string,
 	internalLink: PropTypes.bool.isRequired,
 	locked: PropTypes.bool,
+	comingSoon: PropTypes.bool,
 };
 
 export default WorkItem;

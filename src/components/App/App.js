@@ -11,6 +11,7 @@ import PageContainer from '../PageContainer/PageContainer';
 import IBPDetails from '../IBPDetails/IBPDetails';
 import JeopardyDetails from '../JeopardyDetails/JeopardyDetails';
 import CovidStatDetails from '../CovidStat/CovidStat';
+import ScrollToTop from '../ScrollToTop';
 
 const App = () => {
 	const [navOpen, toggleNavOpen] = useState(false);
@@ -21,28 +22,30 @@ const App = () => {
 	return (
 		<div className="App mg-app">
 			<Router>
-				<PageContainer>
-					<Header navOpen={navOpen}
-						toggleNavOpen={() => toggleNavOpen(!navOpen)} />
-					<Nav style={navAnimation}
-						toggleNavOpen={() => toggleNavOpen(!navOpen)} />
-					<Switch>
-						<Route exact
-							path="/"
-							component={Home} />
-						<Route path="/project-yama"
-							component={ProjectYama} />
-						<Route path="/about-me"
-							component={About} />
-						<Route path="/work/ibm-blockchain-platform"
-							component={IBPDetails} />
-						<Route path="/work/jeopardy"
-							component={JeopardyDetails} />
-						<Route path="/work/covid-stat"
-							component={CovidStatDetails} />
-						<Route component={NotFound} />
-					</Switch>
-				</PageContainer>
+				<ScrollToTop>
+					<PageContainer>
+						<Header navOpen={navOpen}
+							toggleNavOpen={() => toggleNavOpen(!navOpen)} />
+						<Nav style={navAnimation}
+							toggleNavOpen={() => toggleNavOpen(!navOpen)} />
+						<Switch>
+							<Route exact
+								path="/"
+								component={Home} />
+							<Route path="/project-yama"
+								component={ProjectYama} />
+							<Route path="/about-me"
+								component={About} />
+							<Route path="/work/ibm-blockchain-platform"
+								component={IBPDetails} />
+							<Route path="/work/jeopardy"
+								component={JeopardyDetails} />
+							<Route path="/work/covid-stat"
+								component={CovidStatDetails} />
+							<Route component={NotFound} />
+						</Switch>
+					</PageContainer>
+				</ScrollToTop>
 			</Router>
 		</div>
 	);

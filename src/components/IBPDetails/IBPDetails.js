@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSpring } from 'react-spring';
-import { Parallax } from '@react-spring/parallax';
 import DetailHeader from '../DetailPage/DetailHeader';
-import IBPheaderImg from '../../assets/images/ibp_details_header.svg';
 import SectionMaxWidth from '../SectionMaxWidth/SectionMaxWidth';
 import Text from '../Text/Text';
 import Tag from '../Tag/Tag';
 import GradientLink from '../GradientLink/GradientLink';
+import FooterLogoLink from '../FooterLogoLink/FooterLogoLink';
+
+import IBPheaderImg from '../../assets/images/ibp_details_header.svg';
 import reactlogo from '../../assets/images/blockchain/react.svg';
 import reduxlogo from '../../assets/images/blockchain/redux.svg';
 import sasslogo from '../../assets/images/blockchain/sass.svg';
 import hyperledgerlogo from '../../assets/images/blockchain/hyperledger_icon.svg';
 import IBPGetStarted from '../../assets/images/blockchain/getStarted.png';
-import FooterLogoLink from '../FooterLogoLink/FooterLogoLink';
-
 import ScreenshotItem from '../ScreenshotItem/ScreenshotItem';
 import Channels from '../../assets/images/blockchain/channels2.png';
 import GetStartedMenu from '../../assets/images/blockchain/new_get_started.png';
 import Nodes from '../../assets/images/blockchain/Nodes.png';
 import SmartContracts from '../../assets/images/blockchain/smartContracts.png';
-
 import CloudPluginCreate from '../../assets/images/blockchain/cloud_plugin_create.png';
 import CloudPluginInstanceOverview from '../../assets/images/blockchain/cloud_plugin_get_started.png';
 import CloudPluginInstanceWelcome from '../../assets/images/blockchain/cloud_plugin_welcome.png';
@@ -27,10 +25,6 @@ import CloudPluginList from '../../assets/images/blockchain/cloud_plugin_list.pn
 import CloudPluginOverview from '../../assets/images/blockchain/cloud_plugin_overview.png';
 
 const BlockchainPage = () => {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
-
 	const tagAnimation = useSpring({
 		to: async next => {
 			await next({
@@ -75,7 +69,7 @@ const BlockchainPage = () => {
 	});
 
 	return (
-		<Parallax>
+		<div>
 			<DetailHeader
 				title="IBM Blockchain Platform"
 				subtitle={
@@ -343,7 +337,7 @@ const BlockchainPage = () => {
 				</SectionMaxWidth>
 			</div>
 			<FooterLogoLink backgroundColor="gray" />
-		</Parallax>
+		</div>
 	);
 };
 

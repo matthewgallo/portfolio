@@ -1,10 +1,20 @@
 /**
  * useScroll React custom hook
  * Usage:
- *    const { scrollX, scrollY, scrollDirection } = useScroll();
+ *    const { scrollY, scrollDirection } = useScroll();
  */
 
 import { useState, useEffect } from 'react';
+
+function debounce(func, wait = 100) {
+	let timeout;
+	return (...args) => {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			func.apply(this, args);
+		}, wait);
+	};
+}
 
 function useScroll() {
 	const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -19,10 +29,12 @@ function useScroll() {
 		setLastScrollTop(-bodyOffset.top);
 	};
 
+	const delay = 200;
 	useEffect(() => {
-		window.addEventListener('scroll', listener);
+		const debounceWrapper = debounce(listener, delay);
+		window.addEventListener('scroll', debounceWrapper);
 		return () => {
-			window.removeEventListener('scroll', listener);
+			window.removeEventListener('scroll', debounceWrapper);
 		};
 	});
 

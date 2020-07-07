@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSpring } from 'react-spring';
-import { Parallax } from '@react-spring/parallax';
 import DetailHeader from '../DetailPage/DetailHeader';
 import JeopardyDetailsImage from '../../assets/images/jeopardy/mg_jeopardy_detail.svg';
 import Tag from '../Tag/Tag';
@@ -44,7 +43,7 @@ const JeopardyDetails = () => {
 	});
 
 	return (
-		<Parallax>
+		<div>
 			<DetailHeader
 				title={
 					<GradientLink external
@@ -152,7 +151,7 @@ const JeopardyDetails = () => {
 					</div>
 				</SectionMaxWidth>
 			</div>
-		</Parallax>
+		</div>
 	);
 };
 

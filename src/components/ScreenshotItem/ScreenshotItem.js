@@ -44,9 +44,13 @@ const ScreenshotItem = ({ title, subtitle, src }) => {
 	);
 };
 
+ScreenshotItem.defaultProps = {
+	subtitle: '',
+};
+
 ScreenshotItem.propTypes = {
 	src: PropTypes.string.isRequired,
-	subtitle: PropTypes.string.isRequired,
+	subtitle: PropTypes.string,
 	title: PropTypes.string.isRequired,
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSpring } from 'react-spring';
-import { Parallax } from '@react-spring/parallax';
 import DetailHeader from '../DetailPage/DetailHeader';
 import GradientLink from '../GradientLink/GradientLink';
 import CovidStatDetailsImage from '../../assets/images/covidstat/covidstat_header_img.svg';
@@ -42,7 +41,7 @@ const CovidStat = () => {
 		},
 	});
 	return (
-		<Parallax>
+		<div>
 			<DetailHeader
 				title={
 					<GradientLink external
@@ -135,7 +134,7 @@ const CovidStat = () => {
 					</div>
 				</SectionMaxWidth>
 			</div>
-		</Parallax>
+		</div>
 	);
 };
 
