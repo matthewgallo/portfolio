@@ -1,20 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Styled } from './Text.styles';
 
 const Text = ({ children, small, medium, margin }) => {
-	let fontSize = '.875rem';
-	fontSize = small && '.875rem';
-	fontSize = medium && '1rem';
 	return (
-		<p
-			className="content-text"
-			style={{
-				fontSize,
-				marginBottom: margin ? '1.5rem' : '0',
-			}}
-		>
+		<Styled.ContentText margin={margin}
+			small={small}
+			medium={medium}>
 			{children}
-		</p>
+		</Styled.ContentText>
 	);
 };
 

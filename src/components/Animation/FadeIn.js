@@ -11,9 +11,7 @@ const FadeInBottom = ({ threshold = 0, element = 'div', once = false, children, 
 	}, [inView, once, onceAppeared]);
 
 	const { opacity, y } = useSpring({
-		// eslint-disable-next-line no-nested-ternary
 		opacity: once && onceAppeared ? 1 : inView ? 1 : 0,
-		// eslint-disable-next-line no-nested-ternary
 		y: once && onceAppeared ? 0 : inView ? 0 : 35,
 	});
 

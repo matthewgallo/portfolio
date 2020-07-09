@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Styled } from './SectionMaxWidth.styles';
 
 const SectionMaxWidth = ({ children }) => {
-	return <div className="section--max-width-container">{children}</div>;
+	return <Styled.SectionMaxWidthContainer>{children}</Styled.SectionMaxWidthContainer>;
 };
 
 SectionMaxWidth.propTypes = {

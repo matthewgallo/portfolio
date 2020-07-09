@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
 import { COLORS } from '../../theme';
 import Tag from '../Tag/Tag';
+import { Styled } from './WorkItem.styles';
 
 const lockIcon = (
 	<svg
@@ -24,86 +24,16 @@ const lockIcon = (
 	</svg>
 );
 
-const gradients = [
-	{
-		color1: '#fbc2eb',
-		color2: '#a6c1ee',
-	},
-	{
-		color1: '#fdcbf1',
-		color2: '#e6dee9',
-	},
-	{
-		color1: '#a1c4fd',
-		color2: '#c2e9fb',
-	},
-	{
-		color1: '#84fab0',
-		color2: '#8fd3f4',
-	},
-	{
-		color1: '#a6c0fe',
-		color2: '#f68084',
-	},
-	{
-		color1: '#fccb90',
-		color2: '#d57eeb',
-	},
-	{
-		color1: '#e0c3fc',
-		color2: '#8ec5fc',
-	},
-	{
-		color1: '#4facfe',
-		color2: '#00f2fe',
-	},
-	{
-		color1: '#43e97b',
-		color2: '#38f9d7',
-	},
-	{
-		color1: '#a8edea',
-		color2: '#fed6e3',
-	},
-	{
-		color1: '#5ee7df',
-		color2: '#b490ca',
-	},
-	{
-		color1: '#89f7fe',
-		color2: '#66a6ff',
-	},
-	{
-		color1: '#fff1eb',
-		color2: '#ace0f9',
-	},
-	{
-		color1: '#accbee',
-		color2: '#e7f0fd',
-	},
-	{
-		color1: '#93a5cf',
-		color2: '#e7f0fd',
-	},
-	{
-		color1: '#6e45e2',
-		color2: '#88d3ce',
-	},
-];
-
 const WorkItem = ({ image, internalLink, name, url, locked, comingSoon }) => {
 	const { colorMode } = useContext(ThemeContext);
 	const renderContents = () => {
 		return (
 			<>
-				<img src={image}
-					alt="Work item"
-					className="work-item--image" />
-				<div className="work-item--mask" />
-				<div className="work-item--reveal-mask" />
-				<div className="work-item--content">
+				<Styled.WorkItemImage src={image}
+					alt="Work item" />
+				<Styled.WorkItemContent colorMode={colorMode}>
 					<h4>{name}</h4>
-				</div>
+				</Styled.WorkItemContent>
 				{comingSoon && (
 					<Tag
 						style={{
@@ -125,15 +55,13 @@ const WorkItem = ({ image, internalLink, name, url, locked, comingSoon }) => {
 
 	const renderExternalOrDisabledItem = () => {
 		return !internalLink && url ? (
-			<a href={url}
-				className="work-projects-item-link"
+			<Styled.WorkItemLink href={url}
 				target="_blank"
 				rel="noopener noreferrer">
 				{renderContents()}
-			</a>
+			</Styled.WorkItemLink>
 		) : (
-			<button
-				className="work-projects-item-link"
+			<Styled.WorkItemButton
 				type="button"
 				disabled
 				style={{
@@ -147,30 +75,23 @@ const WorkItem = ({ image, internalLink, name, url, locked, comingSoon }) => {
 				}}
 			>
 				{renderContents()}
-			</button>
+			</Styled.WorkItemButton>
 		);
 	};
 
 	const linearAngle = Math.floor(Math.random() * 360) + 1;
-	const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
 
 	return (
-		<li
-			className="work-projects-item"
+		<Styled.WorkItem
 			style={{
 				color: 'red',
-				backgroundImage: `linear-gradient( ${linearAngle && linearAngle}deg, ${randomGradient?.color1} 0%, ${randomGradient?.color2} 100% )`,
+				backgroundImage: `linear-gradient( ${linearAngle && linearAngle}deg, ${
+					colorMode && colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light
+				} 0%, ${colorMode && colorMode === 'dark' ? COLORS.secondary.dark : COLORS.secondary.light} 100% )`,
 			}}
 		>
-			{internalLink && url ? (
-				<Link to={url}
-					className="work-projects-item-link">
-					{renderContents()}
-				</Link>
-			) : (
-				renderExternalOrDisabledItem()
-			)}
-		</li>
+			{internalLink && url ? <Styled.WorkItemRouterLink to={url}>{renderContents()}</Styled.WorkItemRouterLink> : renderExternalOrDisabledItem()}
+		</Styled.WorkItem>
 	);
 };
 

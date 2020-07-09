@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSpring } from 'react-spring';
 import GradientLink from '../GradientLink/GradientLink';
 import Logo from '../Intro/Logo';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
+import { Styled } from './Footer.styles';
 
 const Footer = () => {
+	const { colorMode } = useContext(ThemeContext);
 	const [, setY] = useSpring(() => ({ y: 0 }));
 
 	return (
-		<footer>
-			<div className="footer-container">
-				<div className="footer-logo">
-					<button
+		<Styled.Footer colorMode={colorMode}>
+			<Styled.FooterContainer>
+				<Styled.FooterLogo>
+					<Styled.FooterLogoButton
 						type="button"
-						className="footer-logo-link"
 						onClick={() => {
 							setY({
 								y: 0,
@@ -31,34 +33,34 @@ const Footer = () => {
 								width: '88px',
 							}}
 						/>
-					</button>
-				</div>
-				<ul className="footer-link-container">
-					<li className="footer-link-item">
+					</Styled.FooterLogoButton>
+				</Styled.FooterLogo>
+				<Styled.FooterLinkContainer>
+					<li>
 						<GradientLink url="https://twitter.com/matthewgallo27"
 							external
 							bold>
 							Twitter
 						</GradientLink>
 					</li>
-					<li className="footer-link-item">
+					<li>
 						<GradientLink url="https://www.linkedin.com/in/matthew-gallo-1090748a/"
 							external
 							bold>
 							LinkedIn
 						</GradientLink>
 					</li>
-					<li className="footer-link-item">
+					<li>
 						<GradientLink url="https://github.com/matthewgallo/"
 							external
 							bold>
 							Github
 						</GradientLink>
 					</li>
-				</ul>
-				<span className="copyright mg--caption">&copy; 2020 Matt Gallo</span>
-			</div>
-		</footer>
+				</Styled.FooterLinkContainer>
+				<Styled.Copyright colorMode={colorMode}>&copy; 2020 Matt Gallo</Styled.Copyright>
+			</Styled.FooterContainer>
+		</Styled.Footer>
 	);
 };
 

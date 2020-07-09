@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring } from 'react-spring';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
+import { Styled } from './ThemeToggle.styles';
 
 const ThemeToggle = () => {
 	const { colorMode, setColorMode } = useContext(ThemeContext);
@@ -28,6 +29,7 @@ const ThemeToggle = () => {
 				transform: 'scale(0.1)',
 				top: '-2rem',
 				right: '-2rem',
+				background: 'transparent',
 				config: { duration: 1000 },
 			});
 		},
@@ -38,9 +40,7 @@ const ThemeToggle = () => {
 
 	if (!colorMode) return null;
 	return (
-		<button
-			className="viewing-mode-button"
-			id="toggle-viewing-mode"
+		<Styled.ThemeToggleButton
 			type="button"
 			ref={themeButton}
 			onClick={() => {
@@ -50,11 +50,10 @@ const ThemeToggle = () => {
 			}}
 			title={colorMode && colorMode === 'dark' ? 'Toggle light theme' : 'Toggle dark theme'}
 		>
-			<div className={`theme-toggle ${colorMode && colorMode === 'dark' ? 'dark-theme' : 'light-theme'}`}>
-				<animated.span className="mask"
-					style={colorMode && colorMode === 'dark' ? toggleMoonAnimation : toggleSunAnimation} />
-			</div>
-		</button>
+			<Styled.ThemeToggle colorMode={colorMode}>
+				<Styled.ThemeToggleMask style={colorMode && colorMode === 'dark' ? toggleMoonAnimation : toggleSunAnimation} />
+			</Styled.ThemeToggle>
+		</Styled.ThemeToggleButton>
 	);
 };
 
