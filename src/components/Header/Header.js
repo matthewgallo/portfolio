@@ -5,33 +5,32 @@ import GradientLink from '../GradientLink/GradientLink';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
 import ScrollProgress from '../ScrollProgress/ScrollProgress';
+import { Styled } from './Header.styles';
 
 const Header = ({ toggleNavOpen }) => {
 	const { colorMode } = useContext(ThemeContext);
 	const location = useLocation();
-	console.log(location);
 	return (
-		<header className="mg--header">
-			<div className="nav-content">
-				<div className="nav-logo">
+		<Styled.Header colorMode={colorMode}>
+			<Styled.HeaderContent>
+				<Styled.HeaderLogo>
 					<GradientLink bold
 						url="/"
 						color={colorMode && colorMode === 'dark' ? '#fff' : '#121619'}>
 						matt gallo
 					</GradientLink>
-				</div>
-				<ul className="nav-links desktop-nav-links">
+				</Styled.HeaderLogo>
+				<Styled.HeaderActions>
 					<ThemeToggle />
-					<button className="new-nav-button"
-						onClick={toggleNavOpen}
+					<Styled.HeaderToggleNavButton onClick={toggleNavOpen}
 						type="button">
-						<div className="navigation-line" />
-						<div className="navigation-line" />
-					</button>
-				</ul>
-			</div>
+						<Styled.HeaderNavMenuLine colorMode={colorMode} />
+						<Styled.HeaderNavMenuLine colorMode={colorMode} />
+					</Styled.HeaderToggleNavButton>
+				</Styled.HeaderActions>
+			</Styled.HeaderContent>
 			{location && location.pathname !== '/' && <ScrollProgress />}
-		</header>
+		</Styled.Header>
 	);
 };
 

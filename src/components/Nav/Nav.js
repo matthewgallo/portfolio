@@ -1,47 +1,52 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { animated } from 'react-spring';
-import { NavLink } from 'react-router-dom';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
+import { Styled } from './Nav.styles';
 
-const Nav = ({ style, toggleNavOpen }) => (
-	<animated.nav style={style}
-		className="nav-main">
-		<div className="nav-content">
-			<div className="nav-content-container">
-				<h5>matt gallo</h5>
-				<ul>
-					<li>
-						<NavLink to="/"
-							activeClassName="nav-active"
-							className="new-nav-link mg--delta"
-							onClick={() => toggleNavOpen()}>
-							home
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/about-me"
-							activeClassName="nav-active"
-							className="new-nav-link mg--delta"
-							onClick={() => toggleNavOpen()}>
-							about me
-						</NavLink>
-					</li>
-				</ul>
-				<span aria-label="Hand wave"
-					role="img"
-					className="wave">
-					👋
-				</span>
-			</div>
-			<button className="close-nav-button"
-				onClick={() => toggleNavOpen()}
-				type="button">
-				<div className="navigation-line" />
-				<div className="navigation-line" />
-			</button>
-		</div>
-	</animated.nav>
-);
+const Nav = ({ style, toggleNavOpen }) => {
+	const { colorMode } = useContext(ThemeContext);
+	return (
+		<Styled.NavMain style={style}
+			colorMode={colorMode}>
+			<Styled.NavContent>
+				<Styled.NavContentContainer>
+					<h5>matt gallo</h5>
+					<ul
+						style={{
+							listStyleType: 'none',
+							padding: '0',
+							margin: '0',
+						}}
+					>
+						<li>
+							<Styled.NavPageLink to="/"
+								colorMode={colorMode}
+								onClick={() => toggleNavOpen()}>
+								home
+							</Styled.NavPageLink>
+						</li>
+						<li>
+							<Styled.NavPageLink to="/about-me"
+								colorMode={colorMode}
+								onClick={() => toggleNavOpen()}>
+								about me
+							</Styled.NavPageLink>
+						</li>
+					</ul>
+					<Styled.Wave aria-label="Hand wave"
+						role="img">
+						👋
+					</Styled.Wave>
+				</Styled.NavContentContainer>
+				<Styled.NavCloseButton onClick={() => toggleNavOpen()}
+					type="button">
+					<Styled.NavCloseIconPath />
+					<Styled.NavCloseIconPath />
+				</Styled.NavCloseButton>
+			</Styled.NavContent>
+		</Styled.NavMain>
+	);
+};
 
 Nav.defaultProps = {
 	style: null,

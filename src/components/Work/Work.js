@@ -1,5 +1,6 @@
 import React from 'react';
 import WorkItem from '../WorkItem/WorkItem';
+import { Styled } from './Work.styles';
 import ibpHomeTransparent from '../../assets/images/home_ibp_transparent.png';
 import yamaHomeTransparent from '../../assets/images/home_yama_transparent.png';
 import missionHomeTransparent from '../../assets/images/home_mission_transparent.png';
@@ -47,9 +48,8 @@ const workItems = [
 
 const Work = () => {
 	return (
-		<section className="work-section"
-			id="work">
-			<ul className="work-list grid">
+		<Styled.WorkSection>
+			<Styled.WorkListGrid>
 				{workItems.map(item => {
 					return (
 						<WorkItem
@@ -63,8 +63,8 @@ const Work = () => {
 						/>
 					);
 				})}
-			</ul>
-		</section>
+			</Styled.WorkListGrid>
+		</Styled.WorkSection>
 	);
 };
 

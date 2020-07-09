@@ -6,6 +6,9 @@
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
 		"react/jsx-props-no-spreading": [0],
 		"no-useless-catch": 0,
+		"no-nested-ternary": "off",
+		"import/prefer-default-export": "off",
+		"jsx-a11y/accessible-emoji": "off",
 		"indent": [
 			1,
 			"tab",

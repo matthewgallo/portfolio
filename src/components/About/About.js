@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+import { Styled } from './About.styles';
 
-class About extends Component {
-	componentDidMount() {
-		this.moveImage();
-	}
-
-	moveImage = () => {
+const About = () => {
+	const moveImage = () => {
 		const root = document.getElementById('portrait');
 		const rect = root.getBoundingClientRect();
 		const mouseMonitor = e => {
@@ -22,53 +19,54 @@ class About extends Component {
 		root.addEventListener('mousemove', mouseMonitor);
 	};
 
-	render() {
-		return (
-			<>
-				<div className="about--content">
-					<div className="about--text">
-						<h3>Hello!</h3>
-						<h3 className="text-line">I՚m Matt, a front end developer / designer.</h3>
-						<p className="about-desc">
-							I currently work for the IBM Blockchain Platform as the front end development practice lead, working to bridge the gap between design and
-							engineering. I enjoy learning new things, some of which currently include react hooks, redux, svg animations, and finding out there is something
-							else about async/await that I don&apos;t know.
-						</p>
-						<p className="about-desc">
-							In my free time, I play my saxophone{' '}
-							<span aria-label="Saxophone"
-								role="img">
-								🎷
-							</span>
-							and my fender rhodes{' '}
-							<span aria-label="Fender Rhodes piano"
-								role="img">
-								🎹
-							</span>
-							, play with Petey{' '}
-							<span aria-label="Dog, Petey"
-								role="img">
-								🐶
-							</span>
-							, and enjoy life with Rach{' '}
-							<span aria-label="Heart"
-								role="img">
-								❤️
-							</span>
-							.
-						</p>
-					</div>
-				</div>
-				<div className="portrait"
-					id="portrait">
-					<div className="fill cover-img" />
-					<div className="fill z-10 hover">
-						<div className="fill cover-img hover-img" />
-					</div>
-				</div>
-			</>
-		);
-	}
-}
+	useEffect(() => {
+		moveImage();
+	}, []);
+
+	return (
+		<>
+			<Styled.AboutContainer>
+				<Styled.AboutContent>
+					<h3 style={{ paddingBottom: '1rem' }}>Hello!</h3>
+					<h3>I՚m Matt, a front end developer / designer.</h3>
+					<p style={{ paddingTop: '1.5rem' }}>
+						I currently work for the IBM Blockchain Platform as the front end development practice lead, working to bridge the gap between design and
+						engineering. I enjoy learning new things, some of which currently include react hooks, redux, svg animations, and finding out there is something
+						else about async/await that I don&apos;t know.
+					</p>
+					<p style={{ paddingTop: '1.5rem' }}>
+						In my free time, I play my saxophone{' '}
+						<span aria-label="Saxophone"
+							role="img">
+							🎷
+						</span>
+						and my fender rhodes{' '}
+						<span aria-label="Fender Rhodes piano"
+							role="img">
+							🎹
+						</span>
+						, play with Petey{' '}
+						<span aria-label="Dog, Petey"
+							role="img">
+							🐶
+						</span>
+						, and enjoy life with Rach{' '}
+						<span aria-label="Heart"
+							role="img">
+							❤️
+						</span>
+						.
+					</p>
+				</Styled.AboutContent>
+			</Styled.AboutContainer>
+			<Styled.AboutPortrait id="portrait">
+				<Styled.AboutPortraitImage />
+				<Styled.AboutPortraitHoverContainer>
+					<Styled.AboutPortraitHoverImage />
+				</Styled.AboutPortraitHoverContainer>
+			</Styled.AboutPortrait>
+		</>
+	);
+};
 
 export default About;

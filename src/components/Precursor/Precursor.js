@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { animated } from 'react-spring';
+import { Styled } from './Precursor.styles';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
 import mgLogoLight from '../../assets/images/mg--logo-solid-white.svg';
+import mgLogoDark from '../../assets/images/mg--logo-solid.svg';
 
 const Precursor = ({ precursorOpen, closePrecursor, precursorStyles }) => {
 	const [count, setCount] = useState(0);
@@ -10,6 +12,7 @@ const Precursor = ({ precursorOpen, closePrecursor, precursorStyles }) => {
 	const totalPercent = `${count}%`;
 	const precursorElement = document.querySelector('#precursor');
 	const { body } = document;
+	const { colorMode } = useContext(ThemeContext);
 	if (precursorOpen) {
 		body.style.overflow = 'hidden';
 	} else {
@@ -42,21 +45,33 @@ const Precursor = ({ precursorOpen, closePrecursor, precursorStyles }) => {
 	};
 
 	return (
-		<animated.div className="intro-animated-container"
+		<Styled.PrecursorContainer colorMode={colorMode}
 			style={precursorStyles}
 			id="precursor">
 			{incrementLoadingPercentage()}
-			<div className="intro--line horizontal top" />
-			<div className="intro--line vertical right" />
-			<div className="intro--line horizontal bottom" />
-			<div className="intro--line vertical left" />
-			<div className="intro--center-container">
-				{!percentDoneAnimating && <h2 className={`${doneLoading ? 'intro-percent-fade-out' : ''} intro-percent-number`}>{totalPercent}</h2>}
-				{percentDoneAnimating && <img src={mgLogoLight}
-					className="intro-loading-logo"
+			<Styled.PrecursorLine horizontal
+				top
+				colorMode={colorMode} />
+			<Styled.PrecursorLine vertical
+				right
+				colorMode={colorMode} />
+			<Styled.PrecursorLine horizontal
+				bottom
+				colorMode={colorMode} />
+			<Styled.PrecursorLine vertical
+				left
+				colorMode={colorMode} />
+			<Styled.PrecursorCenterContainer>
+				{!percentDoneAnimating && (
+					<Styled.PrecursorPercent colorMode={colorMode}
+						doneLoading={doneLoading}>
+						{totalPercent}
+					</Styled.PrecursorPercent>
+				)}
+				{percentDoneAnimating && <Styled.PrecursorLogo src={colorMode && colorMode === 'dark' ? mgLogoDark : mgLogoLight}
 					alt="MG logo" />}
-			</div>
-		</animated.div>
+			</Styled.PrecursorCenterContainer>
+		</Styled.PrecursorContainer>
 	);
 };
 

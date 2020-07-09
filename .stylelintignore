@@ -1,7 +1,0 @@
-*.svg
-*.woff
-*.woff2
-*.jpg
-*.png
-/build/*/*.css
-/public/*/*.css

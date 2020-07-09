@@ -1,24 +1,29 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 import Header from '../Header/Header';
-import mgLogo from '../../assets/images/mg--logo-2.svg';
+import Logo from '../Intro/Logo';
+import { Styled } from './NotFound.styles';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
 
-class NotFound extends Component {
-	render() {
-		return (
-			<div>
-				<Header openNav={this.openNav} />
-				<section className="not-found-container">
-					<div>
-						<img className="not-found-logo"
-							src={mgLogo}
-							alt="Matt Gallo logo" />
-						<h4>Page not found :(</h4>
-					</div>
-				</section>
-			</div>
-		);
-	}
-}
+const NotFound = () => {
+	const { colorMode } = useContext(ThemeContext);
+	return (
+		<div>
+			<Header />
+			<Styled.NotFoundContainer colorMode={colorMode}>
+				<div>
+					<Logo
+						style={{
+							height: '50px',
+							transition: 'fill 0.8s ease',
+							width: '88px',
+						}}
+					/>
+					<h4>Page not found</h4>
+				</div>
+			</Styled.NotFoundContainer>
+		</div>
+	);
+};
 
 export default withRouter(NotFound);

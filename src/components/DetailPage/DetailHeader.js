@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring';
 import Sparkles from '../Sparkle/Sparkles';
+import { Styled } from './DetailHeader.styles';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
 
 const DetailHeader = ({ title, subtitle, tags, headerImage }) => {
+	const { colorMode } = useContext(ThemeContext);
 	const titleAnimation = useSpring({
 		to: async next => {
 			await next({
@@ -33,28 +36,24 @@ const DetailHeader = ({ title, subtitle, tags, headerImage }) => {
 	});
 
 	return (
-		<div className="project--details-container">
-			<div className="project--details-header">
-				<animated.div className="project--header-content"
-					style={titleAnimation}>
+		<Styled.DetailHeaderContainer colorMode={colorMode}>
+			<Styled.DetailHeaderContent colorMode={colorMode}>
+				<animated.div style={titleAnimation}>
 					<h4>{title}</h4>
 					<p>{subtitle}</p>
 				</animated.div>
-				<div className="project-tag-group">{tags}</div>
-				<div className="project--header-image-container">
-					<div>
-						<animated.div style={projectImageAnimation}>
-							<Sparkles maxSize={50}
-								minSize={15}>
-								<img src={headerImage.src}
-									alt={headerImage.alt}
-									className="project--header-image" />
-							</Sparkles>
-						</animated.div>
-					</div>
-				</div>
-			</div>
-		</div>
+				<Styled.DetailHeaderTagGroup>{tags}</Styled.DetailHeaderTagGroup>
+				<Styled.DetailHeaderImageContainer>
+					<animated.div style={projectImageAnimation}>
+						<Sparkles maxSize={50}
+							minSize={15}>
+							<Styled.DetailHeaderImage src={headerImage.src}
+								alt={headerImage.alt} />
+						</Sparkles>
+					</animated.div>
+				</Styled.DetailHeaderImageContainer>
+			</Styled.DetailHeaderContent>
+		</Styled.DetailHeaderContainer>
 	);
 };
 

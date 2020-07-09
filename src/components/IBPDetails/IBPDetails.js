@@ -5,7 +5,6 @@ import SectionMaxWidth from '../SectionMaxWidth/SectionMaxWidth';
 import Text from '../Text/Text';
 import Tag from '../Tag/Tag';
 import GradientLink from '../GradientLink/GradientLink';
-import FooterLogoLink from '../FooterLogoLink/FooterLogoLink';
 
 import IBPheaderImg from '../../assets/images/ibp_details_header.svg';
 import reactlogo from '../../assets/images/blockchain/react.svg';
@@ -23,6 +22,11 @@ import CloudPluginInstanceOverview from '../../assets/images/blockchain/cloud_pl
 import CloudPluginInstanceWelcome from '../../assets/images/blockchain/cloud_plugin_welcome.png';
 import CloudPluginList from '../../assets/images/blockchain/cloud_plugin_list.png';
 import CloudPluginOverview from '../../assets/images/blockchain/cloud_plugin_overview.png';
+import DetailCallout from '../DetailPage/DetailCallout';
+import CalloutGroup from '../DetailPage/DetailCalloutGroup';
+import CalloutGroupItem from '../DetailPage/CalloutGroupItem';
+import ContentSection from '../DetailPage/ContentSection';
+import ContentSectionItem from '../DetailPage/ContentSectionItem';
 
 const BlockchainPage = () => {
 	const tagAnimation = useSpring({
@@ -131,93 +135,63 @@ const BlockchainPage = () => {
 					alt: 'IBM Blockchain Platform screenshot',
 				}}
 			/>
-			<div className="project--call-out">
-				<SectionMaxWidth>
-					<h4 className="project-call-out-header">
+			<DetailCallout
+				header={
+					<>
 						The <strong>next generation</strong> of blockchain for business. Proven, flexible and built to run on <strong>any</strong> cloud. Deploy the leading
 						Hyperledger Fabric platform in the environment that’s right for <strong>your</strong> enterprise.
-					</h4>
-					<div className="project--overview">
-						<div className="project-overview-item">
-							<h5>Objective</h5>
-							<Text>Help businesses operate and scale more seamlessly through the use of blockchain</Text>
-						</div>
-						<div className="project-overview-item">
-							<h5>Tools</h5>
-							<Text>
-								<span className="tool-item">
-									<img
-										src={reactlogo}
-										style={{
-											width: '1.25rem',
-											marginRight: '0.5rem',
-										}}
-										alt="React logo"
-										aria-label="React logo"
-									/>
-									React
-								</span>
-								<span className="tool-item">
-									<span style={{ marginRight: '0.5rem' }}
-										role="img"
-										aria-label="Crane emoji for Front end development">
-										🎣
-									</span>
-									React hooks
-								</span>
-								<span className="tool-item">
-									<img src={reduxlogo}
-										style={{ width: '1.25rem', marginRight: '0.5rem' }}
-										alt="Redux logo"
-										aria-label="Redux logo" />
-									Redux
-								</span>
-								<span className="tool-item">
-									<img src={sasslogo}
-										style={{ width: '1.25rem', marginRight: '0.5rem' }}
-										alt="Sass logo"
-										aria-label="Sass logo" />
-									Sass
-								</span>
-								<span className="tool-item">
-									<span style={{ marginRight: '0.5rem' }}
-										role="img"
-										aria-label="Artist palette emoji for Carbon Design system">
-										🎨
-									</span>
-									<GradientLink paddingBottom
-										block
-										external
-										url="https://www.carbondesignsystem.com">
-										Carbon Design System
-									</GradientLink>
-								</span>
-								<span className="tool-item">
-									<img src={hyperledgerlogo}
-										style={{ width: '1.25rem', marginRight: '0.5rem' }}
-										alt="Hyperledger logo"
-										aria-label="Hyperledger logo" />
-									<GradientLink paddingBottom
-										flex
-										external
-										url="https://www.hyperledger.org/use/fabric"
-										className="flex--link">
-										Hyperledger Fabric
-									</GradientLink>
-								</span>
-							</Text>
-						</div>
-						<div className="project-overview-item">
-							<h5>Duration</h5>
-							<Text>2017 - current</Text>
-						</div>
-					</div>
-				</SectionMaxWidth>
-			</div>
-			<div className="project--details-section">
+					</>
+				}
+			>
+				<CalloutGroup header="Objective">
+					<CalloutGroupItem text="Help businesses operate and scale more seamlessly through the use of blockchain" />
+				</CalloutGroup>
+				<CalloutGroup header="Tools">
+					<CalloutGroupItem text="React"
+						imgSrc={reactlogo}
+						imgAlt="React logo" />
+					<CalloutGroupItem text="React hooks"
+						emoji="🎣"
+						imgAlt="Crane emoji for Front end development" />
+					<CalloutGroupItem text="Redux"
+						imgSrc={reduxlogo}
+						imgAlt="Redux logo" />
+					<CalloutGroupItem text="Sass"
+						imgSrc={sasslogo}
+						imgAlt="Sass logo" />
+					<CalloutGroupItem
+						text={
+							<GradientLink paddingBottom
+								block
+								external
+								url="https://www.carbondesignsystem.com">
+								Carbon Design System
+							</GradientLink>
+						}
+						emoji="🎨"
+						imgAlt="Artist palette emoji for Carbon Design system"
+					/>
+					<CalloutGroupItem
+						text={
+							<GradientLink paddingBottom
+								flex
+								external
+								url="https://www.hyperledger.org/use/fabric"
+								className="flex--link">
+								Hyperledger Fabric
+							</GradientLink>
+						}
+						imgSrc={hyperledgerlogo}
+						imgAlt="Hyperledger logo"
+					/>
+				</CalloutGroup>
+				<CalloutGroup header="Duration">
+					<CalloutGroupItem text="2017 - current" />
+				</CalloutGroup>
+			</DetailCallout>
+			<ContentSection>
 				<SectionMaxWidth>
-					<div className="project--section">
-						<h5>Target users</h5>
+					<ContentSectionItem header="Target users">
 						<Text medium
 							margin>
 							Our primary target users included enterprise clients from industries such as trade finance, global trade, food safety, identity management/digital
@@ -228,9 +202,8 @@ const BlockchainPage = () => {
 							will help users to build a fully functioning prototype for their business use case, from design research and ideation through to technical
 							implementation.
 						</Text>
-					</div>
-					<div className="project--section">
-						<h5>Objective</h5>
+					</ContentSectionItem>
+					<ContentSectionItem header="Objective">
 						<Text medium
 							margin>
 							“IBM Blockchain is more than technology. It’s a movement to help you redefine your most important business relationships through trust,
@@ -252,9 +225,8 @@ const BlockchainPage = () => {
 							leading Hyperledger Fabric platform this is one of the key reasons users choose the IBM Blockchain Platform to build their networks together,
 							collaboration is easy and it just works.
 						</Text>
-					</div>
-					<div className="project--section">
-						<h5>Process</h5>
+					</ContentSectionItem>
+					<ContentSectionItem header="Process">
 						<Text medium
 							margin>
 							My primary role on this project was contributing to and leading the front end development of the IBM Blockchain Platform. I was an integral part
@@ -308,7 +280,7 @@ const BlockchainPage = () => {
 							</span>
 							) as well as the Node backend.
 						</Text>
-					</div>
+					</ContentSectionItem>
 					<ScreenshotItem title="New provisioning experience in IBM Cloud"
 						subtitle="Overview page"
 						src={CloudPluginOverview} />
@@ -335,8 +307,7 @@ const BlockchainPage = () => {
 					<ScreenshotItem title="Smart contracts view"
 						src={SmartContracts} />
 				</SectionMaxWidth>
-			</div>
-			<FooterLogoLink backgroundColor="gray" />
+			</ContentSection>
 		</div>
 	);
 };

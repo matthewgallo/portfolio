@@ -3,8 +3,9 @@ import { useSpring } from 'react-spring';
 import DetailHeader from '../DetailPage/DetailHeader';
 import JeopardyDetailsImage from '../../assets/images/jeopardy/mg_jeopardy_detail.svg';
 import Tag from '../Tag/Tag';
-import Text from '../Text/Text';
-import SectionMaxWidth from '../SectionMaxWidth/SectionMaxWidth';
+import CalloutGroup from '../DetailPage/DetailCalloutGroup';
+import CalloutGroupItem from '../DetailPage/CalloutGroupItem';
+import DetailCallout from '../DetailPage/DetailCallout';
 import reactlogo from '../../assets/images/blockchain/react.svg';
 import sasslogo from '../../assets/images/blockchain/sass.svg';
 import storeonlogo from '../../assets/images/jeopardy/storeonLogo.svg';
@@ -85,72 +86,41 @@ const JeopardyDetails = () => {
 					alt: 'Jeopardy app screenshot',
 				}}
 			/>
-			<div className="project--call-out">
-				<SectionMaxWidth>
-					<h4 className="project-call-out-header">
+			<DetailCallout
+				header={
+					<>
 						Kick back, relax, and play some Jeopardy! Test your trivia skills out with this fun game and see how you do with Jeopardy shows dating back to
 						&apos;84.
-					</h4>
-					<div className="project--overview">
-						<div className="project-overview-item">
-							<h5>Objective</h5>
-							<Text>Score some Jeopardy! points</Text>
-						</div>
-						<div className="project-overview-item">
-							<h5>Tools</h5>
-							<Text>
-								<span className="tool-item">
-									<img src={reactlogo}
-										style={{ width: '1.25rem', marginRight: '0.5rem' }}
-										alt="React logo"
-										aria-label="React logo" />
-									React
-								</span>
-								<span className="tool-item">
-									<span style={{ marginRight: '0.5rem' }}
-										role="img"
-										aria-label="Crane emoji for Front end development">
-										🎣
-									</span>
-									React hooks
-								</span>
-								<span className="tool-item">
-									<img src={sasslogo}
-										style={{ width: '1.25rem', marginRight: '0.5rem' }}
-										alt="Sass logo"
-										aria-label="Sass logo" />
-									Sass
-								</span>
-								<span className="tool-item">
-									<img src={storeonlogo}
-										style={{ width: '1.25rem', marginRight: '0.5rem' }}
-										alt="Store.on logo"
-										aria-label="Sass logo" />
-									Store.on
-								</span>
-								<span className="tool-item">
-									<img src={nodejsLogo}
-										style={{ width: '1.25rem', marginRight: '0.5rem' }}
-										alt="Nodejs logo"
-										aria-label="Sass logo" />
-									Node.js
-								</span>
-								<span className="tool-item">
-									<img src={vercelLogo}
-										style={{ width: '1.25rem', marginRight: '0.5rem' }}
-										alt="Vercel logo"
-										aria-label="Sass logo" />
-									Vercel
-								</span>
-							</Text>
-						</div>
-						<div className="project-overview-item">
-							<h5>Created</h5>
-							<Text>May 2020</Text>
-						</div>
-					</div>
-				</SectionMaxWidth>
-			</div>
+					</>
+				}
+			>
+				<CalloutGroup header="Objective">
+					<CalloutGroupItem text="Score some Jeopardy! points" />
+				</CalloutGroup>
+				<CalloutGroup header="Tools">
+					<CalloutGroupItem text="React"
+						imgSrc={reactlogo}
+						imgAlt="React logo" />
+					<CalloutGroupItem text="React hooks"
+						emoji="🎣"
+						imgAlt="Crane emoji for Front end development" />
+					<CalloutGroupItem text="Sass"
+						imgSrc={sasslogo}
+						imgAlt="Sass logo" />
+					<CalloutGroupItem text="Store.on"
+						imgSrc={storeonlogo}
+						imgAlt="Store.on logo" />
+					<CalloutGroupItem text="Node.js"
+						imgSrc={nodejsLogo}
+						imgAlt="Node.js logo" />
+					<CalloutGroupItem text="Vercel"
+						imgSrc={vercelLogo}
+						imgAlt="Vercel logo" />
+				</CalloutGroup>
+				<CalloutGroup header="Created">
+					<CalloutGroupItem text="May 2020" />
+				</CalloutGroup>
+			</DetailCallout>
 		</div>
 	);
 };

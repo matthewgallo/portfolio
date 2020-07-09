@@ -1,6 +1,5 @@
 import React from 'react';
 import Work from '../Work/Work';
-import Footer from '../Footer/Footer';
 import Intro from '../Intro/Intro';
 
 const Home = () => {
@@ -9,7 +8,6 @@ const Home = () => {
 			className="home-container">
 			<Intro />
 			<Work />
-			<Footer />
 		</div>
 	);
 };

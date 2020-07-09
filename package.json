@@ -23,8 +23,6 @@
 		"lint-staged": "^10.0.8",
 		"prettier": "^1.19.1",
 		"pretty-quick": "^2.0.1",
-		"stylelint": "^13.6.1",
-		"stylelint-order": "^4.1.0",
 		"typescript": "^3.9.5"
 	},
 	"dependencies": {
@@ -54,9 +52,7 @@
 		"now-dev": "react-scripts start",
 		"now-build": "react-scripts build",
 		"lint": "eslint .",
-		"lint-fix": "eslint --fix .",
-		"stylelint": "stylelint src",
-		"stylelint-fix": "stylelint --fix src/**/*.{scss,css}"
+		"lint-fix": "eslint --fix ."
 	},
 	"husky": {
 		"hooks": {
@@ -68,9 +64,6 @@
 			"pretty-quick --staged",
 			"eslint --fix",
 			"git add"
-		],
-		"src/**/*.{scss,css}": [
-			"stylelint --fix"
 		]
 	},
 	"browserslist": [

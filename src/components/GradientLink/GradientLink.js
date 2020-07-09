@@ -1,40 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { Styled } from './GradientLink.styles';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
 
-const GradientLink = ({ children, external, url, block, paddingBottom, className, flex, color, bold }) => {
+const GradientLink = ({ children, external, url, block, paddingBottom, flex, color, bold }) => {
 	let displayType = 'initial';
 	displayType = block && 'block';
 	displayType = flex && 'flex';
+	const { colorMode } = useContext(ThemeContext);
 	return (
 		<>
 			{external ? (
-				<a
+				<Styled.GradientLink
+					colorMode={colorMode}
 					href={url}
-					className={`gradient--link ${className}`}
 					target={external ? '_blank' : null}
-					style={{
-						display: displayType,
-						paddingBottom: paddingBottom ? '.25rem' : null,
-						color: color || null,
-						fontWeight: bold ? '600' : null,
-					}}
+					display={displayType}
+					paddingBottom={paddingBottom}
+					bold={bold}
+					color={color}
 				>
 					{children}
-				</a>
+				</Styled.GradientLink>
 			) : (
-				<Link
+				<Styled.GradientRouterLink colorMode={colorMode}
 					to={url}
-					className={`gradient--link ${className}`}
-					style={{
-						display: displayType,
-						paddingBottom: paddingBottom ? '.25rem' : null,
-						color: color || null,
-						fontWeight: bold ? '600' : null,
-					}}
-				>
+					display={displayType}
+					paddingBottom={paddingBottom}
+					bold={bold}
+					color={color}>
 					{children}
-				</Link>
+				</Styled.GradientRouterLink>
 			)}
 		</>
 	);
@@ -44,7 +40,6 @@ GradientLink.defaultProps = {
 	external: false,
 	block: null,
 	paddingBottom: false,
-	className: '',
 	flex: false,
 	color: '',
 	bold: false,
@@ -56,7 +51,6 @@ GradientLink.propTypes = {
 	url: PropTypes.string.isRequired,
 	block: PropTypes.bool,
 	paddingBottom: PropTypes.bool,
-	className: PropTypes.string,
 	flex: PropTypes.bool,
 	color: PropTypes.string,
 	bold: PropTypes.bool,

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { animated } from 'react-spring';
 import Text from '../Text/Text';
+import { ThemeContext } from '../ThemeContext/ThemeContext';
+import { Styled } from './Tag.styles';
 
 const Tag = ({ children, style }) => {
+	const { colorMode } = useContext(ThemeContext);
 	return (
-		<animated.div className="mg--tag"
-			style={style}>
+		<Styled.Tag style={style}
+			colorMode={colorMode}>
 			{typeof children === 'string' ? <Text>{children}</Text> : children}
-		</animated.div>
+		</Styled.Tag>
 	);
 };
 
