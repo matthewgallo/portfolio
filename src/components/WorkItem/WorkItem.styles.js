@@ -11,7 +11,7 @@ const WorkItemImage = styled.img`
 	position: absolute;
 	width: 100%;
 	}
-	@media (min-width: '320px') {
+	@media (min-width: 320px) {
 	.work-item--image {
 		max-height: 20rem;
 	}
