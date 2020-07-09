@@ -15,7 +15,6 @@ const ScrollbarContainer = styled.div`
 const ScrollbarIndicator = styled.div`
 	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
 	height: 4px;
-	transition: width 250ms ease;
 	width: 0%;
 `;
 

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
 import Logo from './Logo';
+import Bold from '../Text/Bold';
 import { Styled } from './Intro.styles';
 
 const Intro = () => {
@@ -17,8 +18,21 @@ const Intro = () => {
 						/>
 					</Styled.IntroLogoContainer>
 					<div>
-						<h3 className="mg--semibold">Matt Gallo</h3>
-						<p className="mg--light-italic">Front end developer and designer*</p>
+						<h3
+							style={{
+								marginBottom: 0,
+							}}
+						>
+							<Bold>Matt Gallo</Bold>
+						</h3>
+						<p
+							style={{
+								fontStyle: 'italic',
+								marginTop: 0,
+							}}
+						>
+							Front end developer and designer*
+						</p>
 					</div>
 				</Styled.IntroContent>
 				<Styled.IntroPartTime>

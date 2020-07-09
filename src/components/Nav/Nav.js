@@ -33,9 +33,11 @@ const Nav = ({ style, toggleNavOpen }) => {
 							</Styled.NavPageLink>
 						</li>
 					</ul>
-					<Styled.Wave aria-label="Hand wave"
-						role="img">
-						👋
+					<Styled.Wave>
+						<span role="img"
+							aria-label="Hand wave">
+							👋
+						</span>
 					</Styled.Wave>
 				</Styled.NavContentContainer>
 				<Styled.NavCloseButton onClick={() => toggleNavOpen()}
