@@ -23,7 +23,7 @@ const Intro = () => {
 								marginBottom: 0,
 							}}
 						>
-							<Bold>Matt Gallo</Bold>
+							<Bold>matt gallo</Bold>
 						</h3>
 						<p
 							style={{

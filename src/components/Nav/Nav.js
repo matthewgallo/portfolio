@@ -42,8 +42,8 @@ const Nav = ({ style, toggleNavOpen }) => {
 				</Styled.NavContentContainer>
 				<Styled.NavCloseButton onClick={() => toggleNavOpen()}
 					type="button">
-					<Styled.NavCloseIconPath />
-					<Styled.NavCloseIconPath />
+					<Styled.NavCloseIconPath colorMode={colorMode} />
+					<Styled.NavCloseIconPath colorMode={colorMode} />
 				</Styled.NavCloseButton>
 			</Styled.NavContent>
 		</Styled.NavMain>

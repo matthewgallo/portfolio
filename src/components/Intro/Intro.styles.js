@@ -11,6 +11,7 @@ const IntroContainer = styled.section`
 	height: 100vh;
 	position: relative;
 	background-image: url(${props => (props.colorMode && props.colorMode === 'dark' ? patternLogoDark : patternLogoLight)});
+	transition: background-image 0.2s ease-in-out, background-color 0.2s ease-in-out;
 	@media (min-width: 1056px) {
 		background-image: url(${props => (props.colorMode && props.colorMode === 'dark' ? patternLogoDarkLarge : patternLogoLightLarge)});
 	}
