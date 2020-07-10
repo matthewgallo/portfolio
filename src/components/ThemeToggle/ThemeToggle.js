@@ -24,7 +24,7 @@ const ThemeToggle = () => {
 				height="512px"
 				viewBox="0 0 512 512"
 				xmlns="http://www.w3.org/2000/svg">
-				<title>Bulb</title>
+				<title>{colorMode && colorMode === 'dark' ? 'Toggle light mode' : 'Toggle dark mode'}</title>
 				<desc>Created with Sketch.</desc>
 				<g id="Page-1"
 					stroke="none"
