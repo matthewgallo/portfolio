@@ -68,6 +68,18 @@ const ThemeToggle = () => {
 							fill={colorMode && colorMode === 'dark' ? '#ffffff' : '#000000'}
 							fillRule="nonzero"
 						/>
+						<path
+							d="M185.889828,231 C190.584248,231 184.847544,208.160239 184.847544,179.993716 C184.847544,151.827194 190.584248,129 185.889828,129 C181.195407,129 171,154.386101 171,182.552623 C171,210.719145 181.195407,231 185.889828,231 Z"
+							id="Oval"
+							fill={colorMode && colorMode === 'dark' ? '#ffffff' : '#FFEAA7'}
+							transform="translate(179.368260, 180.000000) rotate(45.000000) translate(-179.368260, -180.000000) "
+						/>
+						<path
+							d="M333.889828,377 C338.584248,377 332.847544,354.160239 332.847544,325.993716 C332.847544,297.827194 338.584248,275 333.889828,275 C329.195407,275 319,300.386101 319,328.552623 C319,356.719145 329.195407,377 333.889828,377 Z"
+							id="Oval-Copy"
+							fill={colorMode && colorMode === 'dark' ? '#ffffff' : '#DFB326'}
+							transform="translate(327.368260, 326.000000) scale(-1, -1) rotate(45.000000) translate(-327.368260, -326.000000) "
+						/>
 						<AnimatePresence>
 							{colorMode && colorMode !== 'dark' && (
 								<motion.g id="lines"

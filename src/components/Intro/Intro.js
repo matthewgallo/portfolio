@@ -7,7 +7,10 @@ import { Styled } from './Intro.styles';
 const Intro = () => {
 	const { colorMode } = useContext(ThemeContext);
 	return (
-		<Styled.IntroContainer colorMode={colorMode}>
+		<Styled.IntroContainer colorMode={colorMode}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}>
 			<Styled.IntroInner>
 				<Styled.IntroContent>
 					<Styled.IntroLogoContainer>

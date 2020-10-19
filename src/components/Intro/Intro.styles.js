@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { COLORS } from '../../theme';
 import patternLogoLight from '../../assets/images/mg--logo-pattern.svg';
 import patternLogoDark from '../../assets/images/mg--logo-pattern-dark.svg';
 import patternLogoLightLarge from '../../assets/images/mg--logo-large.svg';
 import patternLogoDarkLarge from '../../assets/images/mg--logo-large-dark.svg';
 
-const IntroContainer = styled.section`
+const IntroContainer = styled(motion.section)`
 	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
 	background-size: 100%;
 	height: 100vh;

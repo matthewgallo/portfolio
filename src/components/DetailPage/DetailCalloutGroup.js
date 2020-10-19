@@ -11,8 +11,12 @@ const CalloutGroup = ({ children, header }) => {
 	);
 };
 
+CalloutGroup.defaultProps = {
+	header: null,
+};
+
 CalloutGroup.propTypes = {
-	header: PropTypes.string.isRequired,
+	header: PropTypes.string,
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]).isRequired,
 };
 

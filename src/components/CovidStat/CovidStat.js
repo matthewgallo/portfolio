@@ -1,8 +1,7 @@
 import React from 'react';
-import { useSpring } from 'react-spring';
 import DetailHeader from '../DetailPage/DetailHeader';
 import GradientLink from '../GradientLink/GradientLink';
-import CovidStatDetailsImage from '../../assets/images/covidstat/covidstat_header_img.svg';
+import CovidStatDetailsImage from '../../assets/images/covidstat/home_covid_header.png';
 import Tag from '../Tag/Tag';
 import vercelLogo from '../../assets/images/jeopardy/vercellogo.svg';
 import reactlogo from '../../assets/images/blockchain/react.svg';
@@ -13,34 +12,6 @@ import CalloutGroupItem from '../DetailPage/CalloutGroupItem';
 import DetailCallout from '../DetailPage/DetailCallout';
 
 const CovidStat = () => {
-	const tagAnimation = useSpring({
-		to: async next => {
-			await next({
-				opacity: 1,
-				transform: 'translateX(0)',
-				delay: 200,
-				config: { duration: 400 },
-			});
-		},
-		from: {
-			opacity: 0,
-			transform: 'translateX(-2rem)',
-		},
-	});
-	const tagAnimation2 = useSpring({
-		to: async next => {
-			await next({
-				opacity: 1,
-				transform: 'translateX(0)',
-				delay: 250,
-				config: { duration: 400 },
-			});
-		},
-		from: {
-			opacity: 0,
-			transform: 'translateX(-2rem)',
-		},
-	});
 	return (
 		<div>
 			<DetailHeader
@@ -51,26 +22,6 @@ const CovidStat = () => {
 					</GradientLink>
 				}
 				subtitle="Easily search and view Covid-19 data across countries at a glance"
-				tags={
-					<>
-						<Tag style={tagAnimation}>
-							<span style={{ marginRight: '0.5rem' }}
-								role="img"
-								aria-label="Crane emoji for Front end development">
-								🏗️
-							</span>{' '}
-							Front end development*
-						</Tag>
-						<Tag style={tagAnimation2}>
-							<span style={{ marginRight: '0.5rem' }}
-								role="img"
-								aria-label="Tools emoji and palette emoji for UX/visual design">
-								🛠️ 🎨
-							</span>{' '}
-							UX/Visual design
-						</Tag>
-					</>
-				}
 				headerImage={{
 					src: CovidStatDetailsImage,
 					alt: 'Jeopardy app screenshot',
@@ -106,6 +57,24 @@ const CovidStat = () => {
 				</CalloutGroup>
 				<CalloutGroup header="Created">
 					<CalloutGroupItem text="April 2020" />
+				</CalloutGroup>
+				<CalloutGroup>
+					<Tag>
+						<span style={{ marginRight: '0.5rem' }}
+							role="img"
+							aria-label="Crane emoji for Front end development">
+							🏗️
+						</span>{' '}
+						Front end development*
+					</Tag>
+					<Tag>
+						<span style={{ marginRight: '0.5rem' }}
+							role="img"
+							aria-label="Tools emoji and palette emoji for UX/visual design">
+							🛠️ 🎨
+						</span>{' '}
+						UX/Visual design
+					</Tag>
 				</CalloutGroup>
 			</DetailCallout>
 		</div>

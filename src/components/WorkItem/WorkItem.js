@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
 import { COLORS } from '../../theme';
 import Tag from '../Tag/Tag';
 import { Styled } from './WorkItem.styles';
+import { ImageContext } from '../../contexts/imageContext';
 
 const lockIcon = (
 	<svg
@@ -24,32 +25,113 @@ const lockIcon = (
 	</svg>
 );
 
-const WorkItem = ({ image, internalLink, name, url, locked, comingSoon }) => {
+const transition = {
+	duration: 0.6,
+	ease: [0.43, 0.13, 0.23, 0.96],
+};
+
+const isEven = number => {
+	if (number % 2 === 0) {
+		return true;
+	}
+	return false;
+};
+
+const fadeInUp = {
+	initial: {
+		y: 60,
+		opacity: 0,
+	},
+	animate: {
+		y: 0,
+		opacity: 1,
+	},
+	exit: {
+		opacity: 0,
+		y: 60,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+const WorkItem = ({ index, image, internalLink, name, url, locked, comingSoon }) => {
 	const { colorMode } = useContext(ThemeContext);
-	const renderContents = () => {
+	const workItem = useRef();
+	const imageRefElement = useRef();
+
+	const { setImageProps, setChanged } = useContext(ImageContext);
+	const [willFade, setWillFade] = useState(true);
+
+	const getImageProps = () => {
+		setWillFade(false);
+		const currentImg = imageRefElement.current;
+		const coordinates = currentImg.getBoundingClientRect();
+		const newImgProps = {
+			w: coordinates.width,
+			h: coordinates.height,
+			y: coordinates.y,
+			x: coordinates.x,
+		};
+		setImageProps(newImgProps);
+		setChanged(true);
+	};
+
+	const renderContents = itemUrl => {
 		return (
-			<>
-				<Styled.WorkItemImage src={image}
-					alt="Work item" />
+			<Styled.WorkItemInner
+				className={name}
+				onClick={() => getImageProps()}
+				onKeyUp={() => getImageProps()}
+				role="button"
+				tabIndex={0}
+				reverse={!isEven(index)}
+			>
+				<Styled.WorkItemRouterLink to={itemUrl}>
+					<Styled.WorkItemImage
+						src={image}
+						key={index}
+						alt="Work item"
+						ref={imageRefElement}
+						transition={transition}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={
+							willFade && {
+								opacity: 0,
+								transition: { delay: 0.1 * index },
+							}
+						}
+					/>
+				</Styled.WorkItemRouterLink>
 				<Styled.WorkItemContent colorMode={colorMode}>
-					<h4>{name}</h4>
+					<Styled.ProjectName colorMode={colorMode}
+						transition={{ transition, delay: 0.1 * index }}
+						variants={fadeInUp}>
+						{name}
+					</Styled.ProjectName>
+					{!comingSoon && (
+						<Styled.ViewProjectContainer transition={{ transition, delay: 0.1 * index }}
+							variants={fadeInUp}>
+							<Styled.ViewProjectLabel colorMode={colorMode}>View project</Styled.ViewProjectLabel>
+							<Styled.ViewProjectDivider colorMode={colorMode} />
+						</Styled.ViewProjectContainer>
+					)}
+
+					{comingSoon && (
+						<Tag
+							style={{
+								minWidth: '180px',
+								backgroundColor: colorMode && colorMode === 'dark' ? '#fff' : '#121619',
+								color: colorMode && colorMode === 'dark' ? COLORS.text.light : COLORS.text.dark,
+							}}
+						>
+							More coming soon
+						</Tag>
+					)}
+					{locked ? lockIcon : null}
 				</Styled.WorkItemContent>
-				{comingSoon && (
-					<Tag
-						style={{
-							minWidth: '180px',
-							position: 'absolute',
-							top: '1rem',
-							right: '1rem',
-							backgroundColor: colorMode && colorMode === 'dark' ? '#fff' : '#121619',
-							color: colorMode && colorMode === 'dark' ? COLORS.text.light : COLORS.text.dark,
-						}}
-					>
-						More coming soon
-					</Tag>
-				)}
-				{locked ? lockIcon : null}
-			</>
+			</Styled.WorkItemInner>
 		);
 	};
 
@@ -67,7 +149,6 @@ const WorkItem = ({ image, internalLink, name, url, locked, comingSoon }) => {
 				style={{
 					background: 'transparent',
 					border: '0',
-					display: 'flex',
 					width: '100%',
 					minHeight: '24rem',
 					textAlign: 'left',
@@ -79,18 +160,10 @@ const WorkItem = ({ image, internalLink, name, url, locked, comingSoon }) => {
 		);
 	};
 
-	const linearAngle = Math.floor(Math.random() * 360) + 1;
-
 	return (
-		<Styled.WorkItem
-			style={{
-				color: 'red',
-				backgroundImage: `linear-gradient( ${linearAngle && linearAngle}deg, ${
-					colorMode && colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light
-				} 0%, ${colorMode && colorMode === 'dark' ? COLORS.secondary.dark : COLORS.secondary.light} 100% )`,
-			}}
-		>
-			{internalLink && url ? <Styled.WorkItemRouterLink to={url}>{renderContents()}</Styled.WorkItemRouterLink> : renderExternalOrDisabledItem()}
+		<Styled.WorkItem reverse={!isEven(index)}
+			ref={workItem}>
+			{internalLink && url ? renderContents(url) : renderExternalOrDisabledItem()}
 		</Styled.WorkItem>
 	);
 };
@@ -102,6 +175,7 @@ WorkItem.defaultProps = {
 };
 
 WorkItem.propTypes = {
+	index: PropTypes.number.isRequired,
 	image: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	url: PropTypes.string,

@@ -2,7 +2,7 @@ import { createElement, cloneElement, useState, useEffect, useRef } from 'react'
 import { animated, useSpring } from 'react-spring';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
-const FadeInBottom = ({ threshold = 0, element = 'div', once = false, children, ...rest }) => {
+const FadeIn = ({ threshold = 0, element = 'div', once = false, children, ...rest }) => {
 	const { inView, ref } = useIntersectionObserver({ threshold });
 	const [onceAppeared, setOnceAppeared] = useState(false);
 
@@ -46,4 +46,4 @@ const FadeInBottom = ({ threshold = 0, element = 'div', once = false, children, 
 	);
 };
 
-export default FadeInBottom;
+export default FadeIn;
