@@ -1,12 +1,11 @@
 import React from 'react';
-import { useSpring } from 'react-spring';
 import DetailHeader from '../DetailPage/DetailHeader';
 import SectionMaxWidth from '../SectionMaxWidth/SectionMaxWidth';
 import Text from '../Text/Text';
 import Tag from '../Tag/Tag';
 import GradientLink from '../GradientLink/GradientLink';
 
-import IBPheaderImg from '../../assets/images/ibp_details_header.svg';
+import IBPheaderImg from '../../assets/images/blockchain/home_channel_new.png';
 import reactlogo from '../../assets/images/blockchain/react.svg';
 import reduxlogo from '../../assets/images/blockchain/redux.svg';
 import sasslogo from '../../assets/images/blockchain/sass.svg';
@@ -29,107 +28,11 @@ import ContentSection from '../DetailPage/ContentSection';
 import ContentSectionItem from '../DetailPage/ContentSectionItem';
 
 const BlockchainPage = () => {
-	const tagAnimation = useSpring({
-		to: async next => {
-			await next({
-				opacity: 1,
-				transform: 'translateX(0)',
-				delay: 200,
-				config: { duration: 400 },
-			});
-		},
-		from: {
-			opacity: 0,
-			transform: 'translateX(-2rem)',
-		},
-	});
-	const tagAnimation2 = useSpring({
-		to: async next => {
-			await next({
-				opacity: 1,
-				transform: 'translateX(0)',
-				delay: 250,
-				config: { duration: 400 },
-			});
-		},
-		from: {
-			opacity: 0,
-			transform: 'translateX(-2rem)',
-		},
-	});
-	const tagAnimation3 = useSpring({
-		to: async next => {
-			await next({
-				opacity: 1,
-				transform: 'translateX(0)',
-				delay: 300,
-				config: { duration: 400 },
-			});
-		},
-		from: {
-			opacity: 0,
-			transform: 'translateX(-2rem)',
-		},
-	});
-
 	return (
 		<div>
 			<DetailHeader
 				title="IBM Blockchain Platform"
-				subtitle={
-					<>
-						#1 ranked Blockchain platform by{' '}
-						<GradientLink external
-							url="https://www.juniperresearch.com/press/press-releases/ibm-ranked-no-1-blockchain-technology-leader">
-							Juniper Research
-						</GradientLink>{' '}
-						and{' '}
-						<GradientLink external
-							url="https://www.ibm.com/account/reg/us-en/signup?formid=urx-37667">
-							HFS Research
-						</GradientLink>
-					</>
-				}
-				tags={
-					<>
-						<Tag style={tagAnimation}>
-							<span
-								style={{
-									marginRight: '0.5rem',
-								}}
-								role="img"
-								aria-label="Crane emoji for Front end development"
-							>
-								🏗️
-							</span>{' '}
-							Front end development*
-						</Tag>
-						<Tag style={tagAnimation2}>
-							<span
-								style={{
-									marginRight: '0.5rem',
-								}}
-								role="img"
-								aria-label="Magnifying glass emoji for user research"
-							>
-								🔍
-							</span>{' '}
-							User research
-						</Tag>
-						<Tag style={tagAnimation3}>
-							<span
-								style={{
-									marginRight: '0.5rem',
-								}}
-								role="img"
-								aria-label="Tools emoji for user experience design"
-							>
-								🛠️
-							</span>{' '}
-							UX design
-						</Tag>
-					</>
-				}
+				subtitle="Red Dot award winning interface"
 				headerImage={{
 					src: IBPheaderImg,
 					alt: 'IBM Blockchain Platform screenshot',
@@ -187,6 +90,44 @@ const BlockchainPage = () => {
 				</CalloutGroup>
 				<CalloutGroup header="Duration">
 					<CalloutGroupItem text="2017 - current" />
+				</CalloutGroup>
+				<CalloutGroup>
+					<Tag>
+						<span
+							style={{
+								marginRight: '0.5rem',
+							}}
+							role="img"
+							aria-label="Crane emoji for Front end development"
+						>
+							🏗️
+						</span>{' '}
+						Front end development*
+					</Tag>
+					<Tag>
+						<span
+							style={{
+								marginRight: '0.5rem',
+							}}
+							role="img"
+							aria-label="Magnifying glass emoji for user research"
+						>
+							🔍
+						</span>{' '}
+						User research
+					</Tag>
+					<Tag>
+						<span
+							style={{
+								marginRight: '0.5rem',
+							}}
+							role="img"
+							aria-label="Tools emoji for user experience design"
+						>
+							🛠️
+						</span>{' '}
+						UX design
+					</Tag>
 				</CalloutGroup>
 			</DetailCallout>
 			<ContentSection>

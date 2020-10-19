@@ -1,7 +1,6 @@
 import React from 'react';
-import { useSpring } from 'react-spring';
 import DetailHeader from '../DetailPage/DetailHeader';
-import JeopardyDetailsImage from '../../assets/images/jeopardy/mg_jeopardy_detail.svg';
+import JeopardyDetailsImage from '../../assets/images/jeopardy/home_jeopardy_app.png';
 import Tag from '../Tag/Tag';
 import CalloutGroup from '../DetailPage/DetailCalloutGroup';
 import CalloutGroupItem from '../DetailPage/CalloutGroupItem';
@@ -14,35 +13,6 @@ import vercelLogo from '../../assets/images/jeopardy/vercellogo.svg';
 import GradientLink from '../GradientLink/GradientLink';
 
 const JeopardyDetails = () => {
-	const tagAnimation = useSpring({
-		to: async next => {
-			await next({
-				opacity: 1,
-				transform: 'translateX(0)',
-				delay: 200,
-				config: { duration: 400 },
-			});
-		},
-		from: {
-			opacity: 0,
-			transform: 'translateX(-2rem)',
-		},
-	});
-	const tagAnimation2 = useSpring({
-		to: async next => {
-			await next({
-				opacity: 1,
-				transform: 'translateX(0)',
-				delay: 250,
-				config: { duration: 400 },
-			});
-		},
-		from: {
-			opacity: 0,
-			transform: 'translateX(-2rem)',
-		},
-	});
-
 	return (
 		<div>
 			<DetailHeader
@@ -59,26 +29,6 @@ const JeopardyDetails = () => {
 							📺
 						</span>{' '}
 						Test your trivia skills on an American classic!
-					</>
-				}
-				tags={
-					<>
-						<Tag style={tagAnimation}>
-							<span style={{ marginRight: '0.5rem' }}
-								role="img"
-								aria-label="Crane emoji for Front end development">
-								🏗️
-							</span>{' '}
-							Front end development*
-						</Tag>
-						<Tag style={tagAnimation2}>
-							<span style={{ marginRight: '0.5rem' }}
-								role="img"
-								aria-label="Party emoji for #forfun">
-								🥳
-							</span>{' '}
-							#forfun
-						</Tag>
 					</>
 				}
 				headerImage={{
@@ -119,6 +69,24 @@ const JeopardyDetails = () => {
 				</CalloutGroup>
 				<CalloutGroup header="Created">
 					<CalloutGroupItem text="May 2020" />
+				</CalloutGroup>
+				<CalloutGroup>
+					<Tag>
+						<span style={{ marginRight: '0.5rem' }}
+							role="img"
+							aria-label="Crane emoji for Front end development">
+							🏗️
+						</span>{' '}
+						Front end development*
+					</Tag>
+					<Tag>
+						<span style={{ marginRight: '0.5rem' }}
+							role="img"
+							aria-label="Party emoji for #forfun">
+							🥳
+						</span>{' '}
+						#forfun
+					</Tag>
 				</CalloutGroup>
 			</DetailCallout>
 		</div>

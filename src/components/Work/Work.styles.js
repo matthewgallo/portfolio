@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const WorkSection = styled.section`
 	@media (max-width: 420px) {
@@ -6,16 +7,19 @@ const WorkSection = styled.section`
 	}
 `;
 
-const WorkListGrid = styled.ul`
+const WorkListGrid = styled(motion.ul)`
 	display: grid;
 	grid-gap: 1rem;
 	grid-template-columns: 1fr;
 	list-style-type: none;
 	margin: 4rem auto;
-	max-width: 1200px;
-	padding: 0;
+	max-width: 840px;
+	padding: 1rem;
+	@media (min-width: 880px) {
+		padding: 0;
+	}
 	@media (min-width: 670px) {
-		grid-template-columns: 2fr 2fr;
+		grid-template-columns: 1fr;
 	}
 `;
 
