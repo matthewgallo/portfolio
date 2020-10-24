@@ -6,7 +6,7 @@ import Tag from '../Tag/Tag';
 import { Styled } from './WorkItem.styles';
 import { ImageContext } from '../../contexts/imageContext';
 
-const lockIcon = (
+const LockIcon = () => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		title="Lock icon"
@@ -81,13 +81,13 @@ const WorkItem = ({ index, image, internalLink, name, url, locked, comingSoon })
 		return (
 			<Styled.WorkItemInner
 				className={name}
-				onClick={() => getImageProps()}
+				onClick={!comingSoon ? () => getImageProps() : () => {}}
 				onKeyUp={() => getImageProps()}
 				role="button"
 				tabIndex={0}
 				reverse={!isEven(index)}
 			>
-				<Styled.WorkItemRouterLink to={itemUrl}>
+				<Styled.WorkItemRouterLink to={itemUrl || ''}>
 					<Styled.WorkItemImage
 						src={image}
 						key={index}
@@ -129,7 +129,7 @@ const WorkItem = ({ index, image, internalLink, name, url, locked, comingSoon })
 							More coming soon
 						</Tag>
 					)}
-					{locked ? lockIcon : null}
+					{locked ? <LockIcon /> : null}
 				</Styled.WorkItemContent>
 			</Styled.WorkItemInner>
 		);

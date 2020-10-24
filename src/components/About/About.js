@@ -31,8 +31,12 @@ const About = () => {
 					<h3>I՚m Matt, a front end developer / designer.</h3>
 					<p style={{ paddingTop: '1.5rem' }}>
 						I currently work for the IBM Blockchain Platform as the front end development practice lead, working to bridge the gap between design and
-						engineering. I enjoy learning new things, some of which currently include react hooks, redux, svg animations, and finding out there is something
-						else about async/await that I don&apos;t know.
+						engineering. I enjoy learning new things, some of which currently include react hooks, redux, svg animations, and framer motion{' '}
+						<span role="img"
+							aria-label="Star emoji">
+							💫
+						</span>
+						.
 					</p>
 					<p style={{ paddingTop: '1.5rem' }}>
 						In my free time, I play my saxophone{' '}
