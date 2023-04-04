@@ -34,8 +34,8 @@ const waveAnimation = keyframes`
 `;
 
 const NavMain = styled(animated.nav)`
-	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
-	color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.text.dark : COLORS.text.light)};
+	background-color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
+	color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.text.dark : COLORS.text.light)};
 	height: 100vh;
 	left: 0;
 	position: fixed;
@@ -92,7 +92,7 @@ const NavCloseButton = styled.button`
 `;
 
 const NavCloseIconPath = styled.div`
-	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.text.dark : COLORS.text.light)};
+	background-color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.text.dark : COLORS.text.light)};
 	height: 1px;
 	transform: rotate(0deg);
 	transition: 0.25s ease-in-out;
@@ -109,7 +109,7 @@ const NavCloseIconPath = styled.div`
 `;
 
 const NavPageLink = styled(NavLink)`
-	color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.text.dark : COLORS.text.light)};
+	color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.text.dark : COLORS.text.light)};
 	display: block;
 	font-weight: 300;
 	margin-bottom: 0.5rem;

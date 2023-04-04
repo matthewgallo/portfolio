@@ -7,8 +7,8 @@ const PrecursorContainer = styled(animated.div)`
 		linear-gradient(to bottom, rgba(57, 173, 219, 0.25) 0%, rgba(42, 60, 87, 0.4) 100%),
 		linear-gradient(
 			135deg,
-			${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)} 0%,
-			${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.secondary.dark : COLORS.secondary.light)} 100%
+			${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)} 0%,
+			${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.secondary.dark : COLORS.secondary.light)} 100%
 		);
 	height: 100vh;
 	position: fixed;
@@ -85,7 +85,7 @@ const PrecursorLine = styled.div`
 	transition: all 0.2s cubic-bezier(0.2, 0.2, 0.38, 0.9);
 	height: ${props => (props.horizontal ? '.5rem' : '0')};
 	width: ${props => (props.vertical ? '.5rem' : '0')};
-	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
+	background-color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
 	left: ${props => (props.top || props.left ? '0' : 'initial')};
 	position: absolute;
 	right: ${props => (props.top || props.right || props.bottom ? '0' : 'initial')};
@@ -96,7 +96,7 @@ const PrecursorLine = styled.div`
 
 const PrecursorCenterContainer = styled.div`
 	align-items: center;
-	color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
+	color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
 	display: flex;
 	height: 100vh;
 	justify-content: center;
@@ -104,7 +104,7 @@ const PrecursorCenterContainer = styled.div`
 
 const PrecursorPercent = styled.h2`
 	align-items: center;
-	color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
+	color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
 	display: flex;
 	height: 100vh;
 	justify-content: center;

@@ -8,7 +8,8 @@ import { Styled } from './Footer.styles';
 const Footer = () => {
 	const { colorMode } = useContext(ThemeContext);
 	const [, setY] = useSpring(() => ({ y: 0 }));
-
+	const currentDate = new Date();
+	const currentYear = currentDate.getFullYear();
 	return (
 		<Styled.Footer colorMode={colorMode}>
 			<Styled.FooterContainer>
@@ -58,7 +59,7 @@ const Footer = () => {
 						</GradientLink>
 					</li>
 				</Styled.FooterLinkContainer>
-				<Styled.Copyright colorMode={colorMode}>&copy; 2020 Matt Gallo</Styled.Copyright>
+				<Styled.Copyright colorMode={colorMode}>&copy; {currentYear} Matt Gallo</Styled.Copyright>
 			</Styled.FooterContainer>
 		</Styled.Footer>
 	);

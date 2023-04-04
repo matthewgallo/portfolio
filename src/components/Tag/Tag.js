@@ -8,7 +8,7 @@ const Tag = ({ children, style }) => {
 	const { colorMode } = useContext(ThemeContext);
 	return (
 		<Styled.Tag style={style}
-			colorMode={colorMode}>
+			$colorMode={colorMode}>
 			{typeof children === 'string' ? <Text>{children}</Text> : children}
 		</Styled.Tag>
 	);
@@ -21,8 +21,8 @@ Tag.defaultProps = {
 Tag.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]).isRequired,
 	style: PropTypes.shape({
-		opacity: PropTypes.object,
-		transform: PropTypes.object,
+		opacity: PropTypes.number,
+		transform: PropTypes.string,
 	}),
 };
 

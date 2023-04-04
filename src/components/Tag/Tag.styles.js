@@ -4,7 +4,7 @@ import { COLORS } from '../../theme';
 
 const Tag = styled(animated.div)`
 	align-items: center;
-	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
+	background-color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
 	border-radius: 1rem;
 	color: $text;
 	display: flex;
