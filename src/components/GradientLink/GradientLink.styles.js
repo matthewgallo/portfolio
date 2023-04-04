@@ -32,34 +32,34 @@ const linkStyling = `
 
 const GradientLink = styled.a`
 	${linkStyling}
-	color: ${props => (props.color ? props.color : props.colorMode && props.colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
+	color: ${props => (props.color ? props.color : props.$colorMode && props.$colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
 	display: ${props => (props.display ? props.display : 'inline-block')};
-	padding-bottom: ${props => (props.paddingBottom ? props.paddingBottom : '0')};
-	font-weight: ${props => (props.bold ? '600' : 'initial')};
+	padding-bottom: ${props => (props.$paddingBottom ? props.$paddingBottom : '0')};
+	font-weight: ${props => (props.$bold ? '600' : 'initial')};
 	::before {
-		background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.secondary.dark : COLORS.secondary.light)};
+		background-color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.secondary.dark : COLORS.secondary.light)};
 		transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
 	}
 
 	::after {
-		background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
+		background-color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
 		transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
 	}
 `;
 
 const GradientRouterLink = styled(Link)`
 	${linkStyling}
-	color: ${props => (props.color ? props.color : props.colorMode && props.colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
+	color: ${props => (props.color ? props.color : props.$colorMode && props.$colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
 	display: ${props => (props.display ? props.display : 'inline-block')};
-	padding-bottom: ${props => (props.paddingBottom ? props.paddingBottom : '0')};
-	font-weight: ${props => (props.bold ? '600' : 'initial')};
+	padding-bottom: ${props => (props.$paddingBottom ? props.$paddingBottom : '0')};
+	font-weight: ${props => (props.$bold ? '600' : 'initial')};
 	::before {
-		background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.secondary.dark : COLORS.secondary.light)};
+		background-color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.secondary.dark : COLORS.secondary.light)};
 		transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
 	}
 
 	::after {
-		background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
+		background-color: ${props => (props.$colorMode && props.$colorMode === 'dark' ? COLORS.primary.dark : COLORS.primary.light)};
 		transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
 	}
 `;

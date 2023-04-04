@@ -120,7 +120,7 @@ const WorkItemButton = styled.button`
 		flex-direction: row-reverse;
 	}
 `;
-const WorkItemRouterLink = styled(motion.custom(Link))`
+const WorkItemRouterLink = styled(motion(Link))`
 	${sharedLinkStyles}
 `;
 

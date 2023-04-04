@@ -45,25 +45,25 @@ const Precursor = ({ precursorOpen, closePrecursor, precursorStyles }) => {
 	};
 
 	return (
-		<Styled.PrecursorContainer colorMode={colorMode}
+		<Styled.PrecursorContainer $colorMode={colorMode}
 			style={precursorStyles}
 			id="precursor">
 			{incrementLoadingPercentage()}
 			<Styled.PrecursorLine horizontal
 				top
-				colorMode={colorMode} />
+				$colorMode={colorMode} />
 			<Styled.PrecursorLine vertical
 				right
-				colorMode={colorMode} />
+				$colorMode={colorMode} />
 			<Styled.PrecursorLine horizontal
 				bottom
-				colorMode={colorMode} />
+				$colorMode={colorMode} />
 			<Styled.PrecursorLine vertical
 				left
-				colorMode={colorMode} />
+				$colorMode={colorMode} />
 			<Styled.PrecursorCenterContainer>
 				{!percentDoneAnimating && (
-					<Styled.PrecursorPercent colorMode={colorMode}
+					<Styled.PrecursorPercent $colorMode={colorMode}
 						doneLoading={doneLoading}>
 						{totalPercent}
 					</Styled.PrecursorPercent>
@@ -79,8 +79,8 @@ Precursor.propTypes = {
 	precursorOpen: PropTypes.bool.isRequired,
 	closePrecursor: PropTypes.func.isRequired,
 	precursorStyles: PropTypes.shape({
-		opacity: PropTypes.object,
-		zIndex: PropTypes.object,
+		opacity: PropTypes.number,
+		zIndex: PropTypes.number,
 	}).isRequired,
 };
 

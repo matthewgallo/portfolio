@@ -5,29 +5,29 @@ import { ThemeContext } from '../ThemeContext/ThemeContext';
 
 const GradientLink = ({ children, external, url, block, paddingBottom, flex, color, bold }) => {
 	let displayType = 'initial';
-	displayType = block && 'block';
-	displayType = flex && 'flex';
+	displayType = block ? 'block' : 'initial';
+	displayType = flex ? 'flex' : 'initial';
 	const { colorMode } = useContext(ThemeContext);
 	return (
 		<>
 			{external ? (
 				<Styled.GradientLink
-					colorMode={colorMode}
+					$colorMode={colorMode}
 					href={url}
 					target={external ? '_blank' : null}
 					display={displayType}
-					paddingBottom={paddingBottom}
-					bold={bold}
+					$paddingBottom={paddingBottom}
+					$bold={bold}
 					color={color}
 				>
 					{children}
 				</Styled.GradientLink>
 			) : (
-				<Styled.GradientRouterLink colorMode={colorMode}
+				<Styled.GradientRouterLink $colorMode={colorMode}
 					to={url}
 					display={displayType}
-					paddingBottom={paddingBottom}
-					bold={bold}
+					$paddingBottom={paddingBottom}
+					$bold={bold}
 					color={color}>
 					{children}
 				</Styled.GradientRouterLink>

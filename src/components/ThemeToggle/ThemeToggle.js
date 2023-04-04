@@ -19,7 +19,7 @@ const ThemeToggle = () => {
 			}}
 			title={colorMode && colorMode === 'dark' ? 'Toggle light theme' : 'Toggle dark theme'}
 		>
-			<Styled.ThemeToggle colorMode={colorMode}
+			<Styled.ThemeToggle $colorMode={colorMode}
 				width="512px"
 				height="512px"
 				viewBox="0 0 512 512"

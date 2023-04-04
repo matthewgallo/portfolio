@@ -7,7 +7,7 @@ const Nav = ({ style, toggleNavOpen }) => {
 	const { colorMode } = useContext(ThemeContext);
 	return (
 		<Styled.NavMain style={style}
-			colorMode={colorMode}>
+			$colorMode={colorMode}>
 			<Styled.NavContent>
 				<Styled.NavContentContainer>
 					<h5>matt gallo</h5>
@@ -20,14 +20,14 @@ const Nav = ({ style, toggleNavOpen }) => {
 					>
 						<li>
 							<Styled.NavPageLink to="/"
-								colorMode={colorMode}
+								$colorMode={colorMode}
 								onClick={() => toggleNavOpen()}>
 								home
 							</Styled.NavPageLink>
 						</li>
 						<li>
 							<Styled.NavPageLink to="/about-me"
-								colorMode={colorMode}
+								$colorMode={colorMode}
 								onClick={() => toggleNavOpen()}>
 								about me
 							</Styled.NavPageLink>
@@ -42,8 +42,8 @@ const Nav = ({ style, toggleNavOpen }) => {
 				</Styled.NavContentContainer>
 				<Styled.NavCloseButton onClick={() => toggleNavOpen()}
 					type="button">
-					<Styled.NavCloseIconPath colorMode={colorMode} />
-					<Styled.NavCloseIconPath colorMode={colorMode} />
+					<Styled.NavCloseIconPath $colorMode={colorMode} />
+					<Styled.NavCloseIconPath $colorMode={colorMode} />
 				</Styled.NavCloseButton>
 			</Styled.NavContent>
 		</Styled.NavMain>
@@ -57,8 +57,8 @@ Nav.defaultProps = {
 
 Nav.propTypes = {
 	style: PropTypes.shape({
-		opacity: PropTypes.object,
-		transform: PropTypes.object,
+		opacity: PropTypes.number,
+		transform: PropTypes.string,
 	}),
 	toggleNavOpen: PropTypes.func,
 };

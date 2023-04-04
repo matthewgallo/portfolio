@@ -89,7 +89,7 @@ const BlockchainPage = () => {
 					/>
 				</CalloutGroup>
 				<CalloutGroup header="Duration">
-					<CalloutGroupItem text="2017 - current" />
+					<CalloutGroupItem text="2017 - 2020" />
 				</CalloutGroup>
 				<CalloutGroup>
 					<Tag>
