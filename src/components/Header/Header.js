@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { useLocation } from 'react-router';
-import PropTypes from 'prop-types';
 import GradientLink from '../GradientLink/GradientLink';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
@@ -8,7 +7,7 @@ import ScrollProgress from '../ScrollProgress/ScrollProgress';
 import { Styled } from './Header.styles';
 import Logo from '../Intro/Logo';
 
-const Header = ({ toggleNavOpen }) => {
+const Header = () => {
 	const { colorMode } = useContext(ThemeContext);
 	const location = useLocation();
 	return (
@@ -18,10 +17,12 @@ const Header = ({ toggleNavOpen }) => {
 					<GradientLink bold
 						url="/"
 						color={colorMode && colorMode === 'dark' ? '#fff' : '#121619'}>
-						<Logo style={{
+						<Logo
+							style={{
 								width: '100%',
-								height: '1rem'
-						}}/>
+								height: '1rem',
+							}}
+						/>
 					</GradientLink>
 				</Styled.HeaderLogo>
 				<Styled.HeaderActions>
@@ -38,8 +39,8 @@ const Header = ({ toggleNavOpen }) => {
 	);
 };
 
-Header.propTypes = {
-	toggleNavOpen: PropTypes.func.isRequired,
-};
+// Header.propTypes = {
+// 	toggleNavOpen: PropTypes.func.isRequired,
+// };
 
 export default Header;

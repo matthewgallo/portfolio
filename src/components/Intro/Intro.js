@@ -20,14 +20,29 @@ const Intro = () => {
 								marginBottom: 0,
 							}}
 						>
-							<TextStyles.ContentText medium margin>Hi! 👋🏻 My name is</TextStyles.ContentText>
-							<Bold margin="0.5rem" size="expressive-heading">Matt Gallo</Bold>
-							<Bold size="expressive-heading-03" margin="2rem" secondary>Building design systems at IBM</Bold>
-							<TextStyles.ContentText medium contained>I&apos;m a senior front end engineering lead currently working on the <GradientLink url="https://carbondesignsystem.com/"
-														external
-														bold>
-														Carbon Design System
-													</GradientLink> at IBM.</TextStyles.ContentText>
+							<TextStyles.ContentText medium
+								margin>
+								Hi! 👋🏻 My name is
+							</TextStyles.ContentText>
+							<Bold margin="0.5rem"
+								size="expressive-heading">
+								Matt Gallo
+							</Bold>
+							<Bold size="expressive-heading-03"
+								margin="2rem"
+								secondary>
+								Building design systems at IBM
+							</Bold>
+							<TextStyles.ContentText medium
+								contained>
+								I&apos;m a senior front end engineering lead currently working on the{' '}
+								<GradientLink url="https://carbondesignsystem.com/"
+									external
+									bold>
+									Carbon Design System
+								</GradientLink>{' '}
+								at IBM.
+							</TextStyles.ContentText>
 						</h3>
 					</div>
 				</Styled.IntroContent>

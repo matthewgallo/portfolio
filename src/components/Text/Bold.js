@@ -16,10 +16,10 @@ const BoldText = styled.span`
 				: size === 'expressive-heading-03'
 					? '3rem'
 					: size === 'expressive-heading-04'
-					? '2rem'
-					: size === 'expressive-heading-05'
-					? '.875rem'
-					: '1rem'};
+						? '2rem'
+						: size === 'expressive-heading-05'
+							? '.875rem'
+							: '1rem'};
 	line-height: 1;
 	margin-bottom: ${({ margin }) => margin};
 	color: ${({ secondary, colorMode }) => {
@@ -34,16 +34,20 @@ const BoldText = styled.span`
 			return COLORS.text.dark;
 		}
 		return COLORS.text.light;
-	}}
+	}};
 `;
 
+// eslint-disable-next-line react/prop-types
 const Bold = ({ children, size, margin = '0', secondary }) => {
 	const { colorMode } = useContext(ThemeContext);
-	return <BoldText
-		colorMode={colorMode}
-		secondary={secondary}
-		margin={margin}
-		size={size}>{children}</BoldText>;
+	return (
+		<BoldText colorMode={colorMode}
+			secondary={secondary}
+			margin={margin}
+			size={size}>
+			{children}
+		</BoldText>
+	);
 };
 
 Bold.propTypes = {
