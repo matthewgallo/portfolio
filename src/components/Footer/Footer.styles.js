@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { COLORS } from '../../theme';
 
 const Footer = styled.footer`
-	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.backgroundSecondary.dark : COLORS.backgroundSecondary.light)};
+	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
 	padding: 8% 0;
 	width: 100%;
 `;

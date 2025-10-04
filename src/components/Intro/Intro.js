@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
-import Logo from './Logo';
 import Bold from '../Text/Bold';
 import { Styled } from './Intro.styles';
+import { Styled as TextStyles } from '../Text/Text.styles';
+import GradientLink from '../GradientLink/GradientLink';
 
 const Intro = () => {
 	const { colorMode } = useContext(ThemeContext);
@@ -13,38 +14,23 @@ const Intro = () => {
 			exit={{ opacity: 0 }}>
 			<Styled.IntroInner>
 				<Styled.IntroContent>
-					<Styled.IntroLogoContainer>
-						<Logo
-							style={{
-								width: '100%',
-							}}
-						/>
-					</Styled.IntroLogoContainer>
 					<div>
 						<h3
 							style={{
 								marginBottom: 0,
 							}}
 						>
-							<Bold>matt gallo</Bold>
+							<TextStyles.ContentText medium margin>Hi! 👋🏻 My name is</TextStyles.ContentText>
+							<Bold margin="0.5rem" size="expressive-heading">Matt Gallo</Bold>
+							<Bold size="expressive-heading-03" margin="2rem" secondary>Building design systems at IBM</Bold>
+							<TextStyles.ContentText medium contained>I&apos;m a senior front end engineering lead currently working on the <GradientLink url="https://carbondesignsystem.com/"
+														external
+														bold>
+														Carbon Design System
+													</GradientLink> at IBM.</TextStyles.ContentText>
 						</h3>
-						<p
-							style={{
-								fontStyle: 'italic',
-								marginTop: 0,
-							}}
-						>
-							Front end developer and designer*
-						</p>
 					</div>
 				</Styled.IntroContent>
-				<Styled.IntroPartTime>
-					*part time saxophonist{' '}
-					<span role="img"
-						aria-label="Saxophone emoji">
-						🎷
-					</span>
-				</Styled.IntroPartTime>
 			</Styled.IntroInner>
 		</Styled.IntroContainer>
 	);

@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { COLORS } from '../../theme';
 
 const Header = styled.header`
-	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.backgroundSecondary.dark : COLORS.backgroundSecondary.light)};
+	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? `${COLORS.background.dark}20` : `${COLORS.background.light}20`)};
+	backdrop-filter: blur(10px);
+	border: 1px solid ${({ colorMode }) => (colorMode && colorMode === 'dark' ? COLORS.backgroundSecondary.dark : COLORS.backgroundSecondary.light)};
 	padding: 0.5rem 0;
 	position: fixed;
 	top: 0;
@@ -20,8 +22,7 @@ const HeaderContent = styled.div`
 		max-width: 1170px;
 	}
 	@media (min-width: 768px) {
-		max-width: 1170px;
-		padding: 0 2rem;
+		margin: 0 auto;
 	}
 `;
 

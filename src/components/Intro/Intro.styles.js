@@ -1,21 +1,12 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { COLORS } from '../../theme';
-import patternLogoLight from '../../assets/images/mg--logo-pattern.svg';
-import patternLogoDark from '../../assets/images/mg--logo-pattern-dark.svg';
-import patternLogoLightLarge from '../../assets/images/mg--logo-large.svg';
-import patternLogoDarkLarge from '../../assets/images/mg--logo-large-dark.svg';
 
 const IntroContainer = styled(motion.section)`
 	background-color: ${props => (props.colorMode && props.colorMode === 'dark' ? COLORS.background.dark : COLORS.background.light)};
 	background-size: 100%;
 	height: 100vh;
 	position: relative;
-	background-image: url(${props => (props.colorMode && props.colorMode === 'dark' ? patternLogoDark : patternLogoLight)});
-	transition: background-image 0.2s ease-in-out, background-color 0.2s ease-in-out;
-	@media (min-width: 1056px) {
-		background-image: url(${props => (props.colorMode && props.colorMode === 'dark' ? patternLogoDarkLarge : patternLogoLightLarge)});
-	}
 `;
 
 const IntroInner = styled.div`
@@ -39,7 +30,6 @@ const IntroContent = styled.div`
 	}
 	@media (min-width: 768px) {
 		display: flex;
-		flex-direction: row-reverse;
 		justify-content: space-between;
 		width: 100%;
 	}

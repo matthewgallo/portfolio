@@ -1,6 +1,6 @@
 {
 	"version": 2,
-	"alias": ["matthewdgallo.com", "www.matthewdgallo.com"],
+	"alias": ["mattgallo.dev", "www.mattgallo.dev"],
 	"builds": [
 		{
 			"src": "package.json",

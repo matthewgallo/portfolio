@@ -13,7 +13,7 @@
 		"import/prefer-default-export": "off",
 		"jsx-a11y/accessible-emoji": "off",
 		"indent": [
-			1,
+			2,
 			"tab",
 			{
 				"SwitchCase": 1

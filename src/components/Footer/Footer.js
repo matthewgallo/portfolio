@@ -38,14 +38,7 @@ const Footer = () => {
 				</Styled.FooterLogo>
 				<Styled.FooterLinkContainer>
 					<li>
-						<GradientLink url="https://twitter.com/matthewgallo27"
-							external
-							bold>
-							Twitter
-						</GradientLink>
-					</li>
-					<li>
-						<GradientLink url="https://www.linkedin.com/in/matthew-gallo-1090748a/"
+						<GradientLink url="https://www.linkedin.com/in/matt-gallo-1090748a/"
 							external
 							bold>
 							LinkedIn
@@ -59,7 +52,7 @@ const Footer = () => {
 						</GradientLink>
 					</li>
 				</Styled.FooterLinkContainer>
-				<Styled.Copyright colorMode={colorMode}>&copy; {currentYear} Matt Gallo</Styled.Copyright>
+				<Styled.Copyright colorMode={colorMode}>&copy; {currentYear} matt gallo</Styled.Copyright>
 			</Styled.FooterContainer>
 		</Styled.Footer>
 	);

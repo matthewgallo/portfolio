@@ -4,7 +4,7 @@
 	"private": true,
 	"proxy": "http://localhost:8081",
 	"engines": {
-		"node": "16.19.0",
+		"node": "22.14.0",
 		"npm": "6.13.4"
 	},
 	"devDependencies": {
@@ -45,7 +45,8 @@
 		"request": "^2.79.0",
 		"sass": "^1.55.0",
 		"styled-components": "^5.1.1",
-		"sw-precache": "^5.2.0"
+		"sw-precache": "^5.2.0",
+		"typewriter-effect": "^2.22.0"
 	},
 	"scripts": {
 		"start": "DISABLE_ESLINT_PLUGIN=true concurrently \"PORT=8080 react-scripts start\" \"PORT=8081 babel-watch index.js\"",

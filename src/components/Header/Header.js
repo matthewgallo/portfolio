@@ -6,6 +6,7 @@ import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
 import ScrollProgress from '../ScrollProgress/ScrollProgress';
 import { Styled } from './Header.styles';
+import Logo from '../Intro/Logo';
 
 const Header = ({ toggleNavOpen }) => {
 	const { colorMode } = useContext(ThemeContext);
@@ -17,16 +18,19 @@ const Header = ({ toggleNavOpen }) => {
 					<GradientLink bold
 						url="/"
 						color={colorMode && colorMode === 'dark' ? '#fff' : '#121619'}>
-						matt gallo
+						<Logo style={{
+								width: '100%',
+								height: '1rem'
+						}}/>
 					</GradientLink>
 				</Styled.HeaderLogo>
 				<Styled.HeaderActions>
 					<ThemeToggle />
-					<Styled.HeaderToggleNavButton onClick={toggleNavOpen}
+					{/* <Styled.HeaderToggleNavButton onClick={toggleNavOpen}
 						type="button">
 						<Styled.HeaderNavMenuLine colorMode={colorMode} />
 						<Styled.HeaderNavMenuLine colorMode={colorMode} />
-					</Styled.HeaderToggleNavButton>
+					</Styled.HeaderToggleNavButton> */}
 				</Styled.HeaderActions>
 			</Styled.HeaderContent>
 			{location && location.pathname !== '/' && <ScrollProgress />}
