@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import { useSpring } from 'react-spring';
 import { AnimatePresence } from 'framer-motion';
@@ -31,6 +31,17 @@ const App = () => {
 			window.scrollTo({ top: 0 });
 		}
 	};
+
+	useEffect(() => {
+		let link = document.querySelector("link[rel~='icon']");
+		if (!link) {
+			link = document.createElement('link');
+			link.rel = 'icon';
+			document.head.appendChild(link);
+		}
+
+		link.href = colorMode && colorMode === 'dark' ? '/dark__favicon.ico' : '/favicon.ico';
+	}, [colorMode]);
 
 	return (
 		<>
