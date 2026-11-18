@@ -1,11 +1,11 @@
+/* In normal flow (not absolute) so the footer follows it; fills the viewport like the homepage intro. */
 .container {
   align-items: center;
   background: var(--color-background);
-  block-size: 100%;
   display: flex;
   inline-size: 100%;
   justify-content: center;
-  position: absolute;
+  min-block-size: 100vh;
   text-align: center;
 }
 

@@ -13,6 +13,7 @@ const Header = () => {
         <div className={styles.logo}>
           <GradientLink bold url="/" color="var(--color-text)">
             <Logo
+              interactive
               style={{
                 blockSize: '1rem',
                 inlineSize: '100%',

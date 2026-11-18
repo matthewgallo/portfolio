@@ -39,3 +39,22 @@
     transform: scaleX(0);
   }
 }
+
+/* The accent tile's glow drifts slowly between the two accent colors. */
+.glowTint {
+  animation: glowShift 6s ease-in-out infinite alternate;
+  flood-color: var(--color-secondary);
+}
+
+@keyframes glowShift {
+  to {
+    flood-color: var(--color-primary);
+  }
+}
+
+/* The global reduced-motion rule shortens durations but keeps infinite loops, which would flicker; hold still instead. */
+@media (prefers-reduced-motion: reduce) {
+  .glowTint {
+    animation: none;
+  }
+}

@@ -11,6 +11,7 @@ const Footer = () => {
         <div className={styles.logo}>
           <button className={styles.logoButton} type="button" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <Logo
+              interactive
               style={{
                 blockSize: '50px',
                 inlineSize: '88px',

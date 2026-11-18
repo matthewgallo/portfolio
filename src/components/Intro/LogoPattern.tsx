@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import GlowFilter from './GlowFilter';
 import styles from './LogoPattern.module.css';
 
 /** The seven blocks of the MG mark, in its 850×400 coordinate space (same geometry as Logo.tsx). */
@@ -27,6 +28,7 @@ const TILES = [
 ];
 
 const GRADIENT_ID = 'mg-logo-pattern-gradient';
+const GLOW_ID = 'mg-logo-pattern-glow';
 
 /** Decorative MG pattern for the homepage hero: theme-aware, assembles block by block on load. */
 const LogoPattern = ({ className }: { className?: string }) => (
@@ -37,11 +39,18 @@ const LogoPattern = ({ className }: { className?: string }) => (
         <stop offset={0} style={{ stopColor: 'var(--color-secondary)' }} />
         <stop offset={1} style={{ stopColor: 'var(--color-primary)' }} />
       </linearGradient>
+      <GlowFilter id={GLOW_ID} tintClassName={styles.glowTint} />
     </defs>
     {TILES.map((transform, tile) => {
       const featured = tile === TILES.length - 1;
       return (
-        <g key={transform} transform={transform} className={featured ? styles.featured : styles.tile}>
+        <g
+          key={transform}
+          transform={transform}
+          className={featured ? styles.featured : styles.tile}
+          // Only the accent-colored mark glows; the muted tiles stay flat.
+          filter={featured ? `url(#${GLOW_ID})` : undefined}
+        >
           {BLOCKS.map((block, i) => (
             <rect
               key={i}

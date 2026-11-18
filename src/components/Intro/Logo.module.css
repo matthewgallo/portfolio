@@ -1,0 +1,43 @@
+/*
+ * Hover/focus flourish for interactive logos: each block briefly retracts along its
+ * long axis toward its own corner and springs back, staggered via --i in drawing
+ * order (echoes the homepage LogoPattern grow-in). The parent link/button is the trigger.
+ */
+.interactive {
+  transition: transform 0.2s ease;
+}
+
+.vertical,
+.horizontal {
+  transform-box: fill-box;
+  transform-origin: 0 0;
+}
+
+:is(a, button):is(:hover, :focus-visible) .interactive .vertical {
+  animation: retractY 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i) * 45ms) both;
+}
+
+:is(a, button):is(:hover, :focus-visible) .interactive .horizontal {
+  animation: retractX 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i) * 45ms) both;
+}
+
+:is(a, button):active .interactive {
+  transform: scale(0.94);
+}
+
+@keyframes retractY {
+  40% {
+    transform: scaleY(0.55);
+  }
+}
+
+@keyframes retractX {
+  40% {
+    transform: scaleX(0.55);
+  }
+}
+
+/* Let the glow halo extend past the viewBox instead of being clipped at its edges. */
+.logo {
+  overflow: visible;
+}
