@@ -1,50 +1,50 @@
 .footer {
-	background-color: var(--color-background);
-	padding: 8% 0;
-	width: 100%;
+  background-color: var(--color-background);
+  padding: 8% 0;
+  width: 100%;
 }
 
 .container {
-	display: block;
-	margin: 0 auto;
-	max-width: 1170px;
+  display: block;
+  margin: 0 auto;
+  max-width: 1170px;
 }
 
 .logo {
-	display: block;
-	margin: 0 auto;
-	position: relative;
-	text-align: center;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
 }
 
 .logoButton {
-	background-color: transparent;
-	border: 0;
-	cursor: pointer;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 .logoButton:focus-visible {
-	border-radius: 0.25rem;
-	outline: 2px solid var(--color-secondary);
-	outline-offset: 2px;
+  border-radius: 0.25rem;
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
 }
 
 .linkContainer {
-	display: flex;
-	justify-content: space-around;
-	list-style: none;
-	margin: 0;
-	padding: 2rem 0;
-	text-align: center;
-	width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+  width: 100%;
 }
 
 .copyright {
-	color: var(--color-text);
-	display: block;
-	margin: 0 auto;
-	text-align: center;
+  color: var(--color-text);
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }

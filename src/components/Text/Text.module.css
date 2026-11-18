@@ -1,18 +1,18 @@
 .contentText {
-	font-size: 1.25rem;
-	line-height: 1.25;
-	margin: 0;
-	max-width: 790px;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0;
+  max-width: 790px;
 }
 
 .small {
-	font-size: 0.875rem;
+  font-size: 0.875rem;
 }
 
 .medium {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 .contained {
-	max-width: min(100%, 420px);
+  max-width: min(100%, 420px);
 }

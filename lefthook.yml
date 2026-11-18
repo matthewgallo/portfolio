@@ -4,10 +4,10 @@ pre-commit:
   piped: true # format first, then lint the formatted files
   commands:
     format:
-      glob: "*.{js,ts,tsx}"
+      glob: '*.{js,ts,tsx}'
       run: yarn -s prettier --write {staged_files}
       stage_fixed: true
     lint:
-      glob: "*.{js,ts,tsx}"
+      glob: '*.{js,ts,tsx}'
       run: yarn -s oxlint --fix {staged_files}
       stage_fixed: true

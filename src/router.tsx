@@ -10,8 +10,8 @@ import NotFound from './components/NotFound/NotFound';
 
 // Root layout (header, nav, footer) wraps every page via <Outlet />.
 const rootRoute = createRootRoute({
-	component: App,
-	notFoundComponent: NotFound,
+  component: App,
+  notFoundComponent: NotFound,
 });
 
 const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: Home });
@@ -24,14 +24,14 @@ const covidStatRoute = createRoute({ getParentRoute: () => rootRoute, path: '/wo
 const routeTree = rootRoute.addChildren([indexRoute, projectYamaRoute, aboutMeRoute, ibpDetailsRoute, jeopardyRoute, covidStatRoute]);
 
 export const router = createRouter({
-	routeTree,
-	// New navigations start at the top; back/forward restore the previous scroll position.
-	scrollRestoration: true,
+  routeTree,
+  // New navigations start at the top; back/forward restore the previous scroll position.
+  scrollRestoration: true,
 });
 
 // Registers the route tree with TypeScript so <Link to="..."> is checked against real paths.
 declare module '@tanstack/react-router' {
-	interface Register {
-		router: typeof router;
-	}
+  interface Register {
+    router: typeof router;
+  }
 }

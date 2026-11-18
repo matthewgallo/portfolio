@@ -1,76 +1,76 @@
 /* Entrance: header image grows from the top-left corner into place, then the title slides up. */
 @keyframes imageIn {
-	from {
-		height: 0;
-		left: 0;
-		top: 0;
-		transform: translate(0, 0);
-		width: 0;
-		z-index: 1000;
-	}
-	to {
-		height: 60%;
-		left: 50%;
-		top: 65%;
-		transform: translate(-50%, -50%);
-		width: 100%;
-	}
+  from {
+    height: 0;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    width: 0;
+    z-index: 1000;
+  }
+  to {
+    height: 60%;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
 }
 
 @keyframes headerTextIn {
-	from {
-		opacity: 0;
-		transform: translateY(100%);
-	}
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
 }
 
 .container {
-	background-color: var(--color-background);
-	height: 100vh;
-	overflow: hidden;
-	padding-top: 3rem;
-	width: 100vw;
+  background-color: var(--color-background);
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 3rem;
+  width: 100vw;
 }
 
 .content {
-	align-items: flex-start;
-	color: var(--color-text);
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	margin: 0 auto;
-	max-width: 90%;
-	min-height: calc(100vh - 3rem);
-	padding-top: 4rem;
-	z-index: 2;
+  align-items: flex-start;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 90%;
+  min-height: calc(100vh - 3rem);
+  padding-top: 4rem;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
-	.content {
-		align-items: center;
-		max-width: 1170px;
-		padding: 0 2rem;
-	}
+  .content {
+    align-items: center;
+    max-width: 1170px;
+    padding: 0 2rem;
+  }
 }
 
 .imageContainer {
-	animation: imageIn 0.8s cubic-bezier(0.77, 0.03, 0.21, 0.95) 0.75s both;
-	left: 0;
-	max-width: 840px;
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	width: 100%;
+  animation: imageIn 0.8s cubic-bezier(0.77, 0.03, 0.21, 0.95) 0.75s both;
+  left: 0;
+  max-width: 840px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .headerText {
-	animation: headerTextIn 0.5s cubic-bezier(0.77, 0.03, 0.21, 0.95) 1s both;
-	padding-top: 4rem;
+  animation: headerTextIn 0.5s cubic-bezier(0.77, 0.03, 0.21, 0.95) 1s both;
+  padding-top: 4rem;
 }
 
 .image {
-	height: 100%;
-	max-width: 100%;
-	object-fit: cover;
-	width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  width: 100%;
 }

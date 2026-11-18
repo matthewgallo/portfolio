@@ -1,78 +1,78 @@
 .header {
-	backdrop-filter: blur(10px);
-	background-color: var(--color-header-background);
-	border: 1px solid var(--color-background-secondary);
-	padding: 0.5rem 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 1000;
+  backdrop-filter: blur(10px);
+  background-color: var(--color-header-background);
+  border: 1px solid var(--color-background-secondary);
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .content {
-	display: flex;
-	justify-content: space-between;
-	margin: 0 auto;
-	max-width: 90%;
-	padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 0;
 }
 
 @media (min-width: 1220px) {
-	.content {
-		max-width: 1170px;
-	}
+  .content {
+    max-width: 1170px;
+  }
 }
 
 .logo {
-	align-items: center;
-	display: flex;
-	position: relative;
+  align-items: center;
+  display: flex;
+  position: relative;
 }
 
 .actions {
-	align-items: center;
-	display: flex;
-	margin: 0;
-	padding: 0;
-	transition: opacity 0.35s ease 0.75s;
+  align-items: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.35s ease 0.75s;
 }
 
 /* Nav menu toggle (currently unused, see Header.jsx) */
 .toggleNavButton {
-	align-items: center;
-	background: transparent;
-	border: 0;
-	cursor: pointer;
-	display: flex;
-	flex-direction: column;
-	height: 2rem;
-	justify-content: center;
-	margin: 0;
-	padding: 0;
-	width: 2rem;
-	z-index: 3000;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 2rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 2rem;
+  z-index: 3000;
 }
 
 .toggleNavButton:focus {
-	outline: 0;
+  outline: 0;
 }
 
 .navMenuLine {
-	background-color: var(--color-text);
-	height: 1px;
-	transform: rotate(0deg);
-	transition: 0.25s ease-in-out;
-	width: 1rem;
+  background-color: var(--color-text);
+  height: 1px;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+  width: 1rem;
 }
 
 .navMenuLine:first-of-type {
-	margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .toggleNavButton:is(:hover, :focus) .navMenuLine:first-of-type {
-	transform: translateX(0.25rem);
+  transform: translateX(0.25rem);
 }
 
 .toggleNavButton:is(:hover, :focus) .navMenuLine:last-of-type {
-	transform: translateX(-0.25rem);
+  transform: translateX(-0.25rem);
 }

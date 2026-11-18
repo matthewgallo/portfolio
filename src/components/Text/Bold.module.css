@@ -1,32 +1,32 @@
 .bold {
-	color: var(--color-text);
-	display: block;
-	font-size: 1rem;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 1;
+  color: var(--color-text);
+  display: block;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .secondary {
-	color: var(--color-text-secondary);
+  color: var(--color-text-secondary);
 }
 
 .expressiveHeading {
-	font-size: 5rem;
+  font-size: 5rem;
 }
 
 .expressiveHeading02 {
-	font-size: 4rem;
+  font-size: 4rem;
 }
 
 .expressiveHeading03 {
-	font-size: 3rem;
+  font-size: 3rem;
 }
 
 .expressiveHeading04 {
-	font-size: 2rem;
+  font-size: 2rem;
 }
 
 .expressiveHeading05 {
-	font-size: 0.875rem;
+  font-size: 0.875rem;
 }

@@ -2,72 +2,72 @@
 
 /* ContentSection */
 .contentSection {
-	background-color: var(--color-background);
-	padding: 4rem 0 6rem;
+  background-color: var(--color-background);
+  padding: 4rem 0 6rem;
 }
 
 /* ContentSectionItem */
 .contentSectionItem {
-	padding-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 
 /* DetailCallout */
 .callout {
-	background-color: var(--color-background-secondary);
-	padding: 4rem 0;
+  background-color: var(--color-background-secondary);
+  padding: 4rem 0;
 }
 
 .calloutHeader {
-	font-weight: 300;
+  font-weight: 300;
 }
 
 .calloutOverview {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
 }
 
 /* DetailCalloutGroup */
 .calloutGroup {
-	flex-basis: 45%;
-	margin-bottom: 2rem;
-	max-width: 400px;
+  flex-basis: 45%;
+  margin-bottom: 2rem;
+  max-width: 400px;
 }
 
 /* CalloutGroupItem */
 .calloutGroupItemTool {
-	align-items: center;
-	display: flex;
-	padding-bottom: 0.25rem;
+  align-items: center;
+  display: flex;
+  padding-bottom: 0.25rem;
 }
 
 .calloutGroupItemLogo {
-	margin-right: 0.5rem;
-	width: 1.25rem;
+  margin-right: 0.5rem;
+  width: 1.25rem;
 }
 
 .calloutGroupItemEmoji {
-	margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 /* SplitContent */
 .splitContent {
-	border-bottom: 1px solid var(--color-background-secondary);
-	display: block;
-	margin-bottom: 4rem;
-	padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-background-secondary);
+  display: block;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .splitContentItem {
-	flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .splitContentItemPadded {
-	padding-right: 7.5%;
+  padding-right: 7.5%;
 }
 
 @media (min-width: 768px) {
-	.splitContent {
-		display: flex;
-	}
+  .splitContent {
+    display: flex;
+  }
 }
