@@ -1,12 +1,9 @@
-/*
- * Mesh gradient palette for the featured mark: the two brand accents plus two neighbors that keep
- * the blend vivid (violet/cyan beside blue/green in light; pink/gold beside mint/orange in dark).
- */
+/* Mesh gradient palette for the featured mark (theme tokens from global.css). */
 .pattern {
   --mesh-1: var(--color-secondary);
   --mesh-2: var(--color-primary);
-  --mesh-3: light-dark(#8b5cf6, #ff4f9a);
-  --mesh-4: light-dark(#22d3ee, #ffd166);
+  --mesh-3: var(--color-mesh-3);
+  --mesh-4: var(--color-mesh-4);
 }
 
 /* Each color field wanders and breathes on its own loop. */

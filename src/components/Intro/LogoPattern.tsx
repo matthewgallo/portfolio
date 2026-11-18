@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import grain from '../../assets/images/grain.svg';
 import cx from '../../utils/cx';
 import GlowFilter from './GlowFilter';
 import styles from './LogoPattern.module.css';
@@ -38,18 +39,6 @@ const BLOBS = [
   { cx: 430, cy: 220, r: 260, color: 3, duration: 11, dx: 140, dy: -110 },
   { cx: 820, cy: 30, r: 250, color: 4, duration: 19, dx: -160, dy: 140 },
 ];
-
-/**
- * Film-grain texture for the mesh: fractal noise, desaturated and contrast-boosted around 50% gray
- * so it reads as both light and dark specks under `overlay` blending. Shipped as a static image
- * (not a live filter) so the browser rasterizes it once instead of on every frame the blobs move.
- */
-const GRAIN = `data:image/svg+xml,${encodeURIComponent(
-  `<svg xmlns="http://www.w3.org/2000/svg" width="850" height="400">` +
-    `<filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/>` +
-    `<feColorMatrix values="1.8 0 0 0 -0.4 1.8 0 0 0 -0.4 1.8 0 0 0 -0.4 0 0 0 0 1"/></filter>` +
-    `<rect width="100%" height="100%" filter="url(#n)"/></svg>`
-)}`;
 
 const BASE_GRADIENT_ID = 'mg-logo-pattern-gradient';
 const BLOB_GRADIENT_ID = (color: number) => `mg-logo-pattern-blob-${color}`;
@@ -99,7 +88,7 @@ const LogoPattern = ({ className }: { className?: string }) => {
                   style={{ '--duration': `${duration}s`, '--dx': `${dx}px`, '--dy': `${dy}px` } as CSSProperties}
                 />
               ))}
-              <image href={GRAIN} width={850} height={400} preserveAspectRatio="none" className={styles.grain} />
+              <image href={grain} width={850} height={400} preserveAspectRatio="none" className={styles.grain} />
             </g>
           </g>
         ) : (

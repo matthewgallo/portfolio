@@ -119,15 +119,52 @@
   margin-block-end: 0.75rem;
 }
 
-/* A single logo block in the brand gradient; grows in like the pattern's blocks. */
+/*
+ * A single logo block with the same grainy mesh gradient as the featured MG mark: two drifting
+ * color fields over the brand gradient, film grain on top. Grows in like the pattern's blocks.
+ */
 .accentBlock {
-  animation: growX 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
-  background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
-  block-size: 0.5em;
+  animation:
+    growX 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both,
+    meshDrift 9s ease-in-out infinite alternate;
+  background:
+    radial-gradient(circle at center, var(--color-mesh-3), transparent 60%) 0% 0% / 200% 200%,
+    radial-gradient(circle at center, var(--color-mesh-4), transparent 60%) 100% 100% / 200% 200%,
+    linear-gradient(to right, var(--color-secondary), var(--color-primary));
+  block-size: 0.625em;
   box-shadow: 0 0 1em color-mix(in srgb, var(--color-secondary) 45%, transparent);
-  inline-size: 2em;
+  inline-size: 2.5em;
+  isolation: isolate;
   margin-inline-end: 0.4em;
+  overflow: hidden;
+  position: relative;
   transform-origin: left center;
+}
+
+/* Grain at roughly the same on-screen scale as the MG mark's. */
+.accentBlock::after {
+  background: url('../../assets/images/grain.svg') 0 0 / 360px auto;
+  content: '';
+  inset: 0;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  position: absolute;
+}
+
+@keyframes meshDrift {
+  50% {
+    background-position:
+      100% 20%,
+      0% 60%,
+      0 0;
+  }
+
+  100% {
+    background-position:
+      40% 100%,
+      60% 0%,
+      0 0;
+  }
 }
 
 @keyframes growX {
@@ -229,7 +266,8 @@
 
 /* The global reduced-motion rule shortens durations but keeps infinite loops; hold the gradient still instead. */
 @media (prefers-reduced-motion: reduce) {
-  .tagline {
+  .tagline,
+  .accentBlock {
     animation: none;
   }
 

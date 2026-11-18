@@ -9,6 +9,10 @@
   --color-header-background: #ffffff20;
   --color-primary: #34bc6e;
   --color-secondary: #3c6df0;
+
+  /* Extra hues for the mesh-gradient accents, chosen to sit beside primary/secondary. */
+  --color-mesh-3: #8b5cf6;
+  --color-mesh-4: #22d3ee;
 }
 
 :root[data-theme='dark'] {
@@ -21,6 +25,8 @@
   --color-header-background: #1d1d1f20;
   --color-primary: #ff7043;
   --color-secondary: #69f0ae;
+  --color-mesh-3: #ff4f9a;
+  --color-mesh-4: #ffd166;
 }
 
 /* Karla */
