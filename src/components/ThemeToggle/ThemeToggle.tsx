@@ -1,11 +1,10 @@
-import { useContext, useRef } from 'react';
+import { useContext } from 'react';
 import cx from '../../utils/cx';
 import { ThemeContext } from '../ThemeContext/ThemeContext';
 import styles from './ThemeToggle.module.css';
 
 const ThemeToggle = () => {
 	const { colorMode, setColorMode } = useContext(ThemeContext);
-	const themeButton = useRef<HTMLButtonElement>(null);
 	// Bulb glow + rays fade out in dark mode
 	const lightOnlyClass = cx(styles.lightOnly, colorMode === 'dark' && styles.hidden);
 
@@ -13,11 +12,9 @@ const ThemeToggle = () => {
 		<button
 			className={styles.button}
 			type="button"
-			ref={themeButton}
 			onClick={() => {
 				if (colorMode === 'dark') setColorMode('light');
 				else setColorMode('dark');
-				themeButton.current?.blur();
 			}}
 			title={colorMode === 'dark' ? 'Toggle light theme' : 'Toggle dark theme'}
 			aria-label={colorMode === 'dark' ? 'Toggle light theme' : 'Toggle dark theme'}
