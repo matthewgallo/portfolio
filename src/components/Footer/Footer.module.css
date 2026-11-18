@@ -26,6 +26,12 @@
 	padding: 0;
 }
 
+.logoButton:focus-visible {
+	border-radius: 0.25rem;
+	outline: 2px solid var(--color-secondary);
+	outline-offset: 2px;
+}
+
 .linkContainer {
 	display: flex;
 	justify-content: space-around;
