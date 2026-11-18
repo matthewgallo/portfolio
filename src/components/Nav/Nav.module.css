@@ -2,18 +2,23 @@
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(-10deg);
   }
+
   20% {
     transform: rotate(12deg);
   }
+
   30% {
     transform: rotate(-10deg);
   }
+
   40% {
     transform: rotate(9deg);
   }
+
   50%,
   100% {
     transform: rotate(0deg);
@@ -22,13 +27,14 @@
 
 .nav {
   background-color: var(--color-background);
-  color: var(--color-text);
   block-size: 100vh;
-  inset-inline-start: 0;
-  position: fixed;
+  color: var(--color-text);
   inline-size: 100%;
+  inset-inline-start: 0;
   opacity: 0;
+  position: fixed;
   transform: translateY(-100%);
+
   /* visibility flips after the slide-out so closed links can't be focused */
   transition:
     opacity 0.4s ease,
@@ -53,7 +59,7 @@
   padding: 0 2rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .content {
     max-inline-size: 1170px;
   }

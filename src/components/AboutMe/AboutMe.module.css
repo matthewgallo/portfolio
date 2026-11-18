@@ -8,7 +8,7 @@
   max-inline-size: 1140px;
 }
 
-@media (min-width: 1220px) {
+@media (width >= 1220px) {
   .container {
     inline-size: 100%;
     max-inline-size: 1170px;

@@ -7,10 +7,11 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  list-style: none;
-  margin: 0 auto;
+
   /* same content column as the About section above */
   inline-size: 90%;
+  list-style: none;
+  margin: 0 auto;
   max-inline-size: 1170px;
   padding: 0;
 }
@@ -34,7 +35,7 @@
   background-color: var(--color-background-secondary);
 }
 
-@media (min-width: 1220px) {
+@media (width >= 1220px) {
   .grid {
     inline-size: 100%;
   }
@@ -49,7 +50,7 @@
   padding: 0;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .grid {
     grid-template-columns: 1fr;
   }

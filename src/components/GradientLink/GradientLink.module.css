@@ -19,8 +19,7 @@
   content: '';
   inline-size: 0;
   inset-block-end: -0.125rem;
-  inset-inline-end: 0;
-  inset-inline-start: auto;
+  inset-inline: auto 0;
   position: absolute;
   z-index: 2;
 }

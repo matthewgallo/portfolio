@@ -23,7 +23,7 @@
   display: none;
 }
 
-@media (min-width: 1060px) {
+@media (width >= 1060px) {
   .content {
     max-inline-size: 560px;
   }

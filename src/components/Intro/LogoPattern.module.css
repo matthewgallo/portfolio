@@ -4,7 +4,7 @@
 }
 
 /* On small screens the pattern sits behind the copy, so mute the gradient tile to keep text readable. */
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .featured {
     opacity: 0.3;
   }
