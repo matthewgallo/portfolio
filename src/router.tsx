@@ -1,11 +1,6 @@
 import { createRootRoute, createRoute, createRouter } from '@tanstack/react-router';
 import App from './components/App/App';
 import Home from './components/Home/Home';
-import ProjectYama from './components/ProjectYama/ProjectYama';
-import About from './components/About/About';
-import IBPDetails from './components/IBPDetails/IBPDetails';
-import JeopardyDetails from './components/JeopardyDetails/JeopardyDetails';
-import CovidStatDetails from './components/CovidStat/CovidStat';
 import NotFound from './components/NotFound/NotFound';
 
 // Root layout (header, nav, footer) wraps every page via <Outlet />.
@@ -15,13 +10,12 @@ const rootRoute = createRootRoute({
 });
 
 const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: Home });
-const projectYamaRoute = createRoute({ getParentRoute: () => rootRoute, path: '/project-yama', component: ProjectYama });
-const aboutMeRoute = createRoute({ getParentRoute: () => rootRoute, path: '/about-me', component: About });
-const ibpDetailsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/work/ibm-blockchain-platform', component: IBPDetails });
-const jeopardyRoute = createRoute({ getParentRoute: () => rootRoute, path: '/work/jeopardy', component: JeopardyDetails });
-const covidStatRoute = createRoute({ getParentRoute: () => rootRoute, path: '/work/covid-stat', component: CovidStatDetails });
 
-const routeTree = rootRoute.addChildren([indexRoute, projectYamaRoute, aboutMeRoute, ibpDetailsRoute, jeopardyRoute, covidStatRoute]);
+// Other pages (ProjectYama, About, IBPDetails, JeopardyDetails, CovidStat) are intentionally
+// unrouted for now — their components are kept in src/components until they're re-enabled.
+// Any other path falls through to NotFound.
+
+const routeTree = rootRoute.addChildren([indexRoute]);
 
 export const router = createRouter({
   routeTree,

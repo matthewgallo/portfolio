@@ -18,11 +18,6 @@ const Nav = ({ open, toggleNavOpen }: NavProps) => (
               home
             </Link>
           </li>
-          <li>
-            <Link className={styles.pageLink} to="/about-me" onClick={toggleNavOpen}>
-              about me
-            </Link>
-          </li>
         </ul>
         <span className={styles.wave}>
           <span role="img" aria-label="Hand wave">
