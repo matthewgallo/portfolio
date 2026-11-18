@@ -1,3 +1,38 @@
+/*
+ * Mesh gradient palette for the featured mark: the two brand accents plus two neighbors that keep
+ * the blend vivid (violet/cyan beside blue/green in light; pink/gold beside mint/orange in dark).
+ */
+.pattern {
+  --mesh-1: var(--color-secondary);
+  --mesh-2: var(--color-primary);
+  --mesh-3: light-dark(#8b5cf6, #ff4f9a);
+  --mesh-4: light-dark(#22d3ee, #ffd166);
+}
+
+/* Each color field wanders and breathes on its own loop. */
+.blob {
+  animation: drift var(--duration, 14s) ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes drift {
+  50% {
+    transform: translate(calc(var(--dx) * 0.4), var(--dy)) scale(1.15);
+  }
+
+  100% {
+    transform: translate(var(--dx), calc(var(--dy) * -0.5)) scale(0.9);
+  }
+}
+
+/* Grain sits on top of the mesh; the mask isolates the group, so it only blends with the gradient. */
+.grain {
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 .tile {
   /* Opaque tint (not alpha) so overlapping blocks don't stack into darker patches. */
   fill: color-mix(in srgb, var(--color-text) 7%, var(--color-background));
@@ -54,7 +89,8 @@
 
 /* The global reduced-motion rule shortens durations but keeps infinite loops, which would flicker; hold still instead. */
 @media (prefers-reduced-motion: reduce) {
-  .glowTint {
+  .glowTint,
+  .blob {
     animation: none;
   }
 }
