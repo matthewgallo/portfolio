@@ -1,0 +1,14 @@
+.container {
+	height: 4px;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 3rem;
+	z-index: 2000;
+}
+
+.indicator {
+	background-color: var(--color-primary);
+	height: 4px;
+	width: 0%;
+}

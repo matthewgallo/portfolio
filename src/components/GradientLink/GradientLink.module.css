@@ -1,0 +1,52 @@
+.link {
+	color: var(--color-primary);
+	display: initial;
+	position: relative;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	width: fit-content;
+}
+
+.link:focus,
+.link:hover {
+	outline: 0;
+	text-decoration: none;
+}
+
+.link::after,
+.link::before {
+	bottom: -0.125rem;
+	content: '';
+	height: 3px;
+	left: auto;
+	position: absolute;
+	right: 0;
+	width: 0;
+	z-index: 2;
+}
+
+.link::before {
+	background-color: var(--color-secondary);
+	transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
+}
+
+.link::after {
+	background-color: var(--color-primary);
+	transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+
+.link:hover::after,
+.link:hover::before,
+.link:focus::after,
+.link:focus::before {
+	left: 0;
+	width: 100%;
+}
+
+.flex {
+	display: flex;
+}
+
+.bold {
+	font-weight: 600;
+}
