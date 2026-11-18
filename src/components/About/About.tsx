@@ -6,7 +6,7 @@ const About = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <h3 style={{ paddingBlockEnd: '1rem' }}>Hello!</h3>
-          <h3>I՚m Matt, a front end developer / designer.</h3>
+          <h3>I՚m Matt, a senior front end developer / designer.</h3>
           <p style={{ paddingBlockStart: '1.5rem' }}>
             I currently work as a lead UX/front end engineer for Carbon for IBM Products, a design system used by software products at IBM. I enjoy learning new
             things, some of which currently include react hooks, redux, svg animations, and framer motion{' '}

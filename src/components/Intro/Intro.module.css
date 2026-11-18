@@ -5,6 +5,13 @@
 }
 
 .container {
+  /*
+   * Tagline gradient stops. The light-theme green is deepened toward the text color so it holds
+   * 3:1 contrast on white; light-dark() follows the color-scheme each theme sets in global.css.
+   */
+  --intro-accent-start: var(--color-secondary);
+  --intro-accent-end: light-dark(color-mix(in oklab, var(--color-primary) 72%, var(--color-text)), var(--color-primary));
+
   animation: fadeIn 0.3s ease-out both;
   background-color: var(--color-background);
   background-size: 100%;
@@ -35,6 +42,32 @@
   }
 }
 
+/* Soft accent-colored light that follows the pointer, echoing the logo glow. Mouse/trackpad only. */
+.spotlight {
+  background: radial-gradient(
+    36rem circle at var(--pointer-x, 70%) var(--pointer-y, 50%),
+    color-mix(in srgb, var(--color-secondary) 12%, transparent),
+    color-mix(in srgb, var(--color-primary) 6%, transparent) 40%,
+    transparent 70%
+  );
+  display: none;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.6s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .spotlight {
+    display: block;
+  }
+
+  .container:hover .spotlight {
+    opacity: 1;
+  }
+}
+
 .inner {
   align-items: center;
   block-size: inherit;
@@ -53,17 +86,154 @@
 }
 
 .content {
-  display: block;
   inline-size: 100%;
 }
 
-@media (width >= 768px) {
-  .content {
-    display: flex;
-    justify-content: space-between;
+/* Each line rises in, staggered via --step, landing as the logo pattern assembles. */
+.eyebrow,
+.name,
+.tagline,
+.description {
+  animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) calc(150ms + var(--step, 0) * 90ms) both;
+  font-kerning: normal;
+  margin: 0;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
   }
 }
 
-.heading {
-  margin-block-end: 0;
+/* ---- Eyebrow ---- */
+
+.eyebrow {
+  align-items: center;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  display: flex;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  gap: 0.35em;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  margin-block-end: 0.75rem;
+}
+
+/* A single logo block in the brand gradient; grows in like the pattern's blocks. */
+.accentBlock {
+  animation: growX 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
+  background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+  block-size: 0.5em;
+  box-shadow: 0 0 1em color-mix(in srgb, var(--color-secondary) 45%, transparent);
+  inline-size: 2em;
+  margin-inline-end: 0.4em;
+  transform-origin: left center;
+}
+
+@keyframes growX {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+.wave {
+  animation: wave 1.6s ease-in-out 0.6s;
+  display: inline-block;
+  transform-origin: 70% 80%;
+}
+
+.eyebrow:hover .wave {
+  animation: wave 1.2s ease-in-out;
+}
+
+@keyframes wave {
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+
+  20%,
+  40% {
+    transform: rotate(-8deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0);
+  }
+}
+
+/* ---- Name ---- */
+
+.name {
+  color: var(--color-text);
+  font-size: clamp(3.5rem, 1.75rem + 7vw, 7rem);
+  font-weight: 700;
+
+  /* Display sizes need tighter tracking and leading than body copy. */
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+  margin-block-end: 0.15em;
+  text-rendering: optimizelegibility;
+  text-wrap: balance;
+}
+
+/* ---- Tagline ---- */
+
+.tagline {
+  animation:
+    riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) calc(150ms + var(--step, 0) * 90ms) both,
+    gradientDrift 6s ease-in-out infinite alternate;
+  background: linear-gradient(to right, var(--intro-accent-start), var(--intro-accent-end), var(--intro-accent-start)) 0% 50% / 200% 100%;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 1.25rem color-mix(in srgb, var(--color-secondary) 25%, transparent));
+  font-size: clamp(2rem, 1.25rem + 3vw, 3.5rem);
+  font-weight: 700;
+  inline-size: fit-content;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-block-end: 1.5rem;
+  padding-block-end: 0.08em; /* keeps descenders inside the clipped background */
+  text-wrap: balance;
+  transition: filter 0.4s ease;
+}
+
+.tagline:hover {
+  filter: drop-shadow(0 0 1.75rem color-mix(in srgb, var(--color-primary) 45%, transparent));
+}
+
+@keyframes gradientDrift {
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* ---- Description ---- */
+
+.description {
+  color: color-mix(in srgb, var(--color-text) 75%, transparent);
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  line-height: 1.55;
+  max-inline-size: 34ch;
+  text-wrap: pretty;
+}
+
+.description strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* The global reduced-motion rule shortens durations but keeps infinite loops; hold the gradient still instead. */
+@media (prefers-reduced-motion: reduce) {
+  .tagline {
+    animation: none;
+  }
+
+  .spotlight {
+    display: none;
+  }
 }
