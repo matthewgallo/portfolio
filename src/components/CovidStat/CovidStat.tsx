@@ -48,13 +48,13 @@ const CovidStat = () => {
         </CalloutGroup>
         <CalloutGroup>
           <Tag>
-            <span style={{ marginRight: '0.5rem' }} role="img" aria-label="Crane emoji for Front end development">
+            <span style={{ marginInlineEnd: '0.5rem' }} role="img" aria-label="Crane emoji for Front end development">
               🏗️
             </span>{' '}
             Front end development*
           </Tag>
           <Tag>
-            <span style={{ marginRight: '0.5rem' }} role="img" aria-label="Tools emoji and palette emoji for UX/visual design">
+            <span style={{ marginInlineEnd: '0.5rem' }} role="img" aria-label="Tools emoji and palette emoji for UX/visual design">
               🛠️ 🎨
             </span>{' '}
             UX/Visual design

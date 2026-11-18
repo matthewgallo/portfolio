@@ -4,8 +4,8 @@
   border-collapse: separate;
   cursor: pointer;
   margin: 0;
-  min-height: 2rem;
-  min-width: 2rem;
+  min-block-size: 2rem;
+  min-inline-size: 2rem;
   outline: 0;
   padding: 0;
   position: relative;
@@ -19,8 +19,8 @@
 }
 
 .icon {
-  height: 1.5rem;
-  width: 1.5rem;
+  block-size: 1.5rem;
+  inline-size: 1.5rem;
 }
 
 .lightOnly {

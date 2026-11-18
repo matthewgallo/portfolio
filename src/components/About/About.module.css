@@ -1,21 +1,21 @@
 .container {
   align-items: flex-start;
+  block-size: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  inline-size: 100%;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1140px;
+  max-inline-size: 1140px;
   padding: 8rem 2rem;
   position: relative;
-  width: 100%;
 }
 
 .content {
   flex: 0 1 auto;
-  margin-bottom: 30px;
+  inline-size: 100%;
+  margin-block-end: 30px;
   position: relative;
-  width: 100%;
   word-spacing: 0.2rem;
 }
 
@@ -25,30 +25,30 @@
 
 @media (min-width: 1060px) {
   .content {
-    max-width: 560px;
+    max-inline-size: 560px;
   }
 
   .portrait {
-    bottom: 0;
+    block-size: 500px;
     display: block;
-    height: 500px;
+    inline-size: 30%;
+    inset-block-end: 0;
+    inset-inline-end: 0;
     margin: 0 auto;
-    max-width: 324px;
+    max-inline-size: 324px;
     overflow: hidden;
     position: absolute;
-    right: 0;
-    width: 30%;
   }
 }
 
 .portraitImage,
 .portraitHoverContainer,
 .portraitHoverImage {
-  height: 100%;
-  left: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   position: absolute;
-  top: 0;
-  width: 100%;
   z-index: 5;
 }
 
@@ -78,13 +78,13 @@
 
 .portraitHoverImage::after {
   background-color: #3c6df0;
+  block-size: 100%;
   content: '';
-  height: 100%;
-  left: 0;
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   mix-blend-mode: color;
   position: absolute;
-  top: 0;
-  width: 100%;
   z-index: 5;
 }
 

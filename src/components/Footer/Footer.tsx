@@ -12,9 +12,9 @@ const Footer = () => {
           <button className={styles.logoButton} type="button" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <Logo
               style={{
-                height: '50px',
+                blockSize: '50px',
+                inlineSize: '88px',
                 transition: 'fill 0.8s ease',
-                width: '88px',
               }}
             />
           </button>

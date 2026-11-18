@@ -1,6 +1,6 @@
 .container {
   display: block;
-  margin-bottom: 2rem;
+  margin-block-end: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -16,8 +16,8 @@
 
 .screenshot {
   align-self: start;
-  max-width: 660px;
-  width: 100%;
+  inline-size: 100%;
+  max-inline-size: 660px;
 }
 
 .subtitle {
@@ -26,5 +26,5 @@
 }
 
 .title {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }

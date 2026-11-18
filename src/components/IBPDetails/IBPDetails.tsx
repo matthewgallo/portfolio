@@ -79,7 +79,7 @@ const BlockchainPage = () => {
           <Tag>
             <span
               style={{
-                marginRight: '0.5rem',
+                marginInlineEnd: '0.5rem',
               }}
               role="img"
               aria-label="Crane emoji for Front end development"
@@ -91,7 +91,7 @@ const BlockchainPage = () => {
           <Tag>
             <span
               style={{
-                marginRight: '0.5rem',
+                marginInlineEnd: '0.5rem',
               }}
               role="img"
               aria-label="Magnifying glass emoji for user research"
@@ -103,7 +103,7 @@ const BlockchainPage = () => {
           <Tag>
             <span
               style={{
-                marginRight: '0.5rem',
+                marginInlineEnd: '0.5rem',
               }}
               role="img"
               aria-label="Tools emoji for user experience design"

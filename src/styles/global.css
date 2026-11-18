@@ -93,8 +93,8 @@ a {
 
 #root {
   background-color: var(--color-background);
+  block-size: 100%;
   color: var(--color-text);
-  height: 100%;
 }
 
 h1,
@@ -118,8 +118,8 @@ h4,
 h5,
 h6 {
   font-weight: 500;
-  margin-bottom: 1rem;
-  margin-top: 0;
+  margin-block-end: 1rem;
+  margin-block-start: 0;
 }
 
 h1 {

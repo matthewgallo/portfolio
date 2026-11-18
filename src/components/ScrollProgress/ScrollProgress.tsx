@@ -19,7 +19,7 @@ const ScrollProgress = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.indicator} style={{ width: `${percentScrolled}%` }} />
+      <div className={styles.indicator} style={{ inlineSize: `${percentScrolled}%` }} />
     </div>
   );
 };

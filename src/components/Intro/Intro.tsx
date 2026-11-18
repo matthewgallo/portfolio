@@ -1,10 +1,12 @@
 import Bold from '../Text/Bold';
 import Text from '../Text/Text';
+import LogoPattern from './LogoPattern';
 import styles from './Intro.module.css';
 
 const Intro = () => {
   return (
     <section className={styles.container}>
+      <LogoPattern className={styles.pattern} />
       <div className={styles.inner}>
         <div className={styles.content}>
           <div>

@@ -8,29 +8,54 @@
   animation: fadeIn 0.3s ease-out both;
   background-color: var(--color-background);
   background-size: 100%;
-  height: 100vh;
+  block-size: 100vh;
+  overflow: hidden;
   position: relative;
+}
+
+/* Sits behind the text on small screens, then moves to the right and fades toward the copy. */
+.pattern {
+  block-size: auto;
+  inline-size: max(130vw, 640px);
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+  .pattern {
+    inline-size: min(64vw, 1000px);
+    inset-inline-end: -6vw;
+    inset-inline-start: auto;
+    mask-image: linear-gradient(to right, transparent, #000 45%);
+    opacity: 1;
+    transform: translateY(-50%);
+  }
 }
 
 .inner {
   align-items: center;
+  block-size: inherit;
   display: flex;
-  height: inherit;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 90%;
+  max-inline-size: 90%;
   position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 1220px) {
   .inner {
-    max-width: 1170px;
+    max-inline-size: 1170px;
   }
 }
 
 .content {
   display: block;
-  width: 100%;
+  inline-size: 100%;
 }
 
 @media (min-width: 768px) {
@@ -41,5 +66,5 @@
 }
 
 .heading {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }

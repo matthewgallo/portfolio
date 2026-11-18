@@ -1,0 +1,41 @@
+.tile {
+  /* Opaque tint (not alpha) so overlapping blocks don't stack into darker patches. */
+  fill: color-mix(in srgb, var(--color-text) 7%, var(--color-background));
+}
+
+/* On small screens the pattern sits behind the copy, so mute the gradient tile to keep text readable. */
+@media (max-width: 767px) {
+  .featured {
+    opacity: 0.3;
+  }
+}
+
+/* Each block grows along its long axis from its own corner, staggered via --delay. */
+.vertical,
+.horizontal {
+  animation: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) var(--delay, 0ms) both;
+  transform-box: fill-box;
+  transform-origin: 0 0;
+}
+
+.vertical {
+  animation-name: growY;
+}
+
+.horizontal {
+  animation-name: growX;
+}
+
+@keyframes growY {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes growX {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}

@@ -57,13 +57,13 @@ const JeopardyDetails = () => {
         </CalloutGroup>
         <CalloutGroup>
           <Tag>
-            <span style={{ marginRight: '0.5rem' }} role="img" aria-label="Crane emoji for Front end development">
+            <span style={{ marginInlineEnd: '0.5rem' }} role="img" aria-label="Crane emoji for Front end development">
               🏗️
             </span>{' '}
             Front end development*
           </Tag>
           <Tag>
-            <span style={{ marginRight: '0.5rem' }} role="img" aria-label="Party emoji for #forfun">
+            <span style={{ marginInlineEnd: '0.5rem' }} role="img" aria-label="Party emoji for #forfun">
               🥳
             </span>{' '}
             #forfun

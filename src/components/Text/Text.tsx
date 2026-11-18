@@ -16,7 +16,10 @@ interface TextProps {
 const Text = ({ children, small = true, medium = false, margin = false, contained = false }: TextProps) => {
   const marginBottom = typeof margin === 'string' ? margin : '1.5rem';
   return (
-    <p className={cx(styles.contentText, small ? styles.small : medium && styles.medium, contained && styles.contained)} style={{ marginBottom }}>
+    <p
+      className={cx(styles.contentText, small ? styles.small : medium && styles.medium, contained && styles.contained)}
+      style={{ marginBlockEnd: marginBottom }}
+    >
       {children}
     </p>
   );

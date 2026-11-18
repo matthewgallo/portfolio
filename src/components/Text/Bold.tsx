@@ -21,7 +21,7 @@ interface BoldProps {
 }
 
 const Bold = ({ children, size, margin = '0', secondary = false }: BoldProps) => (
-  <span className={cx(styles.bold, size && SIZE_CLASSES[size], secondary && styles.secondary)} style={{ marginBottom: margin }}>
+  <span className={cx(styles.bold, size && SIZE_CLASSES[size], secondary && styles.secondary)} style={{ marginBlockEnd: margin }}>
     {children}
   </span>
 );

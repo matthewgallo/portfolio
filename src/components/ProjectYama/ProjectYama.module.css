@@ -1,40 +1,40 @@
 .splitContentImg {
-  height: 100%;
+  block-size: 100%;
+  inline-size: 100%;
   object-fit: contain;
-  width: 100%;
 }
 
 @media (min-width: 768px) {
   .splitContentImg {
-    width: 50%;
+    inline-size: 50%;
   }
 
   .splitContentImgPadded {
-    padding-right: 7.5%;
+    padding-inline-end: 7.5%;
   }
 }
 
 .passwordOverlay {
   align-items: center;
   background-color: var(--color-background-secondary);
-  bottom: 0;
+  block-size: 100vh;
   display: flex;
-  height: 100vh;
+  inset-block-end: 0;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
   justify-content: center;
-  left: 0;
   position: absolute;
-  right: 0;
-  top: 0;
   z-index: 1;
 }
 
 .lockIcon {
+  block-size: 4rem;
   border: 2px solid var(--color-text);
   border-radius: 100%;
   display: block;
-  height: 4rem;
+  inline-size: 4rem;
   margin: 0 auto 1rem;
-  width: 4rem;
 }
 
 .lockIcon path,
@@ -48,33 +48,33 @@
 }
 
 .passwordInputContainer {
+  inline-size: 280px;
   position: relative;
-  width: 280px;
 }
 
 .passwordInput {
   background-color: var(--color-background);
+  block-size: 3rem;
   border: 0;
   color: var(--color-text);
-  height: 3rem;
+  inline-size: 100%;
   padding: 14px 42px 14px 15px;
-  transition: padding-right 0.1s ease-in-out;
-  width: 100%;
+  transition: padding-inline-end 0.1s ease-in-out;
 }
 
 .revealButton {
   background: none;
+  block-size: 3rem;
   border: 0;
   cursor: pointer;
-  height: 3rem;
+  inset-inline-end: 0;
   padding: 0;
   position: absolute;
-  right: 0;
 }
 
 .revealButton svg {
-  height: inherit;
-  padding-left: 0.25rem;
-  padding-top: 0.5rem;
-  width: 2.5rem;
+  block-size: inherit;
+  inline-size: 2.5rem;
+  padding-block-start: 0.5rem;
+  padding-inline-start: 0.25rem;
 }

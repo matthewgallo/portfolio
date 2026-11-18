@@ -14,8 +14,8 @@ const Header = () => {
           <GradientLink bold url="/" color="var(--color-text)">
             <Logo
               style={{
-                width: '100%',
-                height: '1rem',
+                blockSize: '1rem',
+                inlineSize: '100%',
               }}
             />
           </GradientLink>
