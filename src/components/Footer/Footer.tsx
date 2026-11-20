@@ -8,18 +8,16 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <button className={styles.logoButton} type="button" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <Logo
-              interactive
-              style={{
-                blockSize: '50px',
-                inlineSize: '88px',
-                transition: 'fill 0.8s ease',
-              }}
-            />
-          </button>
-        </div>
+        <button className={styles.logoButton} type="button" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <Logo
+            interactive
+            style={{
+              blockSize: '32px',
+              inlineSize: '56px',
+              transition: 'fill 0.8s ease',
+            }}
+          />
+        </button>
         <ul className={styles.linkContainer}>
           <li>
             <GradientLink url="https://www.linkedin.com/in/matt-gallo-1090748a/" external bold>
